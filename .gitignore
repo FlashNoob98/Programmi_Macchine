@@ -31,8 +31,12 @@
 *.out
 *.app
 
-##LaTex
+# LaTex
 *.synctex.gz
 *.pdf
 *.log
 *.aux
+*.fls
+*.bbl
+*.blg
+*.fdb_latexmk
