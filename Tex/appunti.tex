@@ -3,8 +3,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
 \usepackage[italian]{babel}
-% \usepackage{graphicx}
+%\usepackage{graphicx}
+\usepackage{float}
 \usepackage{textcomp}
+\usepackage{amsmath}
 
 \title{Appunti personali}
 \author{Olivieri Daniele}
@@ -15,16 +17,13 @@
 %\subsection{Definizione}
 %\label{sec:potere_calorifico_def}
 Esistono due definizioni di potere calorifico: superiore ed inferiore.
-
 Il potere calorifico \textbf{superiore}, indicato con $\Delta_c H_s\text{°}$, è la 
 quantità totale di calore estraibile da un combustibile, esso tiene conto del calore 
 latente necessario alla vaporizzazione dell'acqua formatasi con la cobustione.
-
 Il potere calorifico \textbf{inferiore}, indicato con $\Delta_c H_i\text{°}$, invece 
 non tiene conto del calore necessario alla vaporizzazione dell'acqua, indica quindi 
 la quantità massima di energia convertibile idealmente dal combustibile, viene 
 utilizzato infatti nella definizione del rendimento globale.
-
 Valori tipici del potere calorifico per il metano sono: $\Delta_c H_s\text{°}\ =\ 
 55.50\ MJ/kg$, $\Delta_c H_i\text{°}\ =\ 50.00\ MJ/kg$
 
@@ -47,6 +46,7 @@ Il \textbf{rendimento globale} di un impianto motore è definito dalla seguente
 dove $P_{ua}$ è la \textbf{potenza utile all'asse} $\left(kW\right)$, $\dot{m}_c$ è 
 la \textbf{portata massica} di combustibile $\left(\frac{kg}{s}\right)$ e $H_i$ è il 
 \textbf{potere calorifico inferiore} prima definito $\left(\frac{kJ}{kg}\right)$.
+
 L'inverso del rendimento è definito come \textbf{consumo specifico di calore}
 \begin{equation}
 C_{s_q} \stackrel{def}{=} \frac{\dot{m}_c H_i}{P_{ua}} = \frac{m_c H_i}{L_{ua}}
@@ -68,16 +68,16 @@ C_{s_c} \stackrel{def}{=} \frac{\dot{m}_c}{P_{ua}} = \frac{m_c}{L_{ua}} = \frac{
 \end{equation}
 %rivedi le analisi dimensionali
 \subsection*{Schematizzazione del rendimento}
-\label{sec:rendimento_schema}
+\label{subsec:rendimento_schema}
 Essendo il rendimento globale un parametro così generale per un impianto e povero
 di informazioni dettagliate, è comodo schematizzarlo e suddividerlo in 4 parti
 \begin{equation}
-\label{eq:rendimento_schema_eq}
+\label{eq:rendimento_schema}
  \eta_g \stackrel{sch}{=} \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}}
  \cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r}
 \end{equation}
 
-Analizziamo i 4 rapporti presenti nella \eqref{eq:rendimento_schema_eq}
+Analizziamo i 4 rapporti presenti nella \eqref{eq:rendimento_schema}
 \begin{enumerate}
 \item \textbf{Rendimento di combustione}: potenza termica trasferita al fluido 
 rispetto a quella disponibile nel combustibile
@@ -98,7 +98,7 @@ potenza necessaria al funzionamento dei dispositivi ausiliari e le perdite per
 attrito
 \end{enumerate}
 
-Moltiplicando il secondo e terzo termine della \eqref{eq:rendimento_schema_eq} si 
+Moltiplicando il secondo e terzo termine della \eqref{eq:rendimento_schema} si 
 definisce il \textbf{rendimento termico reale}
 \begin{equation}
 \label{eq:rendimento_reale}
@@ -119,6 +119,7 @@ definisce il \textbf{rendimento termico reale}
 \item[f] è il numero di \textbf{fasi} presenti nel sistema
 \end{itemize}
 \subsection{Primo principio della termodinamica}
+\label{subsec:primo_principio}
 \begin{equation}
 Q - L = \Delta E
 \end{equation}
@@ -128,8 +129,66 @@ Q - L = \Delta U
 \end{equation}
 vale anche in forma specifica.
 
+Una formulazione più generale del primo principio è la seguente:
+\begin{equation}
+\label{eq:I_principio_gen}
+\Delta U = Q - L - \Delta(PV)
+\end{equation}
+Definendo quindi l'\textbf{entalpia} \(H = U+PV\), la \eqref{eq:I_principio_gen} diventa
+\begin{equation}
+\label{eq:I_principio_aperti}
+\Delta H = Q - L
+\end{equation}
+\subsection{Gas perfetti}
+Calori specifici:
+\begin{gather}
+ C_p \stackrel{def}{=} \left.\frac{\delta q}{dT}\right|_{p=\text{cost}}\\
+ C_v \stackrel{def}{=} \left.\frac{\delta q}{dT}\right|_{v=\text{cost}}
+\end{gather}
+Equazione dei gas perfetti e \(CdT\):
+\begin{gather}
+pv=RT\\
+\Delta h=C_p\Delta T\\
+\Delta u=C_v\Delta T
+\end{gather}
+Relazione di Mayer:
+\begin{gather}
+ R = C_p - C_v\\
+ k = \frac{C_p}{C_v}
+\end{gather}
+Equazioni di Gibbs in forma differenziale:
+\begin{gather}
+ ds = \frac{du}{T} + p\frac{dv}{T}\\
+ ds = \frac{dh}{T} - v\frac{dp}{T}
+\end{gather}
+Equazioni di Gibbs in forma integrale:
+\begin{gather}
+ \Delta s = C_v \ln{\frac{T_2}{T_1}} + R \ln{\frac{v_2}{v_1}} \\
+ \Delta s = C_p \ln{\frac{T_2}{T_1}} - R \ln{\frac{p_2}{p_1}}
+\end{gather}
+\subsection{Politropica}
+\label{subsec:politropica}
+L'equazione politropica permette di descrivere tutte le trasformazioni reversibili
+\begin{equation}
+\label{eq:politropica}
+ p\cdot v^x=\text{cost}
+\end{equation}
+Al variare di \(x\) si ottengono trasformazioni diverse rappresentate nella figura 
+sottostante
+\[\begin{cases}
+ x=k & \text{adiabatica isoentropica}\\
+ x=1 & \text{isoterma}\\
+ x=0 & \text{isobara}\\
+ x=\pm\infty & \text{isocora}
+\end{cases}\]
+\begin{figure}[H]
+\label{fig:politropiche}
+ \centering
+ \includegraphics[width=0.5\linewidth]{media/politropiche.png}
+ \caption{Principali politropiche}
+\end{figure}
 
-
-
+\subsection{Rendimento del ciclo di Carnot}
+\label{subsec:rendimento_carnot}
 
 \end{document}
