@@ -16,17 +16,25 @@
 %\label{sec:potere_calorifico_def}
 Esistono due definizioni di potere calorifico: superiore ed inferiore.
 
-Il potere calorifico \textbf{superiore}, indicato con $\Delta_c H_s\text{°}$, è la quantità totale di calore estraibile da un combustibile, esso tiene conto del calore latente necessario alla vaporizzazione dell'acqua formatasi con la cobustione.
+Il potere calorifico \textbf{superiore}, indicato con $\Delta_c H_s\text{°}$, è la 
+quantità totale di calore estraibile da un combustibile, esso tiene conto del calore 
+latente necessario alla vaporizzazione dell'acqua formatasi con la cobustione.
 
-Il potere calorifico \textbf{inferiore}, indicato con $\Delta_c H_i\text{°}$, invece non tiene conto del calore necessario alla vaporizzazione dell'acqua, indica quindi la quantità massima di energia convertibile idealmente dal combustibile, viene utilizzato infatti nella definizione del rendimento globale.
+Il potere calorifico \textbf{inferiore}, indicato con $\Delta_c H_i\text{°}$, invece 
+non tiene conto del calore necessario alla vaporizzazione dell'acqua, indica quindi 
+la quantità massima di energia convertibile idealmente dal combustibile, viene 
+utilizzato infatti nella definizione del rendimento globale.
 
-Valori tipici del potere calorifico per il metano sono: $\Delta_c H_s\text{°}\ =\ 55.50\ MJ/kg$, $\Delta_c H_i\text{°}\ =\ 50.00\ MJ/kg$
+Valori tipici del potere calorifico per il metano sono: $\Delta_c H_s\text{°}\ =\ 
+55.50\ MJ/kg$, $\Delta_c H_i\text{°}\ =\ 50.00\ MJ/kg$
 
 \section{Combustione}
 \label{sec:combustione}
-Il processo di combustione degli idrocarburi in aria $\left(78\%\ N_2\ -\ 21\%\ O_2 \right)$ avviene seguendo la seguente relazione stechiometrica
+Il processo di combustione degli idrocarburi in aria $\left(78\%\ N_2\ -\ 21\%\ O_2 
+\right)$ avviene seguendo la seguente relazione stechiometrica
 \begin{equation}
-C_n H_m\ +\ \left(n+\frac{m}{4}\right)\left(O_2+3.773N_2\right)\ \rightarrow\ nCO_2\ +\ \frac{m}{2}H_2O
+C_n H_m\ +\ \left(n+\frac{m}{4}\right)\left(O_2+3.773N_2\right)\ \rightarrow\ nCO_2\ 
++\ \frac{m}{2}H_2O
 \end{equation}
 Come si può vedere c'è produzione di acqua che evaporando sottrae energia termica.
 
@@ -36,7 +44,9 @@ Il \textbf{rendimento globale} di un impianto motore è definito dalla seguente
 \begin{equation}
  \eta_g \stackrel{def}{=} \frac{P_{ua}}{\dot{m}_c H_i}
 \end{equation}
-dove $P_{ua}$ è la \textbf{potenza utile all'asse} $\left(kW\right)$, $\dot{m}_c$ è la \textbf{portata massica} di combustibile $\left(\frac{kg}{s}\right)$ e $H_i$ è il \textbf{potere calorifico inferiore} prima definito $\left(\frac{kJ}{kg}\right)$.
+dove $P_{ua}$ è la \textbf{potenza utile all'asse} $\left(kW\right)$, $\dot{m}_c$ è 
+la \textbf{portata massica} di combustibile $\left(\frac{kg}{s}\right)$ e $H_i$ è il 
+\textbf{potere calorifico inferiore} prima definito $\left(\frac{kJ}{kg}\right)$.
 L'inverso del rendimento è definito come \textbf{consumo specifico di calore}
 \begin{equation}
 C_{s_q} \stackrel{def}{=} \frac{\dot{m}_c H_i}{P_{ua}} = \frac{m_c H_i}{L_{ua}}
@@ -46,12 +56,15 @@ Utilizzando la \textbf{potenza elettrica} generata anzichè quella meccanica
 (spesso confondibili dato l'elevato rendimento degli alternatori) si definisce
 l'\textbf{heat rate}
 \begin{equation}
- C_{s_{el}} \stackrel{def}{=} \frac{\dot{m}_c H_i}{P_{el}} = \frac{m_c H_i}{E_{el}} \ \ \ \left(\frac{kJ}{kWh} \right)
+ C_{s_{el}} \stackrel{def}{=} \frac{\dot{m}_c H_i}{P_{el}} = \frac{m_c H_i}{E_{el}} \ 
+ \ \ \left(\frac{kJ}{kWh} \right)
 \end{equation}
 
-Fissato il tipo di combustibile si definisce il \textbf{consumo specifico di combustibile}
+Fissato il tipo di combustibile si definisce il \textbf{consumo specifico di 
+combustibile}
 \begin{equation}
-C_{s_c} \stackrel{def}{=} \frac{\dot{m}_c}{P_{ua}} = \frac{m_c}{L_{ua}} = \frac{1}{\eta_gH_i} \ \ \ \left(\frac{g}{kWh} \right)
+C_{s_c} \stackrel{def}{=} \frac{\dot{m}_c}{P_{ua}} = \frac{m_c}{L_{ua}} = \frac{1}
+{\eta_gH_i} \ \ \ \left(\frac{g}{kWh} \right)
 \end{equation}
 %rivedi le analisi dimensionali
 \subsection*{Schematizzazione del rendimento}
@@ -60,34 +73,37 @@ Essendo il rendimento globale un parametro così generale per un impianto e pove
 di informazioni dettagliate, è comodo schematizzarlo e suddividerlo in 4 parti
 \begin{equation}
 \label{eq:rendimento_schema_eq}
- \eta_g \stackrel{sch}{=} \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}}\cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r}
+ \eta_g \stackrel{sch}{=} \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}}
+ \cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r}
 \end{equation}
 
 Analizziamo i 4 rapporti presenti nella \eqref{eq:rendimento_schema_eq}
 \begin{enumerate}
-\item \textbf{Rendimento di combustione}: potenza termica trasferita al fluido rispetto
-a quella disponibile nel combustibile
+\item \textbf{Rendimento di combustione}: potenza termica trasferita al fluido 
+rispetto a quella disponibile nel combustibile
 
 \item \textbf{Rendimento limite}:
 %potenza ricavata se il fluido eseguisse un 
 %ciclo termodinamico reversibile rispetto alla potenza termica trasferita al
 %fluido
-potenza ricavabile se il fluido reale eseguisse un ciclo limite, rispetto alla potenza
-termica ricevuta
+potenza ricavabile se il fluido reale eseguisse un ciclo limite, rispetto alla 
+potenza termica ricevuta
 
-\item \textbf{Rendimento interno} (o specifico): potenza meccanica ottenuta dall'impianto reale 
-rispetto a quello limite
+\item \textbf{Rendimento interno} (o specifico): potenza meccanica ottenuta 
+dall'impianto reale rispetto a quello limite
 
 \item \textbf{Rendimento meccanico}: rapporto tra la potenza meccanica effettivamente 
 disponibile rispetto a quella complessivamente prodotta, alla quale va sottratta la 
-potenza necessaria al funzionamento dei dispositivi ausiliari e le perdite per attrito
+potenza necessaria al funzionamento dei dispositivi ausiliari e le perdite per 
+attrito
 \end{enumerate}
 
 Moltiplicando il secondo e terzo termine della \eqref{eq:rendimento_schema_eq} si 
 definisce il \textbf{rendimento termico reale}
 \begin{equation}
 \label{eq:rendimento_reale}
- \frac{P_l}{\dot{Q_1}}\cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}} \stackrel{def}{=} \eta_r
+ \frac{P_l}{\dot{Q_1}}\cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}} \stackrel{def}{=} 
+ \eta_r
 \end{equation}
 
 
