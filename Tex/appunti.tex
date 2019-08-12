@@ -59,28 +59,36 @@ C_{s_c} \stackrel{def}{=} \frac{\dot{m}_c}{P_{ua}} = \frac{m_c}{L_{ua}} = \frac{
 Essendo il rendimento globale un parametro così generale per un impianto e povero
 di informazioni dettagliate, è comodo schematizzarlo e suddividerlo in 4 parti
 \begin{equation}
-\label{rendimento_schema_eq}
+\label{eq:rendimento_schema_eq}
  \eta_g \stackrel{sch}{=} \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}}\cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r}
 \end{equation}
 
-Analizziamo i 4 rapporti presenti nella \eqref{rendimento_schema_eq}
+Analizziamo i 4 rapporti presenti nella \eqref{eq:rendimento_schema_eq}
 \begin{enumerate}
-\item Rendimento di combustione: potenza termica trasferita al fluido rispetto
+\item \textbf{Rendimento di combustione}: potenza termica trasferita al fluido rispetto
 a quella disponibile nel combustibile
 
-\item Rendimento limite:
+\item \textbf{Rendimento limite}:
 %potenza ricavata se il fluido eseguisse un 
 %ciclo termodinamico reversibile rispetto alla potenza termica trasferita al
 %fluido
 potenza ricavabile se il fluido reale eseguisse un ciclo limite, rispetto alla potenza
 termica ricevuta
 
-\item Rendimento interno (o specifico): potenza meccanica ottenuta dall'impianto reale 
+\item \textbf{Rendimento interno} (o specifico): potenza meccanica ottenuta dall'impianto reale 
 rispetto a quello limite
 
-\item Rendimento meccanico: rapporto tra la potenza meccanica effettivamente 
-disponibile rispetto a quella complessivamente prodotta
+\item \textbf{Rendimento meccanico}: rapporto tra la potenza meccanica effettivamente 
+disponibile rispetto a quella complessivamente prodotta, alla quale va sottratta la 
+potenza necessaria al funzionamento dei dispositivi ausiliari e le perdite per attrito
 \end{enumerate}
+
+Moltiplicando il secondo e terzo termine della \eqref{eq:rendimento_schema_eq} si 
+definisce il \textbf{rendimento termico reale}
+\begin{equation}
+\label{eq:rendimento_reale}
+ \frac{P_l}{\dot{Q_1}}\cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}} \stackrel{def}{=} \eta_r
+\end{equation}
 
 
 \end{document}
