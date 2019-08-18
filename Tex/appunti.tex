@@ -164,7 +164,7 @@ Equazioni di Gibbs in forma differenziale:
 \end{gather}
 Equazioni di Gibbs in forma integrale:
 \begin{gather}
-     \Delta s = C_v \ln{\frac{T_2}{T_1}} + R \ln{\frac{v_2}{v_1}} \\
+    \Delta s = C_v \ln{\frac{T_2}{T_1}} + R \ln{\frac{v_2}{v_1}} \\
     \Delta s = C_p \ln{\frac{T_2}{T_1}} - R \ln{\frac{p_2}{p_1}}
 \end{gather}
 \subsection{Politropica}
@@ -179,14 +179,14 @@ sottostante
 \[\begin{cases}
     x=k & \text{adiabatica isoentropica}\\
     x=1 & \text{isoterma}\\
-     x=0 & \text{isobara}\\
-     x=\pm\infty & \text{isocora}
+    x=0 & \text{isobara}\\
+    x=\pm\infty & \text{isocora}
 \end{cases}\]
 \begin{figure}[H]
     \label{fig:politropiche}
     \centering
     \includegraphics[width=0.5\linewidth]{media/politropiche.png}
-    \caption{Principali politropiche}
+    \caption{Principali politropiche sul piano T-S}
 \end{figure}
 
 \subsection{Rendimento del ciclo di Carnot}
@@ -217,7 +217,27 @@ d'elica, quindi la \eqref{eq:bilancio_energetico} diventa:
     \label{eq:I_principio_gen_chiusi}
     dQ - pdV = d\left(U+mgz+m\frac{c^2}{2}\right)
 \end{equation}
-Se il sistema è aperto invece e nell'ipotesi di variazione di volume specifico nulla
+
+Per sistemi aperti e trasformazioni reversibili, il lavoro di compressione adiabatico
+si esprime tramite la seguente:
+\begin{equation}
+    \label{eq:lavoro_compressione_isoentropico}
+    L_{is} = (h_1 - h_2) = - \int_{p_1}^{p_2} v \cdot dp
+\end{equation}
+
+Se la trasformazione non è isoentropica, vale la disuguaglianza
+\begin{equation}
+    L_r = (h_1 - h_2) > - \int_{p_1}^{p_2} v \cdot dp
+\end{equation}
+ossia l'energia globalmente fornita al fluido è maggiore della variazione di
+energia di pressione
+
+Si definisce quindi rendimento di compressione isoentropico il rapporto
+\begin{equation}
+    \label{eq:rendimento_compressione}
+    \eta_c \stackrel{def}{=} \frac{- \displaystyle \int_{p_1}^{p_2} v \cdot dp}{h_1 - h_2} = \frac{L_{is}}{L_r}
+    %uso \displaystyle per forzare l'integrale grande
+\end{equation}
 
 
 \end{document}
