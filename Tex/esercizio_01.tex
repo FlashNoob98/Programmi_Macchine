@@ -27,9 +27,44 @@ delle seguenti trasformazioni:
    
     \item Compressione isoterma di 1 kg di aria da 1 bar e 288.15 K a 2.5 bar
 
-    \item Compressione di 1 kg di acqua da 12 bar e 288.15 K a 2.5 bar
+    \item Compressione di 1 kg di acqua da 1 bar e 288.15 K a 2.5 bar
 \end{itemize}
 
+\section{Prima trasformazione}
+\label{sec:prima_trasformazione}
+Analizziamo la prima trasformazione utilizzando le relazioni per le trasformazioni reversibili,
+per prima cosa si determina lo stato del gas prima e dopo l'espansione mediante l'equazione
+di stato dei gas
+\begin{equation}
+    \label{eq:stato_gas}
+    PV = RT
+\end{equation}
+Lo stato iniziale è interamente determinato dato che conosciamo sia la temperatura che la pressione
+mentre per il secondo dobbiamo utilizzare la politropica per trasformazioni reversibili,
+in questo caso $x$ è proprio uguale a $k$, la costante del gas pari a $Cp/Cv$
+\begin{equation}
+    \label{eq:politropica}
+    p\cdot v^x=\text{cost}
+\end{equation}
+Possiamo quindi ricavare $V_2$ tramite $$  V_2 = V_1/(\beta^{1/k}) $$
 
+Determinato $V_2$ utilizzando ancora la \eqref{eq:stato_gas} calcoliamo il valore della temperatura
+$T_2$ in uscita dal compressore.
+
+Il lavoro necessario alla compressione sarà interamente speso per l'aumento di entalpia del gas
+e potrà quindi essere calcolato con
+\begin{equation}
+    L_{is} = m\cdot \Delta h = m\cdot C_p(T_2 - T_1)
+\end{equation}
+esso sarà pari a $86.65\ kJ$
+
+Tabella degli stati
+
+\centering
+\begin{tabular}{r|c|c|c}
+    stato    & $P\ (bar)$ & $V\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+    1   &           1 &          0.827    &           15     \\ \hline
+    2   &         2.5 &          0.429    &           101.2
+\end{tabular}
 
 \end{document}
