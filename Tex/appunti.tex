@@ -218,7 +218,7 @@ d'elica, quindi la \eqref{eq:bilancio_energetico} diventa:
     dQ - pdV = d\left(U+mgz+m\frac{c^2}{2}\right)
 \end{equation}
 
-Per sistemi aperti e trasformazioni reversibili, il lavoro di compressione adiabatico
+Per sistemi aperti e trasformazioni reversibili, il lavoro di compressione isoentropico
 si esprime tramite la seguente:
 \begin{equation}
     \label{eq:lavoro_compressione_isoentropico}
@@ -234,14 +234,14 @@ Se la trasformazione non è isoentropica, vale la disuguaglianza
 ossia l'energia globalmente fornita al fluido è maggiore della variazione di
 energia di pressione
 
-Si definisce quindi rendimento di compressione isoentropico il rapporto
+Si definisce quindi rendimento di compressione il rapporto
 \begin{equation}
-    \label{eq:rendimento_compressione_isoentropico}
-    \eta_c \stackrel{def}{=} \frac{- \displaystyle \int_{p_1}^{p_2} v \cdot dp}{h_1 - h_2} = \frac{L_{is}}{L_r}
+    \label{eq:rendimento_compressione}
+    \eta_{c} \stackrel{def}{=} \frac{- \displaystyle \int_{p_1}^{p_2} v \cdot dp}{h_1 - h_2}
     %uso \displaystyle per forzare l'integrale grande
 \end{equation}
 
-Si definisce rendimento politropico di compressione
+Si definisce rendimento \textbf{politropico} di compressione
 \begin{equation}
     \label{eq:rendimento_compressione_politropico}
     \eta_{pc} \stackrel{def}{=} \frac{\displaystyle\frac{n}{n-1} R T_1 \left(1-\beta^{\displaystyle\frac{n-1}{n}} \right)}{C_p \left(T_1 - T_2\right)}
@@ -255,12 +255,42 @@ sviluppando diventa:
 il rendimento politropico di compressione non dipende dal rapporto di compressione $\beta$
 ma soltanto dal valore dell'esponente n della politropica
 
+Si definisce rendimento \textbf{adiabatico} di compressione
+\begin{equation}
+    \label{eq:rendimento_compressione_adiabatico}
+    \eta_{ad-c} \stackrel{def}{=} \frac{L_{is}}{L_r} = \frac{ C_p T_1 \left(1-\beta^{\displaystyle\frac{k-1}{k}}\right)}
+    {C_p T_1 \left(1-\beta^{\displaystyle\frac{n-1}{n}}\right)} = \frac{1-\beta^{\displaystyle\frac{k-1}{k}}}{1-\beta^{\displaystyle\frac{k-1}{k\eta_{pc}}}}
+\end{equation}
+
 \subsection{Macchine motrici}
 \label{subsec:macchine_motrici}
 %per le macchine motrici si invertono i termini dei rendimenti dato che il lavoro reale sarà sempre minore
-%del lavoro ideale isoentropico e politropico
+%del lavoro ideale adiabatico e politropico
 
+Si definisce rendimento di espansione
+\begin{equation}
+    \label{eq:rendimento_espansione}
+    \eta_{e} \stackrel{def}{=} \frac{h_1 - h_2}{- \displaystyle \int_{p_1}^{p_2} v \cdot dp}
+\end{equation}
 
+Rendimento \textbf{politropico} di espansione
+\begin{equation}
+    \label{eq:rendimento_espansione_politropico}
+    \eta_{pe} \stackrel{def}{=} \frac{C_p \left(T_1 - T_2\right)}{\displaystyle\frac{n}{n-1} R T_1 \left(1-1/\beta^{\displaystyle\frac{n-1}{n}} \right)}
+    = \frac{L_r}{L_{pe}}
+\end{equation}
+sviluppando diventa:
+\begin{equation}
+    \eta_{pe} = \frac{n-1}{n} \frac{k}{k-1} 
+\end{equation}
+anche in questo caso non dipende da $\beta$
 
+Si definisce il rendimento \textbf{adiabatico} di espansione
+\begin{equation}
+    \label{eq:rendimento_espansione_adiabatico}
+    \eta_{ad-e} \stackrel{def}{=} \frac{1-1/\beta^{\frac{k-1}{k}\eta_{pe}}}
+    {1-1/\beta^{\frac{k-1}{k}}}
+    %uso \displaystyle per forzare l'integrale grande
+\end{equation}
 
 \end{document}
