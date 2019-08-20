@@ -58,19 +58,43 @@ e potrà quindi essere calcolato con
 \end{equation}
 esso sarà pari a $86.65\ kJ$
 
+Considerando la trasformazione adiabatica, il calore scambiato sarà nullo.
+
 Tabella degli stati
 
 \begin{center}
 \begin{tabular}{r|c|c|c}
-    
     stato    & $P\ (bar)$ & $V\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
     1   &           1 &          0.827    &           15     \\ \hline
     2   &         2.5 &          0.429    &           101.2
 \end{tabular}
 \end{center}
 
-\section{Seconda trasforamzione}
+\section{Seconda trasformazione}
 \label{sec:seconda_trasformazione}
-Work in Progress...
+Anche in questo caso la trasformazione è adiabatica ma viene fornito un valore del rendimento
+politropico di compressione $\eta_{pc} = 0.755$, definito come
+\begin{equation}
+    \eta_{pc} \stackrel{def}{=} \frac{\displaystyle\frac{n}{n-1} R T_1 \left(1-\beta^{\displaystyle\frac{n-1}{n}} \right)}{C_p \left(T_1 - T_2\right)}
+    = \frac{L_{pc}}{L_r}
+\end{equation}
+o equivalentemente 
+\begin{equation}
+    \eta_{pc} = \frac{n}{n-1} \frac{k-1}{k}
+\end{equation}
+si può quindi ricavare il valore dell'esponente n della politropica oppure sostituire direttamente
+il rendimento politropico nella definizione del rendimento adiabatico e quindi calcolarne il valore.
+\begin{equation}
+    \label{eq:rendimento_compressione_adiabatico}
+    \eta_{ad-c} \stackrel{def}{=} \frac{L_{is}}{L_r} = \frac{ C_p T_1 \left(1-\beta^{\displaystyle\frac{k-1}{k}}\right)}
+    {C_p T_1 \left(1-\beta^{\displaystyle\frac{n-1}{n}}\right)} = \frac{1-\beta^{\displaystyle\frac{k-1}{k}}}{1-\beta^{\displaystyle\frac{k-1}{k\eta_{pc}}}}
+\end{equation}
+svolgendo i calcoli si trova quindi un valore del rendimento adiabatico pari a $\eta_{ad-c}=0.722$.
+Il lavoro necessario alla trasformazione adiabatica reale sarà quindi il rapporto tra il lavoro necessario
+alla precedente trasformazione isoentropica e il rendimento adiabatico
+\begin{equation*}
+    L_r = \frac{L_{is}}{\eta_{ad-c}}
+\end{equation*}
+e sarà pari a $120\ kJ$
 
 \end{document}

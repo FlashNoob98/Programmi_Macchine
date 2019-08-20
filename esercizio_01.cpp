@@ -11,12 +11,14 @@ float Cp = 1.005, Cv = 0.7179, K=Cp/Cv, R=Cp-Cv;
 float T1,T2,P1,P2,V1,V2;
 float mass, beta;
 float lavoro, calore;
+float eta_pc, eta_ad;
 
 //chiamata funzioni
 void startup();
 void input();
 void calcola_stato();
 float isoentropica();
+float adiabatica_reale();
 
 //funzione main
 int main(){
@@ -24,7 +26,8 @@ int main(){
     startup();
     input();
     calcola_stato();
-    isoentropica();
+    //isoentropica();
+    adiabatica_reale();
     //cout << "Hello world \n";
     cout << endl;
     return 0;
@@ -62,6 +65,17 @@ void calcola_stato(){
 float isoentropica(){
     /*isoentropica L=m\DeltaH=m*Cp*\Delta T*/
     float L = mass*Cp*(T2-T1);
-    cout <<"Lavoro necessario per compressione adiabatica isoentropica: "<< L << " kJ";
+    cout <<"Lavoro necessario per compressione adiabatica isoentropica: "<< L << " kJ\n";
     return L;
+}
+
+float adiabatica_reale(){
+    float Lis = isoentropica();
+    cout << "Inserisci il valore del rendimento politropico per il calcolo dell'adiaabtica reale\n";
+    cin >> eta_pc;
+    eta_ad = (1-pow(beta,((K-1)/K)))/(1-pow(beta,((K-1)/(K*eta_pc))));
+    cout << "Rendimento adiabatico: " << eta_ad << endl;
+    float Lad = Lis/eta_ad;
+    cout << "Lavoro necessario alla trasformazione adiabatica reale: " << Lad <<" kJ\n";
+    return Lad;
 }
