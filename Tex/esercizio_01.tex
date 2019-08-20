@@ -146,5 +146,19 @@ Ricaviamo quindi gli stati termodinamici come fatto in precedenza
         2   &         2.5 &          0.331    &           15
     \end{tabular}
 \end{center}
+Il lavoro necessario alla compressione è pari al calore scambiato dal sistema dato che l'energia interna $U$
+di un gas perfetto è funzione della sola temperatura, resta quindi anch'essa costante, ciò implica che
+$Q = L$.
+Il lavoro è facilmente calcolabile come 
+\begin{equation}
+    L = \int_{v_1}^{v_2} p\cdot dV
+\end{equation}
+utilizzando la \eqref{eq:stato_gas} e sostituendo $p$ si ricava:
+\begin{equation}
+    L = mRT \ln\left(\frac{1}{\beta}\right)
+\end{equation}
+Il lavoro di compressione isotermo è quindi pari a $75.8\ kJ$ così come anche il calore uscente necessario a 
+mantenere la temperatura costante.
+
 
 \end{document}

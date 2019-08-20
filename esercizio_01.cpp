@@ -109,5 +109,8 @@ return 0;
 float isoterma(){
     cout << "\nCalcolo stato 2 per compressione isoterma:\n";
     calcola_stato(1); //uso 1 come esponente politropica per renderla isoterma
-    return 0;
+    //dL = pdV
+    float L = mass*R*T1*log(beta);
+    cout << "Il lavoro speso nella compressione isoterma è pari a: " << L << " kJ\n";
+    return L;
 }
