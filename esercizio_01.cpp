@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 //definizione variabili
@@ -20,7 +21,7 @@ void calcola_stato(float n);
 float isoentropica();
 float adiabatica_reale();
 float politropica();
-
+float isoterma();
 //funzione main
 int main(){
     //cout << R <<endl;
@@ -33,6 +34,8 @@ int main(){
     calcola_stato(gamma);
 
     politropica();
+
+    isoterma();
     cout << endl;
     return 0;
 }
@@ -57,13 +60,17 @@ void input(){
 
 //calcoli
 void calcola_stato(float n){
+    //con n = 0 non funziona, va implementato if case(?)
     beta = P2/P1;
     //cout << beta << endl;
     V1 = R*T1/P1/100;
     V2 = V1/(pow(beta,(1/n)));
-    cout <<"V1 e V2 = "<< V1 << "  " << V2 <<" m^3/kg"<<endl;
     T2 = P2*V2/R*100;
-    cout <<"T2 = "<< T2-273.15 <<" °C\n" ;
+    int p=3; //imposta precisione tabella
+    cout << endl;
+    cout <<"Stato\t"<< "P(bar)\t" << "v(m^3/kg) " <<"T(°C)"<<endl;
+    cout <<"1\t"<<P1<<'\t'<<setprecision(p)<<V1<<"\t  "<<T1-273.15 <<endl;
+    cout <<"2\t"<<P2<<'\t'<<setprecision(p)<<V2<<"\t  "<<T2-273.15 <<endl<<endl;
 }
 
 float isoentropica(){
@@ -97,4 +104,10 @@ float politropica(){
     cout << "Lavoro necessario alla trasformazione politropica: " << L_pc << " kJ\n";
     cout << "Calore necessario alla trasformazione politropica (positivo entrante): " << L_ad-L_pc << " kJ\n";
 return 0;
+}
+
+float isoterma(){
+    cout << "\nCalcolo stato 2 per compressione isoterma:\n";
+    calcola_stato(1); //uso 1 come esponente politropica per renderla isoterma
+    return 0;
 }

@@ -63,11 +63,11 @@ Considerando la trasformazione adiabatica, il calore scambiato sarà nullo.
 Tabella degli stati
 
 \begin{center}
-\begin{tabular}{r|c|c|c}
-    stato    & $P\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
-    1   &           1 &          0.827    &           15     \\ \hline
-    2   &         2.5 &          0.429    &           101.2
-\end{tabular}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &           1 &          0.827    &           15     \\ \hline
+        2   &         2.5 &          0.429    &           101.2
+    \end{tabular}
 \end{center}
 
 \section{Trasformazione adiabatica reale}
@@ -116,16 +116,35 @@ degli stati termodinamici:
 
 \begin{center}
     \begin{tabular}{r|c|c|c}
-        stato    & $P\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+        stato    & $p\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
         1   &           1 &          0.827    &           15     \\ \hline
         2   &         2.5 &          0.468    &           134.4
     \end{tabular}
-    \end{center}
+\end{center}
 temperatura e volume specifico sono maggiori rispetto alle condizioni successive alla trasforamzione
 isoentropica.
 Il lavoro necessario per la trasformazione politropica è ricavabile dalla definizione del rendimento politropico
 \eqref{eq:rendimento_politropica} ed è pari a $90.6\ kJ$, per raggiungere lo stato termodinamico 2 però
 è necessario fornire una quantità di calore al gas pari alla differenza tra il lavoro reale e quello politropico
 ossia $29.4\ kJ$ di calore.
+
+\section{Trasformazione isoterma}
+\label{sec:quarta_trasformazione}
+La compressione isoterma implica una sottrazione di calore continua al fine di mantenere la temperatura
+costante durante la compressione, tecnicamente irrealzzabile a causa della geometria dei compressori
+fortemente adiabatici, si può ottenere invece una interrefrigerazione dividendo la compressione in più 
+stadi.
+Utilizzando ancora la \eqref{eq:politropica} e ponendo l'esponente pari ad 1 si ottiene l'equazione dell'isoterma
+\begin{equation}
+    p\cdot v = \text{cost}
+\end{equation}
+Ricaviamo quindi gli stati termodinamici come fatto in precedenza
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &           1 &          0.827    &           15     \\ \hline
+        2   &         2.5 &          0.331    &           15
+    \end{tabular}
+\end{center}
 
 \end{document}
