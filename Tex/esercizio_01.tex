@@ -30,14 +30,14 @@ delle seguenti trasformazioni:
     \item Compressione di 1 kg di acqua da 1 bar e 288.15 K a 2.5 bar
 \end{itemize}
 
-\section{Prima trasformazione}
+\section{Trasformazione isoentropica}
 \label{sec:prima_trasformazione}
 Analizziamo la prima trasformazione utilizzando le relazioni per le trasformazioni reversibili,
 per prima cosa si determina lo stato del gas prima e dopo l'espansione mediante l'equazione
 di stato dei gas
 \begin{equation}
     \label{eq:stato_gas}
-    PV = RT
+    pv = RT
 \end{equation}
 Lo stato iniziale è interamente determinato dato che conosciamo sia la temperatura che la pressione
 mentre per il secondo dobbiamo utilizzare la politropica per trasformazioni reversibili,
@@ -46,9 +46,9 @@ in questo caso $x$ è proprio uguale a $k$, la costante del gas pari a $Cp/Cv$
     \label{eq:politropica}
     p\cdot v^x=\text{cost}
 \end{equation}
-Possiamo quindi ricavare $V_2$ tramite $$  V_2 = V_1/(\beta^{1/k}) $$
+Possiamo quindi ricavare $v_2$ tramite $$  v_2 = v_1/(\beta^{1/k}) $$
 
-Determinato $V_2$ utilizzando ancora la \eqref{eq:stato_gas} calcoliamo il valore della temperatura
+Determinato $v_2$ utilizzando ancora la \eqref{eq:stato_gas} calcoliamo il valore della temperatura
 $T_2$ in uscita dal compressore.
 
 Il lavoro necessario alla compressione sarà interamente speso per l'aumento di entalpia del gas
@@ -64,22 +64,24 @@ Tabella degli stati
 
 \begin{center}
 \begin{tabular}{r|c|c|c}
-    stato    & $P\ (bar)$ & $V\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+    stato    & $P\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
     1   &           1 &          0.827    &           15     \\ \hline
     2   &         2.5 &          0.429    &           101.2
 \end{tabular}
 \end{center}
 
-\section{Seconda trasformazione}
+\section{Trasformazione adiabatica reale}
 \label{sec:seconda_trasformazione}
 Anche in questo caso la trasformazione è adiabatica ma viene fornito un valore del rendimento
 politropico di compressione $\eta_{pc} = 0.755$, definito come
 \begin{equation}
+    \label{eq:rendimento_politropica}
     \eta_{pc} \stackrel{def}{=} \frac{\displaystyle\frac{n}{n-1} R T_1 \left(1-\beta^{\displaystyle\frac{n-1}{n}} \right)}{C_p \left(T_1 - T_2\right)}
     = \frac{L_{pc}}{L_r}
 \end{equation}
 o equivalentemente 
 \begin{equation}
+    \label{eq:rendimento_politropica_breve}
     \eta_{pc} = \frac{n}{n-1} \frac{k-1}{k}
 \end{equation}
 si può quindi ricavare il valore dell'esponente n della politropica oppure sostituire direttamente
@@ -95,6 +97,35 @@ alla precedente trasformazione isoentropica e il rendimento adiabatico
 \begin{equation*}
     L_r = \frac{L_{is}}{\eta_{ad-c}}
 \end{equation*}
-e sarà pari a $120\ kJ$
+e sarà pari a $120\ kJ$.
+Anche in questo caso il calore scambiato è considerato nullo.
+
+\section{Trasformazione politropica}
+\label{sec:terza_trasformazione}
+La terza trasformazione richiede il calcolo delle condizioni termodinamiche dello stato finale della
+compressione adiabatica reale, possiamo calcolare la politropica passante per gli stessi punti dato che
+ci viene fornito il rendimento.
+Riferendoci quindi alla \eqref{eq:politropica} dobbiamo calcolare il valore dell'esponente incognito
+ricavabile dalla \eqref{eq:rendimento_politropica_breve} che sarà uguale a
+\begin{equation}
+    n = \frac{\eta_{pc}}{\eta_{pc}-\displaystyle\frac{k-1}{k}}
+\end{equation}
+in questo caso pari a 1.609, maggiore del valore $k = 1.4$ per l'aria, com'era da aspettarsi.
+Rieseguendo i calcoli svolti nella sezione \ref{sec:prima_trasformazione} possiamo creare la nuova tabella
+degli stati termodinamici:
+
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $P\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &           1 &          0.827    &           15     \\ \hline
+        2   &         2.5 &          0.468    &           134.4
+    \end{tabular}
+    \end{center}
+temperatura e volume specifico sono maggiori rispetto alle condizioni successive alla trasforamzione
+isoentropica.
+Il lavoro necessario per la trasformazione politropica è ricavabile dalla definizione del rendimento politropico
+\eqref{eq:rendimento_politropica} ed è pari a $90.6\ kJ$, per raggiungere lo stato termodinamico 2 però
+è necessario fornire una quantità di calore al gas pari alla differenza tra il lavoro reale e quello politropico
+ossia $29.4\ kJ$ di calore.
 
 \end{document}
