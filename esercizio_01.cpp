@@ -76,6 +76,8 @@ void calcola_stato(float n){
 float isoentropica(){
     /*isoentropica L=m\DeltaH=m*Cp*\Delta T*/
     float L = mass*Cp*(T2-T1);
+    //float L = -P1*V1*100/(K-1)*(pow(V1,1-K)- pow(V2,1-K));
+    //float L = mass*Cp*(T2-T1);
     return L;
 }
 
