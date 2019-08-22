@@ -152,11 +152,11 @@ di un gas perfetto è funzione della sola temperatura, resta quindi anch'essa co
 $Q = L$.
 Il lavoro è facilmente calcolabile come 
 \begin{equation}
-    L = \int_{v_1}^{v_2} p\cdot dV
+    L = \int_{p_1}^{p_2} v\cdot dp
 \end{equation}
 utilizzando la \eqref{eq:stato_gas} e sostituendo $p$ si ricava:
 \begin{equation}
-    L = mRT \ln\left(\frac{1}{\beta}\right)
+    L = mRT\cdot \ln\beta
 \end{equation}
 Il lavoro di compressione isotermo è quindi pari a $75.8\ kJ$ così come anche il calore uscente necessario a 
 mantenere la temperatura costante.
@@ -165,5 +165,16 @@ mantenere la temperatura costante.
 \label{sec:compressione_liquido}
 Valutare lo scambio di lavoro meccanico ed energia termica necessari alla compressione di 1 kg di acqua da
 1 bar e $288.15 K$ a 2.5 bar.
+Nell'ipotesi di processo adiabatico reversibile, il lavoro necessario sarà pari all'integrale 
+\begin{equation}
+    L = \int_{p_1}^{p_2} v\cdot dp
+\end{equation}
+considerato inoltre il modello di liquido ideale, il volume specifico si può assumere costante, rendendo banale
+il calcolo dell'integrale, tenendo in considerazione il fatto che la pressione va espressa in Pascal
+per una corretta analisi dimensionale.
+\begin{equation}
+    L = mv(p_2-p_1)
+\end{equation}
+Sarà pari a $150\ J$.
 
 \end{document}
