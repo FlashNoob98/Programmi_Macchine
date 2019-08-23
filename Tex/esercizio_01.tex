@@ -109,6 +109,7 @@ ci viene fornito il rendimento.
 Riferendoci quindi alla \eqref{eq:politropica} dobbiamo calcolare il valore dell'esponente incognito
 ricavabile dalla \eqref{eq:rendimento_politropica_breve} che sarà uguale a
 \begin{equation}
+    \label{eq:esp_politropica}
     n = \frac{\eta_{pc}}{\eta_{pc}-\displaystyle\frac{k-1}{k}}
 \end{equation}
 in questo caso pari a 1.609, maggiore del valore $k = 1.4$ per l'aria, com'era da aspettarsi.
@@ -179,15 +180,73 @@ Sarà pari a $150\ J$.
 
 \section{Valutazioni complessive}
 \label{sec:valutazioni_complessive}
-Mediante l'ausilio del software GeoGebra ho rappresentato le trasformazioni compiute dall'aria negli esempi
-precedenti.
+Mediante l'ausilio del software GeoGebra sono state rappresentate le trasformazioni compiute dall'aria negli esempi
+precedenti nel piano T-s.
 \begin{figure}[H]
     \label{fig:trasformazioni}
     \centering
     \includegraphics[width=0.65\linewidth]{media/isobare_T-S_resize.png}
     %\caption{"Etichetta"}
 \end{figure}
+Per prima cosa sono stati impostati i valori di temperatura iniziale e finale dalle tabelle, tracciando le isoterme
+$T_1\ T_2$ e $T_{2ad}$ e fissata arbitrariamente (per semplicità di calcolo) entropia nulla allo stato $2_{isoT}$.
+Utilizzando la relazione dell'entropia in forma integrale per trasformazioni isoterme
+\begin{equation*}
+    \Delta s = R\ln\beta
+\end{equation*}
+sono state misurate la variazioni di entropia specifica per la trasformazione isoterma e quindi la coordinata x dello stato iniziale 1
+pari a $263\ J/(kg\cdot K)$.
+\subsection{Rappresentazione delle isobare}
+Per rappresentare le isobare nel piano T-s è stato sufficiente sfruttare l'equazione dell'entropia per gas perfetti,
+semplificando il termine contenente il rapporto tra le pressioni. Gli stati termodinamici presi in considerazione
+per imporre il passaggio delle curve sono quello iniziale (1) e quello successivo alla trasformazione isoterma ($2_{isoT}$)
+in questo modo il valore iniziale $T_0$ è lo stesso per entrambe le isobare.
+Svolgendo i passaggi:
+\begin{gather*}
+    \Delta s = C_p \ln \frac{T}{T_0} \\
+    \frac{s - s_0}{C_p} = \ln\frac{T}{T_0} \\
+    T = T_0 \exp \frac{s-s_0}{C_p}
+\end{gather*}
+con $T_0$ pari a 288.15 ed $s_0$ pari a 0 per la isobara a pressione maggiore e 263 per quella passante per il punto iniziale.
+Intersecando l'isobara maggiore con la isoterma $T_2$ è stato possibile individuare il punto $2_r$ successivo alla compressione reale
+e valutarne l'entropia.
 
-
+\subsection{Rappresentazione della politropica}
+Facendo riferimento alla \eqref{eq:politropica} ed avendo calcolato l'esponente tramite la \eqref{eq:esp_politropica}
+utilizzando il rendimento fornito dall'esercizio, è stato possibile scrivere rappresentare la trasformazione sul piano T-s
+imponendo il passaggio per i punti 1 e $2_r$
+% \begin{equation*}
+%     p v^k = \text{cost}
+% \end{equation*}
+% per rappresentarla nel piano T-s sono stati necessari però alcuni passaggi:
+\begin{gather*}
+    pv^k = \text{cost} \\
+    kpv^{k-1}dv + v^kdp = 0
+\end{gather*}
+raccogliendo e semplificando per $v^{k-1}$ si ottiene
+\begin{equation}
+    \label{eq:politropica_differenziata}
+    kpdv + vdp = 0
+\end{equation}   
+differenziando invece la \eqref{eq:stato_gas} e sostituendo il termine $vdp$ nella \eqref{eq:politropica_differenziata}
+si ottiene:
+\begin{gather*}
+    (k-1)pdv + RdT = 0 \\
+    pdv = -\frac{RdT}{k-1}
+\end{gather*}
+sostituendo anche in questo caso nell'equazione dell'entropia (questa volta in forma differenziale)
+si ottiene:
+\begin{gather*}
+    Tds = C_vdT -\frac{RdT}{k-1} \\
+    \frac{dT}{T} = \frac{k-1}{C_v-R} ds
+\end{gather*}
+integrando
+\begin{equation*}
+    \ln\frac{T}{T_0} = \frac{k-1}{C_v-R}\cdot(s-s_0)
+\end{equation*}
+l'equazione della politropica sarà dunque
+\begin{equation}
+    T = T_0 \exp\left(\frac{k-1}{C_v-R}\cdot(s-s_0) \right)
+\end{equation}
 
 \end{document}
