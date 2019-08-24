@@ -248,9 +248,34 @@ l'equazione della politropica sarà dunque
 \begin{equation}
     T = T_0 \exp\left(\frac{k-1}{C_v(k-1)-R}\cdot(s-s_0)\right)
 \end{equation}
-con k pari a 1.6, il termine $(s-s_0)$ va diviso per 1000 dato che il valore di entropia è espresso in J
+con k pari a 1.6, il termine $(s-s_0)$ va diviso per 1000 dato che la scala dell' entropia è espressa in J
 e non in kJ.
 Si può vedere che la curva della politropica ottenuta interseca la isoterma superiore e
 l'isobara nello stesso punto.
+
+\subsection{Valutazione dei lavori}
+Per sistemi aperti adiabatici il lavoro è pari alla variazione di entalpia del fluido, nel caso
+di gas perfetti è pari a $C_p(\Delta T)$ ed è definito $C_p$ la quantità di calore da fornire
+per innalzare di 1 grado la temperatura di una massa unitaria di gas in una trasformazione isobara.
+
+Per il secondo principio
+\begin{equation}
+    \label{eq:seconmdo_principio}
+    Tds = dq + dl
+\end{equation}
+il lavoro necessario alla trasformazioni adiabatica isoentropica sarà per questo motivo l'area sottesa
+alla isobara isobara $p_2$ dal punto $2_{isoT}$ ad entropia nulla al punto $2_{ad}$
+mentre quello necessario alla trasformazione adiabatica reale si otterrà eseguendo lo stesso integrale tra i punti
+$2_{isoT}$ e $2_r$.
+La differenza tra questi due valori è pari al lavoro valutabile mediante l'integrale della politropica tra i punti
+1 e $2_r$ sommato al lavoro di contro-recupero.
+
+Mediante la funzione "Integrale" definita in GeoGebra è possibile valutare facilmente
+l'area sottesa alle funzioni appena rappresentate.
+% Eseguendo l'integrale della isobara $p_2$ dal punto $2_{isoT}$ ad entropia nulla al punto $2_{ad}$
+% si ottiene il lavoro della compressione adiabatica isoentropica, eseguendo l'integrale della stessa funzione
+% dal punto $2_{isoT}$ al punto $2_r$ si ottiene invece il lavoro necessario alla trasformazione adiabatica reale.
+
+
 
 \end{document}
