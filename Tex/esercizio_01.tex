@@ -237,16 +237,20 @@ si ottiene:
 sostituendo anche in questo caso nell'equazione dell'entropia (questa volta in forma differenziale)
 si ottiene:
 \begin{gather*}
-    Tds = C_vdT -\frac{RdT}{k-1} \\
-    \frac{dT}{T} = \frac{k-1}{C_v-R} ds
+    Tds = C_vdT -\frac{R}{k-1}dT \\
+    \frac{dT}{T} = \frac{k-1}{C_v(k-1)-R} ds
 \end{gather*}
 integrando
 \begin{equation*}
-    \ln\frac{T}{T_0} = \frac{k-1}{C_v-R}\cdot(s-s_0)
+    \ln\frac{T}{T_0} = \frac{k-1}{C_v(k-1)-R}\cdot(s-s_0)
 \end{equation*}
 l'equazione della politropica sarà dunque
 \begin{equation}
-    T = T_0 \exp\left(\frac{k-1}{C_v-R}\cdot(s-s_0) \right)
+    T = T_0 \exp\left(\frac{k-1}{C_v(k-1)-R}\cdot(s-s_0)\right)
 \end{equation}
+con k pari a 1.6, il termine $(s-s_0)$ va diviso per 1000 dato che il valore di entropia è espresso in J
+e non in kJ.
+Si può vedere che la curva della politropica ottenuta interseca la isoterma superiore e
+l'isobara nello stesso punto.
 
 \end{document}
