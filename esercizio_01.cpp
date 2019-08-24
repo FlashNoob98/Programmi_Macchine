@@ -104,7 +104,7 @@ float politropica(){
     float L_ad = isoentropica();
     float L_pc = L_ad*eta_pc;
     cout << "Lavoro necessario alla trasformazione politropica: " << L_pc << " kJ\n";
-    cout << "Calore necessario alla trasformazione politropica (positivo entrante): " << L_ad-L_pc << " kJ\n";
+    cout << "Calore trasferito nella trasformazione politropica: " << L_ad-L_pc << " kJ\n";
     //alternativa (valori fissi) debug
     //float n = 1.61;
     //float c = Cp*(n-K)/(n-1);

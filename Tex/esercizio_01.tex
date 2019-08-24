@@ -126,9 +126,9 @@ degli stati termodinamici:
 temperatura e volume specifico sono maggiori rispetto alle condizioni successive alla trasforamzione
 isoentropica.
 Il lavoro necessario per la trasformazione politropica è ricavabile dalla definizione del rendimento politropico
-\eqref{eq:rendimento_politropica} ed è pari a $90.6\ kJ$, per raggiungere lo stato termodinamico 2 però
-è necessario fornire una quantità di calore al gas pari alla differenza tra il lavoro reale e quello politropico
-ossia $29.4\ kJ$ di calore.
+\eqref{eq:rendimento_politropica} ed è pari a $90.6\ kJ$, per raggiungere lo stato termodinamico 2.
+La differenza tra il lavoro reale e quello politropico è pari a $29.4\ kJ$ di energia che viene fornita al fluido
+sotto forma di calore causato dagli attriti interni della macchina. Questa quantità è definita lavoro di contro-recupero.
 
 \section{Trasformazione isoterma}
 \label{sec:quarta_trasformazione}
@@ -276,6 +276,36 @@ l'area sottesa alle funzioni appena rappresentate.
 % si ottiene il lavoro della compressione adiabatica isoentropica, eseguendo l'integrale della stessa funzione
 % dal punto $2_{isoT}$ al punto $2_r$ si ottiene invece il lavoro necessario alla trasformazione adiabatica reale.
 
+\section{Confronto livelli di energia}
+Confrontare i livelli di energia meccanica scambiata nelle precedenti trasformazioni con 
+quella potenziale posseduta da un uomo di peso medio (80 kg) che si trovi ad una quota di 150 m.
+La variazione di energia potenziale gravitazionale è facilmente ricavabile tramite la relazione
+\begin{equation}
+    \Delta U = mg\Delta h
+\end{equation}
+% \textit rende il testo corsivo
+
+dove
+\begin{itemize}
+    \item[\textit{m}] è la massa del corpo (kg)
+    \item[\textit{g}] è l'accelerazione gravitazionale terrestre pari a 9.81 $(m/s^2)$ 
+    \item[\textit{h}] è l'altezza in metri
+\end{itemize}  
+Fissato il valore dell'energia nullo al livello del mare, una massa di 80 kg a 150 m avrà
+un'energia potenziale gravitazionale di 117.72 kJ.
+
+Confrontiamo ora in una tabella i valori di queste energie scambiate
+\begin{center}
+    \begin{tabular}{l|c}
+        Trasformazione & Energia scambiata (kJ)\\ \hline
+        Compressione reale        & 120  \\
+        Compressione politropica  & 90.6 \\
+        Compressione isoentropica & 86.5 \\
+        Compressione isoterma     & 75.8 \\
+        Compressione liquido      & 150$\cdot 10^{-3}$  \\
+        Uomo che scala 150 m      & 117.2
+    \end{tabular}
+\end{center}
 
 
 \end{document}
