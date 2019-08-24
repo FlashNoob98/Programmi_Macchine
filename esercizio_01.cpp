@@ -22,6 +22,8 @@ float isoentropica();
 float adiabatica_reale();
 float politropica();
 float isoterma();
+void adiabatico_politropico();
+
 //funzione main
 int main(){
     //cout << R <<endl;
@@ -36,6 +38,7 @@ int main(){
     politropica();
 
     isoterma();
+    adiabatico_politropico();
     cout << endl;
     return 0;
 }
@@ -119,4 +122,18 @@ float isoterma(){
     float L = mass*R*T1*log(beta);
     cout << "Il lavoro speso nella compressione isoterma è pari a: " << L << " kJ\n";
     return L;
+}
+
+void adiabatico_politropico(){
+    cout << "Calcolo del rendimento politropico a partire da quello adiabatico e da Beta\n";
+    cout << "Inserisci Beta: ";
+    cin >> beta;
+    cout << "Inserisci il rendimento adiabatico: ";
+    float eta;
+    cin >> eta;
+    // float n = -1/(log((eta - 1 + pow(beta,(K-1)/K))/(eta))/log(beta)-1);
+    float n = log(beta)/(log(beta)-log((eta-1+pow(beta,(K-1)/K))/(eta)));
+    cout << "Il coefficiente n vale: " << n <<endl;
+    float res = n*(K-1)/(K*(n-1));
+    cout << "Il rendimento politropico vale: " << res << endl;
 }
