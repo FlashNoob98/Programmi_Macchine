@@ -153,7 +153,7 @@ di un gas perfetto è funzione della sola temperatura, resta quindi anch'essa co
 $Q = L$.
 Il lavoro è facilmente calcolabile come 
 \begin{equation}
-    L = \int_{p_1}^{p_2} v\cdot dpD
+    L = \int_{p_1}^{p_2} v\cdot dp
 \end{equation}
 utilizzando la \eqref{eq:stato_gas} e sostituendo $p$ si ricava:
 \begin{equation}
@@ -161,6 +161,22 @@ utilizzando la \eqref{eq:stato_gas} e sostituendo $p$ si ricava:
 \end{equation}
 Il lavoro di compressione isotermo è quindi pari a $75.8\ kJ$ così come anche il calore uscente necessario a 
 mantenere la temperatura costante.
+
+\section{Rendimenti}
+Confronto tra i vari rendimenti delle trasformazioni appena viste.
+
+Il rendimento adiabatico è stato definito nella \eqref{eq:rendimento_compressione_adiabatico} e il suo valore è di 0.722.
+
+Il rendimento isotermo è invece così definito:
+\begin{equation}
+    \label{eq:rendimento_isotermo}
+    \eta_{is_T} \stackrel{def}{=} \frac{L_{is_T}}{L_r}
+\end{equation}
+Il lavoro isotermo è stato calcolato nella sezione \ref{sec:quarta_trasformazione} e vale $75.8\ kJ$, il rendimento
+vale quindi 0.632
+
+L'esponente della politropica che passa per i punti della trasformazione reale è stato calcolato mediante 
+la \eqref{eq:esp_politropica} e vale 1.609
 
 \section{Compressione di un liquido}
 \label{sec:compressione_liquido}

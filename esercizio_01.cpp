@@ -10,6 +10,7 @@ using namespace std;
 //definizione variabili
 float Cp = 1.005, Cv = 0.7179, K=Cp/Cv, R=Cp-Cv;
 float T1,T2,P1,P2,V1,V2;
+float L_ad; //lavoro reale
 float mass, beta;
 float lavoro, calore;
 float eta_pc, eta_ad;
@@ -91,7 +92,7 @@ float adiabatica_reale(){
     cin >> eta_pc;
     eta_ad = (1-pow(beta,((K-1)/K)))/(1-pow(beta,((K-1)/(K*eta_pc))));
     cout << "Rendimento adiabatico: " << eta_ad << endl;
-    float L_ad = L_is/eta_ad;
+    L_ad = L_is/eta_ad;
     cout << "Lavoro necessario alla trasformazione adiabatica reale: " << L_ad <<" kJ\n";
     //calcolo esponente politropica
     float n = eta_pc/(eta_pc -((K-1)/K));
@@ -121,6 +122,7 @@ float isoterma(){
     //dL = pdV
     float L = mass*R*T1*log(beta);
     cout << "Il lavoro speso nella compressione isoterma è pari a: " << L << " kJ\n";
+    cout << "Rendimento isotermo: "<< L/L_ad <<endl;
     return L;
 }
 
