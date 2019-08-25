@@ -7,5 +7,5 @@ I sorgenti LaTex si trovano nella cartella [Tex](/Tex), eseguire `pdflatex nomef
 sono pre compilati e caricati comunque sul repository
 
 ### C++
-I sorgenti scritti in C++ possono essere compilati ed eseguiti attraverso il comando `g++ -Wall nomefile.cpp -o nomefile.o;./nomefile.o`
+I sorgenti scritti in C++ si trovano nella cartella [CPP](/CPP) possono essere compilati ed eseguiti attraverso il comando `g++ -Wall nomefile.cpp -o nomefile.o;./nomefile.o`
 
