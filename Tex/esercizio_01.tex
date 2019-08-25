@@ -55,6 +55,7 @@ $T_2$ in uscita dal compressore.
 Il lavoro necessario alla compressione sarà interamente speso per l'aumento di entalpia del gas
 e potrà quindi essere calcolato con
 \begin{equation}
+    \label{eq:lavoro_isoentropico}
     L_{is} = m\cdot \Delta h = m\cdot C_p (T_2 - T_1)
 \end{equation}
 esso sarà pari a $86.65\ kJ$
@@ -347,11 +348,11 @@ Analizziamo ora la targa di un compressore commerciale da officina, reperita dal
 \end{figure}
 scelto il modello \textit{engineAIR 5/100 Petrol} i valori di nostro interesse sono:
 
-\textit{Pressione massima:} il valore di massima pressione all'uscita del compressore 
-
-\textit{Portata d'aria:} quantità d'aria aspirata in l/min 
-
-\textit{Potenza motore:} potenza massima erogabile dal motore
+\begin{itemize}
+    \item [\textit{Pressione:}] il valore di massima pressione in uscita al compressore
+    \item[\textit{Portata d'aria:}] quantità d'aria aspirata in l/min 
+    \item[\textit{Potenza motore:}] potenza massima erogabile dal motore
+\end{itemize} 
 
 Dato che non possediamo la curva di andamento pressione/potenza non possiamo stimare il rendimento se non nella condizione
 di massimo regime, ossia ad una pressione in uscita pari a 10 bar ed una potenza di 3.6 kW.
@@ -361,6 +362,29 @@ Se la portata volumetrica è espressa in l/min, per trasformarla in kg/s dobbiam
 \begin{equation*}
     \dot{m} = \frac{\dot{V}}{v}
 \end{equation*}
-dove \textit{v} è il volume specifico del gas e $\dot{V}$ è espressa in $m^3/s$.
+dove \textit{v} è il volume specifico del gas e $\dot{V}$ è espressa in $m^3/s$, da l/min a $m^3/s$ bisogna dividere per 60000.
 
+Rieseguendo i passaggi svolti nella sezione \ref{sec:prima_trasformazione} si ottiene la tabella degli stati ideali
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &           1 &          0.856    &           25     \\ \hline
+        2   &          10 &          0.165    &           302
+    \end{tabular}
+\end{center}
+e dopo aver valutato la potenza meccanica necessaria alla trasformazione isoentropica mediante la \eqref{eq:lavoro_isoentropico}
+si può facilmente valutare il rendimento adiabatico di compressione definito nella \eqref{eq:rendimento_compressione_adiabatico}
+e pari a 0.525.
+
+Ottenuto il rapporto di compressione e il rendimento adiabatico, ripetendo i passaggi svolti per il compressore fornito dall'esercizio
+si può ottenere il rendimento politropico pari a 0.645.
+Ricavato il valore dell'esponente della politropica con la \eqref{eq:esp_politropica} si può determinare lo stato reale in uscita dal compressore.
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (bar)$ & $v\ (m^3/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &           1 &          0.856    &           25     \\ \hline
+        2   &          10 &          0.237    &           554
+    \end{tabular}
+\end{center}
+I rendimenti del secondo compressore, volumetrico monostadio, sono di gran lunga inferiori rispetto ad un compressore assiale (dinamico) multistadio.
 \end{document}
