@@ -11,6 +11,7 @@ float Cp = 1.005, Cv = 0.7179, K=Cp/Cv, R=Cp-Cv;
 float T1,T2,P1,P2,V1,V2;
 float L_is; //lavoro isoentropica
 float L_ad; //lavoro reale
+float n; //esponente politropica
 float mass, beta;
 float lavoro, calore;
 float eta_pc, eta_ad;
@@ -20,10 +21,12 @@ void startup();
 void input();
 void calcola_stato(float n);
 void isoentropica();
-float adiabatica_reale();
-float politropica();
-float isoterma();
-void adiabatico_politropico();
+void potenza_reale();
+void rendimento();
+void adiabatica_reale();
+// float politropica();
+// float isoterma();
+void adiabatico_to_politropico();
 
 //funzione main
 int main(){
@@ -32,6 +35,11 @@ int main(){
     input();
     calcola_stato(K);
     isoentropica();
+    potenza_reale();
+    rendimento();
+    adiabatico_to_politropico();
+    cout << "Condizioni di uscita reali\n";
+    calcola_stato(n);
    // float gamma = adiabatica_reale();
    // cout << "\nCalcolo ora lo stato utilizzando l'esponente della politropica:\n";
    // calcola_stato(gamma);
@@ -39,7 +47,7 @@ int main(){
     //politropica();
 //
     //isoterma();
-    //adiabatico_politropico();
+    //adiabatico_to_politropico();
     cout << endl;
     return 0;
 }
@@ -83,4 +91,30 @@ void isoentropica(){
     //float L = -P1*V1*100/(K-1)*(pow(V1,1-K)- pow(V2,1-K));
     //float L = mass*Cp*(T2-T1);
     cout <<"Potenza necessaria per compressione adiabatica isoentropica: "<< L_is << " kW\n";
+}
+
+void potenza_reale(){
+    L_ad = L_is -1;
+    while (L_ad <= L_is){
+        cout << "Inserisci il valore della potenza necessaria (in kW): ";
+        cin >> L_ad;
+        if (L_ad < L_is){
+            cout << "Impossibile!\n";
+        }
+    }
+}
+
+void rendimento(){
+    eta_ad = L_is/L_ad;
+    cout << "Il rendimento adiabatico di compressione è: "<< eta_ad << endl;
+}
+
+void adiabatico_to_politropico(){
+    cout << "\nCalcolo del rendimento politropico a partire da quello adiabatico\n";
+    float eta = eta_ad; //il rendimento è già stato precedentemente calcolato
+    // float n = -1/(log((eta - 1 + pow(beta,(K-1)/K))/(eta))/log(beta)-1);
+    n = log(beta)/(log(beta)-log((eta-1+pow(beta,(K-1)/K))/(eta)));
+    cout << "Il coefficiente n della politropica che passa per lo stato di uscita reale vale: " << n <<endl;
+    float res = n*(K-1)/(K*(n-1));
+    cout << "Il rendimento politropico vale: " << res << endl;
 }
