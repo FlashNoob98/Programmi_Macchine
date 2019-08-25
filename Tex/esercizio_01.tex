@@ -340,5 +340,27 @@ del coefficiente \textit{n} tramite alcuni passaggi
 e vale in questo caso 1.46.
 Si può quindi ricavare il rendimento politropico dalla \eqref{eq:rendimento_politropica_breve} che vale in questo caso 0.91.
 
+Analizziamo ora la targa di un compressore commerciale da officina, reperita dal produttore \textit{CECCATO}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\linewidth]{media/catalogo.png}
+\end{figure}
+scelto il modello \textit{engineAIR 5/100 Petrol} i valori di nostro interesse sono:
+
+\textit{Pressione massima:} il valore di massima pressione all'uscita del compressore 
+
+\textit{Portata d'aria:} quantità d'aria aspirata in l/min 
+
+\textit{Potenza motore:} potenza massima erogabile dal motore
+
+Dato che non possediamo la curva di andamento pressione/potenza non possiamo stimare il rendimento se non nella condizione
+di massimo regime, ossia ad una pressione in uscita pari a 10 bar ed una potenza di 3.6 kW.
+Per prima cosa fissiamo le condizioni ambientali di aspirazione ad 1 bar e 25°C, in questo modo utilizzando il modello
+di gas ideale e ricavato il volume specifico possiamo valutare la portata massica, più comoda per i calcoli.
+Se la portata volumetrica è espressa in l/min, per trasformarla in kg/s dobbiamo effettuare la seguente conversione:
+\begin{equation*}
+    \dot{m} = \frac{\dot{V}}{v}
+\end{equation*}
+dove \textit{v} è il volume specifico del gas e $\dot{V}$ è espressa in $m^3/s$.
 
 \end{document}

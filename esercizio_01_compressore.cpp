@@ -12,7 +12,7 @@ float T1,T2,P1,P2,V1,V2;
 float L_is; //lavoro isoentropica
 float L_ad; //lavoro reale
 float n; //esponente politropica
-float mass, beta;
+float mass, volum, beta;
 float lavoro, calore;
 float eta_pc, eta_ad;
 
@@ -34,6 +34,9 @@ int main(){
     startup();
     input();
     calcola_stato(K);
+    //trasformo portata volumetrica in portata massica
+    mass = volum/(60000*V1);
+    cout << "Portata massica: " << mass*1000 <<" dm^3/s\n";
     isoentropica();
     potenza_reale();
     rendimento();
@@ -60,10 +63,11 @@ void startup(){
 
 //richiesta dati
 void input(){
-    cout << "Inserisci la portata massica (Kg/s)\n";
-    cin >> mass;
-    cout << "Inserisci la temperatura iniziale (in Kelvin)\n";
+    cout << "Inserisci la portata volumetrica (l/min)\n";
+    cin >> volum;
+    cout << "Inserisci la temperatura iniziale (in Celsius)\n";
     cin >> T1;
+    T1 = T1 + 273.15; //è più comoda da inserire in °C
     cout << "Inserisci la pressione iniziale (in bar)\n";
     cin >> P1;
     cout << "Inserisci la pressione finale (in bar)\n";
