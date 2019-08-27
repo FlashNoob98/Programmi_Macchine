@@ -14,5 +14,86 @@
 
 \begin{document}
 \maketitle
+A partire dai dati sperimentali riportati nei tre schemi d'impianto calcolare
+\begin{itemize}
+    \item I rendimenti:
+    \begin{itemize}
+        \item globale elettrico
+        \item globale
+        \item di combustione
+        \item limite
+        \item interno d'impianto
+        \item reale
+        \item meccanico
+        \item adiabatico di espansione
+    \end{itemize}
+    \item Le temperature medie di adduzione e sottrazione del calore
+\end{itemize}
+Confrontare i risultati.
+
+\section{Definizione dei rendimenti}
+I rendimenti richiesti dall'esercizio sono così definiti:
+\begin{itemize}
+    \item Rendimento globale elettrico
+    \begin{equation}
+        \label{eq:rendimento_elettrico}
+        \eta_{g_{el}} \stackrel{def}{=} \frac{P_{el}}{\dot m_c \cdot H_i}
+    \end{equation}
+    
+    \item Rendimento globale
+    \begin{equation}
+        \label{eq:rendimento_globale}
+        \eta_g \stackrel{def}{=} \frac{P_{ua}}{\dot{m}_c \cdot H_i}
+   \end{equation}
+
+   \item Rendimento di combustione
+   \begin{equation}
+       \label{eq:rendimento_combustione}
+       \eta_C \stackrel{def}{=} \frac{\dot{Q_1}}{\dot{m}_c \cdot H_i}
+   \end{equation}
+
+   \item Rendimento limite
+   \begin{equation}
+       \label{eq:redimento_limite}
+       \eta_l \stackrel{def}{=} \frac{P_l}{\dot{Q_1}}
+   \end{equation}
+
+   \item Rendimento interno d'impianto
+   \begin{equation}
+        \label{eq:rendimento_interno}
+       \eta_{ii} \stackrel{def}{=} \frac{P_r}{P_l}
+   \end{equation}
+
+   \item Rendimento meccanico
+   \begin{equation}
+       \label{eq:rendimento_meccanico}
+       \eta_m \stackrel{def}{=} \frac{P_{ua}}{P_r}
+   \end{equation}
+
+   \item Rendimento reale
+   \begin{equation}
+       \label{eq:rendimento_reale}
+       \eta_r \stackrel{def}{=} \eta_l \cdot \eta_{ii} = \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}}
+   \end{equation}
+
+   \item Rendimento adiabatico di espansione
+   \begin{equation}
+        \label{eq:rendimento_adiabatico}
+        \eta_{ad_e} \stackrel{def}{=} \frac{L_{is}}{L_r} = \frac{1-1/\beta^{\frac{m-1}{m}}}
+        {1-1/\beta^{\frac{k-1}{k}}}
+   \end{equation}
+   oppure utilizzando il rendimento politropico
+   \begin{equation}
+        \label{eq:rendimento_adiabatico_con_rendimento_politropico}
+        \eta_{ad_e} = \frac{1-1/\beta^{\frac{k-1}{k}\eta_{pe}}}
+        {1-1/\beta^{\frac{k-1}{k}}}
+        %uso \displaystyle per forzare l'integrale grande
+   \end{equation}
+\end{itemize}
+
+
+\section{Impianto minimo}
+\label{sec:primo_impianto}
+
 
 \end{document}
