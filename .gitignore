@@ -29,7 +29,7 @@
 
 # LaTex
 *.synctex.gz
-#*.pdf fast view from github
+*.pdf 
 *.log
 *.aux
 *.fls
