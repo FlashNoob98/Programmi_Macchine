@@ -146,7 +146,39 @@ Il \textbf{rendimento di combustione} è dunque pari a 89.60\%
 \subsection{Rendimento limite}
 \label{subsec:rendimento_limite}
 Per poter calcolare il rendimento limite definito nella \eqref{eq:redimento_limite} è necessaria un'analisi
-più approfondita dell'impianto che permetta di calcolare il ciclo termodinamico limite, ovvero quello che avverrebbe
-con processi di scambio termico isobari ed espansione/compressione isoentropici. 
+più approfondita dell'impianto che permetta di valutare il ciclo termodinamico limite, ovvero quello che avverrebbe
+con processi di scambio termico isobari ed espansione/compressione adiabatici isoentropici. 
+
+Utilizziamo come punti di riferimento i valori reali misurati nello stato termodinamico 1 e 3 ossia a monte delle macchine
+adiabatiche, possiamo raccogliere i dati in una tabella
+(la pressione è stata trasformata da \textit{ata} ad \textit{atm} mentre l'entalpia da \textit{kcal} a \textit{kJ}):
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (atm)$ & $h\ (kJ/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &        0.0419 &          125.6   &           30     \\ \hline
+        3   &        59.05  &           3381   &           485
+    \end{tabular}
+\end{center}
+Confrontanto il valore di entalpia con quello delle tabelle dell'acqua in condizioni di saturazione possiamo affermare
+che l'acqua si trova nella condizione di liquido saturo, possiamo quindi leggere la pressione dalla stessa tabella.
+Consideriamo unica la compressione eseguita dalle due pompe.
+
+Riportiamo questi valori in una tabella che comprenda anche l'entropia ed il titolo per il calcolo degli altri 2 stati termodinamici,
+lo stato 1 come precedentemente detto è in condizioni di liquido saturo mentre lo stato 3 è nella condizione di vapore surriscaldato
+nel momento in cui la temperatura è maggiore della temperatura critica dell'acqua (373.9 °C) e la pressione è minore di quella critica
+(217.7 atm).
+Ricordando le ipotesi precedenti possiamo fissare pressione ed entropia per gli stati 2 e 4.
+I valori di temperatura, titolo ed entalpia per lo stato 2 e 4 sono stimabili mediante l'uso del diagramma di Mollier,
+tabelle o software appositi.
+\begin{center}
+    \begin{tabular}{r|c|c|c|c|c}
+        stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
+        1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline
+        2   &        59.05    &          30.137&liq. sott.& 131.7    &0.4368 \\ \hline
+        3   &        59.05  &           485   & vap. surr.& 3381     &6.837  \\ \hline
+        4   &        0.0419       &      29.98&     79.85 &  2066    &6.837
+    \end{tabular}
+\end{center}
+
 
 \end{document}
