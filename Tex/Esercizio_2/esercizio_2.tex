@@ -94,9 +94,40 @@ Valutare inoltre le temperature medie di adduzione e sottrazione del calore.
 
 \section{Impianto minimo}
 \label{sec:primo_impianto}
+\subsection{Rendimento globale elettrico}
+\label{subsec:rendimento_globale_elettrico}
 Il primo schema presenta i componenti minimi necessari alla realizzazione di un impianto con turbina a vapore,
 è possibile valutare rapidamente il rendimento elettrico dell'impianto dopo aver trasformato la portata massica di combustibile da 
 tonnellate/ora in kilogrammi/secondo, ossia dividere per 3.6, il risultato sarà 1524.4 kg/s di gas naturale immessi nel generatore di vapore.
 Il potere calorifico inferiore, ossia la massima quantità di calore ottenibile da una combustione completa del gas naturale è di 47.7 MJ/kg
 Il \textbf{rendimento globale elettrico} sarà dunque pari a 0.277.
+
+\subsection{Rendimento globale}
+\label{subsec:rendimento_globale}
+Per il calcolo del rendimento globale è necessario valutare la potenza utile all'asse della turbina valutabile come 
+la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
+dei dispositivi ausiliari (pompe).
+Notando che i valori di entalpia riportati nello schema sono espressi in kcal/kg e che 1 kcal è pari a 4.186 kJ,
+bisogna moltiplicare per questo fattore la differenza di entalpia.
+
+C'è una fuga di vapore in turbina quindi per una stima più precisa consideriamo la portata massica più bassa pari
+a 70.72 t/h, pari a 19.65 kg/s. La variazione di entalpia è pari a 254.9 kcal/kg o 1067 kJ/kg.
+La potenza ottenuta dalla turbina è dunque 20.960 MW.
+
+Nell'impianto sono presenti 2 pompe, una di estrazione dal condensatore e l'altra di alimento verso il generatore
+di vapore, entrambi i lavori sono stimabili attraverso la variazione di entalpia subita dal fluido:
+la pompa di \textbf{estrazione} produce un aumento di entalpia pari a 0.7 kcal/kg o 2.93 kJ/kg con una portata massica di
+71.6 t/h o 19.89 kg/s, la potenza meccanica necessaria sarà dunque 58.3 kW, una modesta quantità rispetto a quella prodotta dalla turbina.
+La pompa di \textbf{alimento} produce una variazione di entalpia pari a 2.11 kcal/kg o 8.833 kJ/kg, la portata massica è identica
+alla precedente, la potenza necessaria è 175.69 kW, maggiore della pompa precedente ma comunque molto piccola rispetto alla potenza
+ricavata dalla turbina, è proprio questo il grande vantaggio degli impianti a vapore rispetto agli impianti a gas dove la potenza
+necessaria alla compressione del gas non è affatto trascurabile.
+
+La potenza meccanica \textbf{netta} è dunque 20.726 MW, il \textbf{rendimento globale} dell'impianto è pari a 0.285.
+È possibile stimare il rendimento dell'alternatore come rapporto tra il rendimento globale elettrico e quello globale d'impianto
+pari dunque al 97.19\%
+Confrontando questo valore con quelli medi graficati si può supporre che non sia presente un riduttore di giri 
+collegato fra la turbina e l'alternatore, anche dallo schema infatti si può leggere la velocità della turbina di 3000 rpm 
+ossia 50 Hz, identica alla frequenza elettrica di rete.
+
 \end{document}
