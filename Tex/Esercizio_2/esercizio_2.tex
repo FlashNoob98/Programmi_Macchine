@@ -104,8 +104,8 @@ Il \textbf{rendimento globale elettrico} sarà dunque pari a 0.277.
 
 \subsection{Rendimento globale}
 \label{subsec:rendimento_globale}
-Per il calcolo del rendimento globale è necessario valutare la potenza utile all'asse della turbina valutabile come 
-la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
+Per il calcolo del rendimento globale è necessario valutare la potenza utile all'asse della turbina, considerata adiabatica,
+valutabile come la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
 dei dispositivi ausiliari (pompe).
 Notando che i valori di entalpia riportati nello schema sono espressi in kcal/kg e che 1 kcal è pari a 4.186 kJ,
 bisogna moltiplicare per questo fattore la differenza di entalpia.
@@ -132,6 +132,15 @@ ossia 50 Hz, identica alla frequenza elettrica di rete.
 
 \subsection{Rendimento di combustione}
 \label{subsec:rendimento_combustione}
-Definito nella \eqref{eq:rendimento_combustione} il rendimento di combustione
+Definito nella \eqref{eq:rendimento_combustione} il rendimento di combustione esprime il rapporto tra la quantità di calore
+fornita al fluido e quella potenzialmente ottenibile dal combustibile.
+
+La potenza termica trasferita al fluido è valutabile come la portata di fluido per la variazione di entalpia $\dot m\cdot \Delta h$
+cioè 3276 kJ/kg per 19.89 kg/s ossia 65.156 MW di potenza termica trasferita.
+
+La potenza termica potenziale è pari invece alla portata di combustibile per il suo potere calorifico inferiore:
+1524 kg/s per 47.7 MJ/kg ossia 72.716 MW.
+
+Il \textbf{rendimento di combustione} è dunque pari a 89.60\%
 
 \end{document}
