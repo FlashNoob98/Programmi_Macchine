@@ -190,4 +190,25 @@ La \textbf{potenza meccanica limite} è quindi 25.719 MW, mentre la potenza term
 lo stato 3 e 2, 64.258 MW.
 Il \textbf{rendimento limite} è del 40.02 \%
 
+Il rendimento limite è pari al rendimento del ciclo ideale di Carnot che avviene tra le stesse temmperature medie di adduzione e sottrazione
+del calore, temperature stimabili dalla seguente:
+\begin{equation}
+    \label{eq:T_ds}
+    Q = T\Delta s
+\end{equation}
+La temperatura media di adduzione del calore è pari a:
+\begin{equation*}
+    T_{m_a} = \frac{h_3-h_2}{s_3 - s_2} = 507.68\ K = 234.53 \text{°C}
+\end{equation*}
+mentre quella di sottrazione è pari a:
+\begin{equation*}
+    T_{m_s} = \frac{h_4 - h_1}{s_4 - s_1} = 303.17\ K = 30.02 \text{°C}
+\end{equation*}
+Il rendimento del ciclo di Carnot è quindi definito come
+\begin{equation}
+    \eta_{Carnot} \stackrel{def}{=} 1 - \frac{T_{m_s}}{T_{m_a}}
+\end{equation}
+e utilizzando le temperature in Kelvin esso vale 0.402 ossia 40.2 \%.
+Il rendimento limite raggiunge il rendimento di Carnot se trascuriamo la potenza meccanica necessaria alla compressione del fluido.
+
 \end{document}
