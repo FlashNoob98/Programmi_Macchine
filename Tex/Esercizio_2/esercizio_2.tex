@@ -80,16 +80,17 @@ A partire dai dati sperimentali riportati nei tre schemi d'impianto calcolare i 
    \item Rendimento adiabatico di espansione
    \begin{equation}
         \label{eq:rendimento_adiabatico}
-        \eta_{ad_e} \stackrel{def}{=} \frac{L_{is}}{L_r} = \frac{1-1/\beta^{\frac{m-1}{m}}}
-        {1-1/\beta^{\frac{k-1}{k}}}
-   \end{equation}
-   oppure utilizzando il rendimento politropico
-   \begin{equation}
-        \label{eq:rendimento_adiabatico_con_rendimento_politropico}
-        \eta_{ad_e} = \frac{1-1/\beta^{\frac{k-1}{k}\eta_{pe}}}
-        {1-1/\beta^{\frac{k-1}{k}}}
-        %uso \displaystyle per forzare l'integrale grande
-   \end{equation}
+        \eta_{ad_e} \stackrel{def}{=} \frac{P_{is}}{P_r}
+    \end{equation}
+%          = \frac{1-1/\beta^{\frac{m-1}{m}}}
+%         {1-1/\beta^{\frac{k-1}{k}}}
+%    oppure utilizzando il rendimento politropico
+%    \begin{equation}
+%         \label{eq:rendimento_adiabatico_con_rendimento_politropico}
+%         \eta_{ad_e} = \frac{1-1/\beta^{\frac{k-1}{k}\eta_{pe}}}
+%         {1-1/\beta^{\frac{k-1}{k}}}
+%         %uso \displaystyle per forzare l'integrale grande
+%    \end{equation}
 \end{itemize}
 Valutare inoltre le temperature medie di adduzione e sottrazione del calore.
 
@@ -108,7 +109,7 @@ Il \textbf{rendimento globale elettrico} sarà dunque pari a 27.7 \%.
 In prima approssimazione il rendimento globale può essere confuso con quello elettrico, in questo caso infatti la turbina ha una velocità
 di 3000 giri al minuto ossia 50 Hz, non è necessario collegare un riduttore meccanico tra la turbina e l'alternatore.
 Il rendimento dell'alternatore, per una potenza di circa 20 MW è stimabile da valori tabellati, pari a circa il 97.5 \%.
-La potenza utile all'asse $P_{ua}$ sarà dunque il rapporto della potenza elettrica generata per il rendimento dell`alternatore, ossia
+La potenza \textbf{utile all'asse} $P_{ua}$ sarà dunque il rapporto della potenza elettrica generata per il rendimento dell`alternatore, ossia
 20.625 MW, fornendo un rendimento \textbf{globale} di impianto pari a 28.37 \%. 
 
 \subsection{Rendimento di combustione}
@@ -221,5 +222,7 @@ La potenza meccanica ideale è stata calcolata nella sezione \ref{subsec:rendime
 \subsection{Rendimento reale}
 Il rendimento reale definito nella \eqref{eq:rendimento_reale} è pari al prodotto tra i rendimenti interno e limite, vale dunque 32.25 \%
 
+\subsection{Rendimento meccanico}
+Definito nella \eqref{eq:rendimento_meccanico} esprime le perdite meccaniche ed è pari a 0.995
 
 \end{document}
