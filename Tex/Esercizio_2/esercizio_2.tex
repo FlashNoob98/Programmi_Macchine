@@ -80,7 +80,7 @@ A partire dai dati sperimentali riportati nei tre schemi d'impianto calcolare i 
    \item Rendimento adiabatico di espansione
    \begin{equation}
         \label{eq:rendimento_adiabatico}
-        \eta_{ad_e} \stackrel{def}{=} \frac{P_{is}}{P_r}
+        \eta_{ad_e} \stackrel{def}{=} \frac{P_r}{P_{is}}
     \end{equation}
 %          = \frac{1-1/\beta^{\frac{m-1}{m}}}
 %         {1-1/\beta^{\frac{k-1}{k}}}
@@ -159,8 +159,8 @@ tabelle o software appositi.
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
         1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline
         2   &        59.05    &          30.137&liq. sott.& 131.7    &0.4368 \\ \hline
-        3   &        59.05  &           485   & vap. surr.& 3381     &6.837  \\ \hline
-        4   &        0.0419       &      29.98&     79.85 &  2066    &6.837
+        3   &        59.05   &           485  & vap. surr.& 3381     &6.837  \\ \hline
+        4   &        0.0419       &      29.98&     79.85 & 2066     &6.837
     \end{tabular}
 \end{center}
 
@@ -196,6 +196,7 @@ e utilizzando le temperature in Kelvin esso vale 0.402 ossia 40.2 \%.
 %Il rendimento limite raggiunge il rendimento di Carnot se trascuriamo la potenza meccanica necessaria alla compressione del fluido.
 
 \subsection{Rendimento interno di impianto}
+\label{subsec:rendimento_interno}
 Per il calcolo del rendimento interno di impianto è necessario valutare la potenza ottenuta dalla trasformazione reale,
 valutabile come la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
 dei dispositivi ausiliari (pompe).
@@ -224,5 +225,11 @@ Il rendimento reale definito nella \eqref{eq:rendimento_reale} è pari al prodot
 
 \subsection{Rendimento meccanico}
 Definito nella \eqref{eq:rendimento_meccanico} esprime le perdite meccaniche ed è pari a 0.995
+
+\subsection{Rendimento adiabatico di espansione}
+Il rendimento adiabatico di espansione permette di stimare le irreversibilità introdotte dall'espansione in turbina come definito dalla \eqref{eq:rendimento_adiabatico}.
+La potenza meccanica \textbf{limite} è stata calcolata nella sezione \ref{subsec:rendimento_limite} e vale 25.840 MW (ignorando la spesa necessaria alla compressione),
+mentre quella \textbf{reale} nella sezione \ref{subsec:rendimento_interno} e vale 20.960 MW.
+Il rendimento \textbf{adiabatico} di espansione vale dunque 81.11 \%.
 
 \end{document}
