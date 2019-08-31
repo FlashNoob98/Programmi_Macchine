@@ -64,17 +64,18 @@ A partire dai dati sperimentali riportati nei tre schemi d'impianto calcolare i 
        \eta_{ii} \stackrel{def}{=} \frac{P_r}{P_l}
    \end{equation}
 
+   \item Rendimento reale
+   \begin{equation}
+       \label{eq:rendimento_reale}
+       \eta_r \stackrel{def}{=} \eta_l \cdot \eta_{ii} = \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}}
+   \end{equation}
+
    \item Rendimento meccanico
    \begin{equation}
        \label{eq:rendimento_meccanico}
        \eta_m \stackrel{def}{=} \frac{P_{ua}}{P_r}
    \end{equation}
 
-   \item Rendimento reale
-   \begin{equation}
-       \label{eq:rendimento_reale}
-       \eta_r \stackrel{def}{=} \eta_l \cdot \eta_{ii} = \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}}
-   \end{equation}
 
    \item Rendimento adiabatico di espansione
    \begin{equation}
@@ -100,35 +101,15 @@ Il primo schema presenta i componenti minimi necessari alla realizzazione di un 
 è possibile valutare rapidamente il rendimento elettrico dell'impianto dopo aver trasformato la portata massica di combustibile da 
 tonnellate/ora in kilogrammi/secondo, ossia dividere per 3.6, il risultato sarà 1524.4 kg/s di gas naturale immessi nel generatore di vapore.
 Il potere calorifico inferiore, ossia la massima quantità di calore ottenibile da una combustione completa del gas naturale è di 47.7 MJ/kg
-Il \textbf{rendimento globale elettrico} sarà dunque pari a 0.277.
+Il \textbf{rendimento globale elettrico} sarà dunque pari a 27.7 \%.
 
 \subsection{Rendimento globale}
 \label{subsec:rendimento_globale}
-Per il calcolo del rendimento globale è necessario valutare la potenza utile all'asse della turbina, considerata adiabatica,
-valutabile come la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
-dei dispositivi ausiliari (pompe).
-Notando che i valori di entalpia riportati nello schema sono espressi in kcal/kg e che 1 kcal è pari a 4.186 kJ,
-bisogna moltiplicare per questo fattore la differenza di entalpia.
-
-C'è una fuga di vapore in turbina quindi per una stima più precisa consideriamo la portata massica più bassa pari
-a 70.72 t/h, pari a 19.65 kg/s. La variazione di entalpia è pari a 254.9 kcal/kg o 1067 kJ/kg.
-La potenza ottenuta dalla turbina è dunque 20.960 MW.
-
-Nell'impianto sono presenti 2 pompe, una di estrazione dal condensatore e l'altra di alimento verso il generatore
-di vapore, entrambi i lavori sono stimabili attraverso la variazione di entalpia subita dal fluido:
-la pompa di \textbf{estrazione} produce un aumento di entalpia pari a 0.7 kcal/kg o 2.93 kJ/kg con una portata massica di
-71.6 t/h o 19.89 kg/s, la potenza meccanica necessaria sarà dunque 58.3 kW, una modesta quantità rispetto a quella prodotta dalla turbina.
-La pompa di \textbf{alimento} produce una variazione di entalpia pari a 2.11 kcal/kg o 8.833 kJ/kg, la portata massica è identica
-alla precedente, la potenza necessaria è 175.69 kW, maggiore della pompa precedente ma comunque molto piccola rispetto alla potenza
-ricavata dalla turbina, è proprio questo il grande vantaggio degli impianti a vapore rispetto agli impianti a gas dove la potenza
-necessaria alla compressione del gas non è affatto trascurabile.
-
-La potenza meccanica \textbf{netta} è dunque 20.726 MW, il \textbf{rendimento globale} dell'impianto è del 28.5 \%.
-% È possibile stimare il rendimento dell'alternatore come rapporto tra il rendimento globale elettrico e quello globale d'impianto
-% pari dunque al 97.19\%
-% Confrontando questo valore con quelli medi graficati si può supporre che non sia presente un riduttore di giri 
-% collegato fra la turbina e l'alternatore, anche dallo schema infatti si può leggere la velocità della turbina di 3000 rpm 
-% ossia 50 Hz, identica alla frequenza elettrica di rete.
+In prima approssimazione il rendimento globale può essere confuso con quello elettrico, in questo caso infatti la turbina ha una velocità
+di 3000 giri al minuto ossia 50 Hz, non è necessario collegare un riduttore meccanico tra la turbina e l'alternatore.
+Il rendimento dell'alternatore, per una potenza di circa 20 MW è stimabile da valori tabellati, pari a circa il 97.5 \%.
+La potenza utile all'asse $P_{ua}$ sarà dunque il rapporto della potenza elettrica generata per il rendimento dell`alternatore, ossia
+20.625 MW, fornendo un rendimento \textbf{globale} di impianto pari a 28.37 \%. 
 
 \subsection{Rendimento di combustione}
 \label{subsec:rendimento_combustione}
@@ -149,6 +130,8 @@ Per poter calcolare il rendimento limite definito nella \eqref{eq:redimento_limi
 più approfondita dell'impianto che permetta di valutare il ciclo termodinamico limite, ovvero quello che avverrebbe
 con processi di scambio termico isobari ed espansione/compressione adiabatici isoentropici. 
 
+Notando che i valori di entalpia riportati nello schema sono espressi in kcal/kg e che 1 kcal è pari a 4.186 kJ,
+bisogna moltiplicare per questo fattore la differenza di entalpia.
 Utilizziamo come punti di riferimento i valori reali misurati nello stato termodinamico 1 e 3 ossia a monte delle macchine
 adiabatiche, possiamo raccogliere i dati in una tabella
 (la pressione è stata trasformata da \textit{ata} ad \textit{atm} mentre l'entalpia da \textit{kcal} a \textit{kJ}):
@@ -212,11 +195,31 @@ e utilizzando le temperature in Kelvin esso vale 0.402 ossia 40.2 \%.
 %Il rendimento limite raggiunge il rendimento di Carnot se trascuriamo la potenza meccanica necessaria alla compressione del fluido.
 
 \subsection{Rendimento interno di impianto}
+Per il calcolo del rendimento interno di impianto è necessario valutare la potenza ottenuta dalla trasformazione reale,
+valutabile come la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
+dei dispositivi ausiliari (pompe).
+
+È presente una fuga di vapore in turbina quindi per una stima più precisa consideriamo la portata massica più bassa pari
+a 70.72 t/h, pari a 19.65 kg/s. La variazione di entalpia è pari a 254.9 kcal/kg o 1067 kJ/kg.
+La potenza ottenuta dalla turbina è dunque 20.960 MW.
+
+Nell'impianto sono presenti 2 pompe, una di estrazione dal condensatore e l'altra di alimento verso il generatore
+di vapore, entrambi i lavori sono stimabili attraverso la variazione di entalpia subita dal fluido:
+la pompa di \textbf{estrazione} produce un aumento di entalpia pari a 0.7 kcal/kg o 2.93 kJ/kg con una portata massica di
+71.6 t/h o 19.89 kg/s, la potenza meccanica necessaria sarà dunque 58.3 kW, una modesta quantità rispetto a quella prodotta dalla turbina.
+La pompa di \textbf{alimento} produce una variazione di entalpia pari a 2.11 kcal/kg o 8.833 kJ/kg, la portata massica è identica
+alla precedente, la potenza necessaria è 175.69 kW, maggiore della pompa precedente ma comunque molto piccola rispetto alla potenza
+ricavata dalla turbina, è proprio questo il grande vantaggio degli impianti a vapore rispetto agli impianti a gas dove la potenza
+necessaria alla compressione del gas non è affatto trascurabile.
+La potenza meccanica \textbf{reale} è dunque 20.726 MW.
+
 Definito nella \eqref{eq:rendimento_interno} il rendimento \textbf{interno} esprime il rapporto tra la potenza ricavata dall'impianto reale
-e quella massima ricavabile dallo stesso impianto se fosse ideale.
-La potenza meccanica netta è stata calcolata nella sezione \ref{subsec:rendimento_globale} e calcolando il rendimento si ottiene un valore di 
+e quella massima ricavabile dallo stesso impianto se fosse ideale, esprime cioè la bontà costruttiva dell'impianto rispetto al limite ideale.
+La potenza meccanica ideale è stata calcolata nella sezione \ref{subsec:rendimento_limite} e valutando il rendimento si ottiene un valore di 
 80.59\%.
 
+\subsection{Rendimento reale}
+Il rendimento reale definito nella \eqref{eq:rendimento_reale} è pari al prodotto tra i rendimenti interno e limite, vale dunque 32.25 \%
 
 
 \end{document}
