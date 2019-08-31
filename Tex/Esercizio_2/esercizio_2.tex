@@ -123,12 +123,12 @@ alla precedente, la potenza necessaria è 175.69 kW, maggiore della pompa preced
 ricavata dalla turbina, è proprio questo il grande vantaggio degli impianti a vapore rispetto agli impianti a gas dove la potenza
 necessaria alla compressione del gas non è affatto trascurabile.
 
-La potenza meccanica \textbf{netta} è dunque 20.726 MW, il \textbf{rendimento globale} dell'impianto è pari a 0.285.
-È possibile stimare il rendimento dell'alternatore come rapporto tra il rendimento globale elettrico e quello globale d'impianto
-pari dunque al 97.19\%
-Confrontando questo valore con quelli medi graficati si può supporre che non sia presente un riduttore di giri 
-collegato fra la turbina e l'alternatore, anche dallo schema infatti si può leggere la velocità della turbina di 3000 rpm 
-ossia 50 Hz, identica alla frequenza elettrica di rete.
+La potenza meccanica \textbf{netta} è dunque 20.726 MW, il \textbf{rendimento globale} dell'impianto è del 28.5 \%.
+% È possibile stimare il rendimento dell'alternatore come rapporto tra il rendimento globale elettrico e quello globale d'impianto
+% pari dunque al 97.19\%
+% Confrontando questo valore con quelli medi graficati si può supporre che non sia presente un riduttore di giri 
+% collegato fra la turbina e l'alternatore, anche dallo schema infatti si può leggere la velocità della turbina di 3000 rpm 
+% ossia 50 Hz, identica alla frequenza elettrica di rete.
 
 \subsection{Rendimento di combustione}
 \label{subsec:rendimento_combustione}
@@ -209,6 +209,14 @@ Il rendimento del ciclo di Carnot è quindi definito come
     \eta_{Carnot} \stackrel{def}{=} 1 - \frac{T_{m_s}}{T_{m_a}}
 \end{equation}
 e utilizzando le temperature in Kelvin esso vale 0.402 ossia 40.2 \%.
-Il rendimento limite raggiunge il rendimento di Carnot se trascuriamo la potenza meccanica necessaria alla compressione del fluido.
+%Il rendimento limite raggiunge il rendimento di Carnot se trascuriamo la potenza meccanica necessaria alla compressione del fluido.
+
+\subsection{Rendimento interno di impianto}
+Definito nella \eqref{eq:rendimento_interno} il rendimento \textbf{interno} esprime il rapporto tra la potenza ricavata dall'impianto reale
+e quella massima ricavabile dallo stesso impianto se fosse ideale.
+La potenza meccanica netta è stata calcolata nella sezione \ref{subsec:rendimento_globale} e calcolando il rendimento si ottiene un valore di 
+80.59\%.
+
+
 
 \end{document}
