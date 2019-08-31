@@ -30,6 +30,42 @@ I dati utili all'analisi termodinamica sono i seguenti:
 mentre per le condizioni dell'aria in ingresso alla turbina si può facilmente supporre che la temperatura sia pari a 15°C mentre la pressione 1 atm
 (atmosfera standard ICAO).
 
+\section{Ciclo reale}
+\label{sec:ciclo_reale}
+Iniziamo l'analisi termodinamica dell'impianto a partire dagli stati del ciclo reale.
+Calcoliamo il volume specifico $v_1$ utilizzando l'equazione di stato dei gas perfetti:
+\begin{equation}
+    \label{eq:gas_perfetti}
+    pv = RT
+\end{equation}
+Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$
+Il calcolo della potenza termica da fornire in camera di combustione si esegue attraverso l'analisi dell'\textit{Heat Rate} espresso in kJ/kWh va diviso per 3600 per renderlo
+adimensionale ottenendo un valore di 2.395, se la potenza elettrica generata è di 43.100 MW, la potenza termica necessaria al funzionamento dell'impianto sarà 103.200 MW.
+Tale valore è pari alla portata massica di combustibile per il suo potere calorifico inferiore, se utilizziamo gas naturale è pari a 47.7 MJ/kg e la portata di combustibile
+è di 2.16 kg/s.
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+            &p(atm) &T(°C)  &v$(m^3/kg)$     \\ \hline
+        1   &    1  & 15    & 0.827   \\
+        2   &   29.5&       &          \\
+    \end{tabular}
+\end{center}
+
+\section{Ciclo limite}
+\label{sec:ciclo_limite}
+Analizziamo il ciclo Joule limite considerando il compressore e la turbina isoentropici, e la combustione isobara.
+Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$ e calcoliamo il volume specifico raggiunto dopo la compressione isoentropica
+\begin{equation*}
+    v_2 = v_1/(\beta^{1/k})
+\end{equation*}
+e nuovamente $T_2$ mediante la \eqref{eq:gas_perfetti}.
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+            &p(atm) &T(°C)  &v$(m^3/kg)$     \\ \hline
+        1   &    1  & 15    & 0.827   \\
+        2   &   29.5& 484   & 0.0737  \\
+    \end{tabular}
+\end{center}
 
 
 \end{document}
