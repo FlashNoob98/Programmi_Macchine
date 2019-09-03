@@ -14,7 +14,7 @@
 
 \begin{document}
 \maketitle
-In un serbatoio è contenuta dell'aria ad una pressione $p_{01}$ di 2.58 bar ed una temperatura $T_{01}$ di 378 K. La pressione ambiente $p_{02}$ è di 1 bar.
+In un serbatoio è contenuta dell'aria ad una pressione $p_a$ di 2.58 bar ed una temperatura $T_a$ di 378 K. La pressione ambiente $p_2$ è di 1 bar.
 \begin{enumerate}
     \item Valutare le trasformazioni che avvengono in uno stadio di turbina assiale nel quale espande il suddetto fluido, nell'ipotesi
     di trasformazioni adiabatiche isoentropiche e flusso monodimensionale.
@@ -28,13 +28,14 @@ In un serbatoio è contenuta dell'aria ad una pressione $p_{01}$ di 2.58 bar ed 
     \item Disegnare le palettature statoriche e rotoriche
 \end{enumerate}
 Si assuma un angolo tra la velocità assoluta all'uscita dello statore e la direzione tangenziale $\alpha_1$ di 15°
-
-Il gas si trova inizialmente alle condizioni di ristagno, supposta nulla la velocità all'interno del serbatoio, espande isoentropicamente fino alla pressione di 1 bar
-attraverso uno stadio di turbina che ne ricaverà dunque del lavoro da tale espansione. Non conoscendo le dimensioni del serbatoio o la massa di gas possiamo fare solo ragionamenti
-per unità di massa.
-COnsiderando la trasformazione isoentropica possiamo facilmente calcolare lo stato termodinamico 2 in uscita dalla turbina.
+\section{Analisi condizioni termodinamiche}
+\label{sec:analisi_termodinamiche}
+Il gas si trova inizialmente alle condizioni di ristagno (A), supposta nulla la velocità all'interno del serbatoio, espande isoentropicamente fino alla pressione di 1 bar
+attraverso uno stadio di turbina che ne ricaverà dunque del lavoro da tale espansione. Non conoscendo le dimensioni del serbatoio o la massa di gas possiamo fare
+solo ragionamenti per unità di massa.
+Considerando la trasformazione isoentropica possiamo facilmente calcolare lo stato termodinamico 2 in uscita dalla turbina.
 \begin{equation}
-    T_2 = T_{01}\cdot\beta^{\frac{1-k}{k}}
+    T_2 = T_a\cdot\beta^{\frac{1-k}{k}}
 \end{equation}
 con $\beta$ pari a 2.58 e $k$ pari a 1.4, la temperatura in uscita dalla turbina varrà 288.3 K, con l'ausilio dell'equazione di stato dei gas
 possiamo quindi completare la tabella con gli stati termodiamici a monte e a valle della turbina.
@@ -42,9 +43,25 @@ possiamo quindi completare la tabella con gli stati termodiamici a monte e a val
 \begin{center}
     \begin{tabular}{c|c|c|c}
         Stato   &p (bar)    &T (°C) &v ($m^3/kg$) \\ \hline
-        1       &2.58       &104,8  &0.420  \\
+        A       &2.58       &104,8  &0.420  \\
         2       &1          &15.2   &0.827  
     \end{tabular}
 \end{center}
+Il salto entalpico specifico disponibile $\Delta h^*$ è quindi pari a $C_p \cdot (T_1-T_2)$ ossia 90.12 kJ/kg
 
+\section{Stadio ad azione}
+\label{sec:stadio_ad_azione}
+Consideriamo in prima analisi uno stadio ad azione, l'espansione del gas avviene nelle palette statoriche che trasformano tutta l'energia di pressione in velocità,
+essendo ferme non producono ovviamente lavoro, si individua quindi una condizione termodinamica intermedia tra statore e rotore nella quale la pressione è identica
+alla pressione in uscita ma l'energia cinetica ha eguagliato l'energia potenziale (ossia l'entalpia totale) posseduta in precedenza dal gas.
+\begin{equation}
+    \label{eq:entalpia_stadio_azione}
+    \Delta h^* = \frac{c_1^2}{2}
+\end{equation}
+quindi
+\begin{equation}
+    \label{eq:vel_stadio_azione}
+    c_1 = \sqrt{2\Delta h^*}    
+\end{equation}
+$C_1$ = 13.43 m/s
 \end{document}
