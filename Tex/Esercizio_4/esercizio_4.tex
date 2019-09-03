@@ -53,7 +53,7 @@ Il salto entalpico specifico disponibile $\Delta h^*$ è quindi pari a $C_p \cdo
 \label{sec:stadio_ad_azione}
 Consideriamo in prima analisi uno stadio ad azione, l'espansione del gas avviene nelle palette statoriche che trasformano tutta l'energia di pressione in velocità,
 essendo ferme non producono ovviamente lavoro, si individua quindi una condizione termodinamica intermedia tra statore e rotore nella quale la pressione è identica
-alla pressione in uscita ma l'energia cinetica ha eguagliato l'energia potenziale (ossia l'entalpia totale) posseduta in precedenza dal gas.
+alla pressione in uscita ma l'energia cinetica ha eguagliato l'energia potenziale (ossia l'entalpia totale $\Delta h^*$) posseduta in precedenza dal gas.
 \begin{equation}
     \label{eq:entalpia_stadio_azione}
     \Delta h^* = \frac{c_1^2}{2}
@@ -63,5 +63,14 @@ quindi
     \label{eq:vel_stadio_azione}
     c_1 = \sqrt{2\Delta h^*}    
 \end{equation}
-$C_1$ = 13.43 m/s
+$c_1$ = 13.43 m/s
+
+Il gas deve essere quindi rallentato fino alla velocità $c_2$ dalle palette rotoriche per poter ottenere un lavoro utile, per massimizzare tale lavoro la velocità
+in uscita dalla turbina deve essere la minima possibile ma al limite diversa da 0 per conservare la condizione di flusso stazionario (non può esserci accumulo).
+Il lavoro ottenuto dall'espansione sarà quindi
+\begin{equation}
+    l = \Delta h^* - \frac{c_2^2}{2}
+\end{equation}
+Sia $\vec u$ la velocità tangenziale del rotore, $\vec c$ la velocità assoluta del fluido rispetto ad un sistema inerziale esterno alla turbina,
+risulterà $\vec w$ la velocità relativa del fluido rispetto alla palettatura e pari quindi a  $\vec c - \vec u$
 \end{document}
