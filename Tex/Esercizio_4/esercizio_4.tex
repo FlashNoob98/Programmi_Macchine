@@ -69,14 +69,29 @@ Il gas deve essere quindi rallentato fino alla velocità $c_2$ dalle palette rot
 in uscita dalla turbina deve essere la minima possibile ma al limite diversa da zero per conservare la condizione di flusso stazionario (non può esserci accumulo).
 Il lavoro ottenuto dall'espansione sarà quindi
 \begin{equation}
+    \label{eq:lavoro_ad_azione}
     l = \Delta h^* - \frac{c_2^2}{2}
 \end{equation}
 
 Sia $\vec u$ la velocità tangenziale del rotore, $\vec c$ la velocità assoluta del fluido rispetto ad un sistema inerziale esterno alla turbina,
 risulterà $\vec w$ la velocità relativa del fluido rispetto alla palettatura e pari quindi a  $\vec c - \vec u$.
 Questi tre vettori formano un \textbf{triangolo delle velocità} e permettono un'analisi rapida del moto del fluido attraverso le palettature,
-supponiamo quindi di costruire la turbina in maniera ottimale, limitando il più possibile il modulo delle velocità per ridurre al minimo le perdite dovute alla viscosità 
-del fluido.
+supponiamo quindi di costruire la turbina in maniera ottimale, limitando il più possibile il modulo delle velocità per ridurre al minimo le perdite.
+% dovute alla viscosità del fluido.
+Per ricavare la velocità tangenziale $\vec u_1$ della turbina ad azione possiamo utilizzare la seguente relazione
+\begin{equation}
+    \left.\frac{u_1}{c_1}\right|_{opt} = \frac{\cos \alpha_1}{2}
+\end{equation}
+L'angolo $\alpha_1$ varia generalmente tra i 10 e i 20 gradi al fine di ottenere rendimenti elevati, un angolo troppo elevato delle palette sstatoriche rallenta poco 
+il fluido, un angolo troppo piccolo richiederebbe dimensioni maggiori della palettatura per consentire una pari portata.
+Nel testo dell'esercizio quest'angolo viene richiesto uguale a 15° quindi $|\vec u_1|$ sarà pari a 6.48 m/s e uguale anche a $|\vec u_2|$ per la rigidità
+del rotore.
 
+Supponiamo ora che la velocità in uscita dal rotore sia parallela all'asse della turbina, sarà quindi pari a
+\begin{equation}
+    c_2 = c_1 \cdot \sin \alpha
+\end{equation}
+ossia 3.47 m/s.
 
+Utilizzando la \eqref{eq:vel_stadio_azione} possiamo infine calcolare il lavoro ricavato dall'espansione: 84.08 kJ/kg con un rendimento del 93.3 \%.
 \end{document}

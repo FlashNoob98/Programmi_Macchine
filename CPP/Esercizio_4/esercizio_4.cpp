@@ -4,9 +4,10 @@
 #include <iomanip>
 using namespace std;
 
+#define PI 3.14159265
 float P1,P2,T1,T2,v1,v2;
 float k = 1.4,R=0.287,Cp=1.005;
-float dHstar;
+float dHstar,c_1,c_2,alpha;
 
 void input_dati(){
     cout << "Inserisci la pressione di ristagno (bar): ";
@@ -15,6 +16,8 @@ void input_dati(){
     cin >> T1;
     cout << "Inserisci la pressione ambiente (bar): ";
     cin >> P2;
+    cout << "Inserisci l'angolo alpha1 (gradi): ";
+    cin >> alpha;
 }
 
 float calcolo_T2(float beta, float T, float k){
@@ -34,6 +37,22 @@ float c1(float H){
     return pow(2*H,0.5);
 }
 
+float u(float angolo,float c){
+    return c*cos(angolo*PI/180)/2;
+}
+
+float eta_max(float angolo){
+    return pow(cos(angolo*PI/180),2);
+}
+
+float vel_uscita(float angolo, float c){
+    return c*sin(angolo*PI/180);
+}
+
+float work(float vel,float H){
+    return H-(pow(vel,2)/2);
+}
+
 int main(){
     input_dati();
     T2 = calcolo_T2(P1/P2,T1,k);
@@ -46,6 +65,13 @@ int main(){
     cout <<"2\t"<<P2<<'\t'<<setprecision(pr)<<v2<<"\t  "<<T2-273.15 <<endl<<endl;
     dHstar = entalpia_disp(T1,T2);
     cout << "L'entalpia disponibile è: "<< dHstar << " kJ/kg\n";
-    cout << "Velocità c_1 per stadio ad azione: " << c1(dHstar) << " m/s\n";
+    c_1 = c1(dHstar);
+    cout << "Velocità c_1 per stadio ad azione: " << c_1 << " m/s\n";
+    cout << "Velocità tangenziale u del rotore: " << u(alpha,c_1) << " m/s\n";
+    c_2 = vel_uscita(alpha,c_1);
+    cout << "Velocità assiale in uscita c_2: " << c_2 << " m/s\n";
+    cout << "Lavoro ottenuto: " << work(c_2,dHstar) << " kJ/kg\n";
+    cout << "Rendimento massimo a " << alpha << "° : " << eta_max(alpha) << endl;
+    //cout << "Rendimento effettivo: " << work(c_2,dHstar)/dHstar << endl;
     return 0;
 }
