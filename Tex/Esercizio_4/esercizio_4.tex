@@ -35,9 +35,14 @@ attraverso uno stadio di turbina che ne ricaverà dunque del lavoro da tale espa
 solo ragionamenti per unità di massa.
 Considerando la trasformazione isoentropica possiamo facilmente calcolare lo stato termodinamico 2 in uscita dalla turbina.
 \begin{equation}
+    \label{eq:isoentropica}
     T_2 = T_a\cdot\beta^{\frac{1-k}{k}}
 \end{equation}
 con $\beta$ pari a 2.58 e $k$ pari a 1.4, la temperatura in uscita dalla turbina varrà 288.3 K, con l'ausilio dell'equazione di stato dei gas
+\begin{equation}
+    \label{eq:stato_gas}
+    pv = RT
+\end{equation}
 possiamo quindi completare la tabella con gli stati termodiamici a monte e a valle della turbina.
 
 \begin{center}
@@ -98,8 +103,53 @@ Con l'ausilio di \textit{GeoGebra} possiamo facilmente disegnare i due triangoli
 \begin{figure}[H]
     \label{fig:triangoli_azione}
     \centering
-    \includegraphics[width=0.95\linewidth]{media/triangoli_azione.png}
+    \includegraphics[width=\linewidth]{media/triangoli_azione.png}
 \end{figure}
 e misurare le lunghezze dei vettori.
 
+\section{Stadio a reazione}
+\label{sec:stadio_a_reazione}
+Non siamo costretti a far espandere il fluido interamente nello statore, è possibile costruire uno stadio detto a \textbf{reazione} compiendo una espansione parziale
+nello statore e la rimanente differenza di pressione verrà trasformata in lavoro nella successiva palettatura rotorica.
+Si definisce \textbf{grado di reazione} il rapporto:
+\begin{equation}
+    \label{eq:grado_di_reazione}
+    R \stackrel{def}{=} \frac{\Delta h_{\text{rot}}}{l} = \frac{\frac{w_2^2-w_1^2}{2} + \frac{u_1^2 - u_2^2}{2} }  %numeratore
+                                                                {\frac{c_1^2-c_2^2}{2} + \frac{w_2^2-w_1^2}{2} + \frac{u_1^2 - u_2^2}{2}}  %denominatore
+\end{equation}
+Volendo suddividere equamente i contributi di energia meccanica ricavati nel rotore tra la variazione di velocità assoluta e quella relativa al rotore stesso
+posso costruire uno stadio con grado di reazione pari a 0.5.
+La \eqref{eq:entalpia_stadio_azione} diventa
+\begin{equation}
+    \frac{c_1^2}{2} = \Delta h^* (1-R)
+\end{equation}
+diventa immediato il calcolo di $c_1$ pari a 9.49 m/s.
+I triangoli di velocità sono ottimizzati se $c_2$ è parallelo all'asse del rotore ed uguale a $w_1$, la velocità del rotore $u$ sarà dunque
+\begin{equation}
+    u = c_1 \cdot \cos \alpha
+\end{equation}
+e pari a 9.17 m/s.
+Seguendo i passaggi precedenti è possibile rappresentare quindi i triangoli di velocità
+\begin{figure}[H]
+    \label{fig:triangoli_reazione}
+    \centering
+    \includegraphics[width=\linewidth]{media/triangoli_reazione.png}
+\end{figure}
+Il lavoro ricavato dallo stadio a reazione si calcola allo stesso modo del caso precedente e risulta pari a 87.1 kJ/kg, il rendimento è quindi maggiore dello stadio
+ad azione. Di contro la velocità tangenziale della turbina è aumentata notevolmente, ciò può causare uno stress eccessivo delle palette soggette ad un'elevata
+forza centrifuga.
+
+Conoscendo la velocità $c_1$ è possibile valutare lo stato termodinamico intermedio tra la palettatura statorica e quella rotorica con la \eqref{eq:entalpia_stadio_azione}
+dato che ancora il lavoro ricavato nello statore è nullo.
+Conoscendo la variazione di entalpia si ricava la variazione di temperatura dividendo per il $C_p$, si ricava $\beta$ dalla \eqref{eq:isoentropica}
+ed applicando la \eqref{eq:stato_gas} determiniamo lo stato intermedio 1.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        Stato   &p (bar)    &T (°C) &v ($m^3/kg$) \\ \hline
+        A       &2.58       &104,8  &0.420  \\
+        1       &1.66       &60     &0.576  \\
+        2       &1          &15.2   &0.827  
+    \end{tabular}
+\end{center}
 \end{document}
