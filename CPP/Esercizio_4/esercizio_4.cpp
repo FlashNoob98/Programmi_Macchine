@@ -32,7 +32,7 @@ float calcolo_v(float p, float T){
 }
 
 float entalpia_disp(float t1,float t2){
-    return Cp*(t1-t2);
+    return Cp*(t1-t2)*1000;
 }
 
 float c1(float H,float r){
@@ -70,13 +70,13 @@ int main(){
     cout <<"1\t"<<P1<<'\t'<<setprecision(pr)<<v1<<"\t  "<<T1-273.15 <<endl;
     cout <<"2\t"<<P2<<'\t'<<setprecision(pr)<<v2<<"\t  "<<T2-273.15 <<endl<<endl;
     dHstar = entalpia_disp(T1,T2);
-    cout << "L'entalpia disponibile è: "<< dHstar << " kJ/kg\n";
+    cout << "L'entalpia disponibile è: "<< dHstar/1000 << " kJ/kg\n";
     c_1 = c1(dHstar,0);
     cout << "Velocità c_1 per stadio ad azione: " << c_1 << " m/s\n";
     cout << "Velocità tangenziale u del rotore: " << u(alpha,c_1) << " m/s\n";
     c_2 = vel_uscita(alpha,c_1);
     cout << "Velocità assiale in uscita c_2: " << c_2 << " m/s\n";
-    cout << "Lavoro ottenuto: " << work(c_2,dHstar) << " kJ/kg\n";
+    cout << "Lavoro ottenuto: " << work(c_2,dHstar)/1000 << " kJ/kg\n";
     cout << "Rendimento massimo a " << alpha << "° : " << eta_max(alpha) << endl<<endl;
     //cout << "Rendimento effettivo: " << work(c_2,dHstar)/dHstar << endl;
     cout << "Calcolo stadio a reazione!\n\n";
@@ -86,7 +86,7 @@ int main(){
     cout << "Velocità c_1 per stadio a reazione: " << c_1 << " m/s\n";
     cout << "Velocità tangenziale u del rotore: " << u(alpha,c_1)*2 << " m/s\n";
     cout << "Rendimento massimo a " << alpha << "° : " << eta_reazione(alpha) << endl<<endl;
-    Tmedia = T1-(pow(c_1,2)/(2*Cp));
+    Tmedia = T1-(pow(c_1,2)/(2*Cp*1000));
     cout << "Temperatura intermedia: " << Tmedia-273.15 <<" °C\n";
     beta_parziale = pow(e,Cp/R*log(T1/Tmedia));
     cout << "Pressione parziale: " << P1/beta_parziale << " bar\n";
