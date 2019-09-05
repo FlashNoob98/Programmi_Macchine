@@ -5,11 +5,11 @@
 using namespace std;
 
 #define PI 3.14159265
-#define e 2.71828
 float P1,P2,T1,T2,v1,v2;
 float k = 1.4,R=0.287,Cp=1.005;
 float dHstar,c_1,c_2,alpha;
 float r, Tmedia,beta_parziale;
+float T0,TB; //condizioni di ristagno
 
 void input_dati(){
     cout << "Inserisci la pressione di ristagno (bar): ";
@@ -77,9 +77,15 @@ int main(){
     c_2 = vel_uscita(alpha,c_1);
     cout << "Velocità assiale in uscita c_2: " << c_2 << " m/s\n";
     cout << "Lavoro ottenuto: " << work(c_2,dHstar)/1000 << " kJ/kg\n";
-    cout << "Rendimento massimo a " << alpha << "° : " << eta_max(alpha) << endl<<endl;
+    cout << "Rendimento massimo a " << alpha << "° : " << eta_max(alpha) << endl;
     //cout << "Rendimento effettivo: " << work(c_2,dHstar)/dHstar << endl;
-    cout << "Calcolo stadio a reazione!\n\n";
+    T0 = ((1000*Cp*T1)-((c_2*c_2)/2))/(1000*Cp);
+    cout << "Temperatura T0 all'ingresso dello statore: " << T0-273.15 << " °C\n"; 
+    cout << "Pressione p0 all'ingresso dello statore: " << P1*pow((T0/T1),k/(k-1)) << " bar\n";
+    TB = ((1000*Cp*T2)+((c_2*c_2)/2))/(1000*Cp);
+    cout << "Temperatura TB di ristagno: " << TB-273.15 << " °C\n"; 
+
+    cout << "\nCalcolo stadio a reazione!\n\n";
     cout << "Inserisci il grado di reazione (0~1): ";
     cin >> r;
     c_1 = c1(dHstar,r);
@@ -88,7 +94,6 @@ int main(){
     cout << "Rendimento massimo a " << alpha << "° : " << eta_reazione(alpha) << endl<<endl;
     Tmedia = T1-(pow(c_1,2)/(2*Cp*1000));
     cout << "Temperatura intermedia: " << Tmedia-273.15 <<" °C\n";
-    beta_parziale = pow(e,Cp/R*log(T1/Tmedia));
-    cout << "Pressione parziale: " << P1/beta_parziale << " bar\n";
+    cout << "Pressione parziale: " << P1*pow((Tmedia/T1),k/(k-1)) << " bar\n";
     return 0;
 }

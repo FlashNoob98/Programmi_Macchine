@@ -48,7 +48,7 @@ possiamo quindi completare la tabella con gli stati termodiamici a monte e a val
 \begin{center}
     \begin{tabular}{c|c|c|c}
         Stato   &p (bar)    &T (°C) &v ($m^3/kg$) \\ \hline
-        A       &2.58       &104,8  &0.420  \\
+        A       &2.58       &104.8  &0.420  \\
         2       &1          &15.2   &0.827  
     \end{tabular}
 \end{center}
@@ -107,6 +107,26 @@ Con l'ausilio di \textit{GeoGebra} possiamo facilmente disegnare i due triangoli
 \end{figure}
 e misurare le lunghezze dei vettori.
 
+Nell'ipotesi di flusso stazionario possiamo supporre che la velocità $c_2$ in uscita dalla turbina sia la stessa di quella in ingresso allo statore,
+ai fini dell'analisi energetica non ci interessa se l'espansione iniziale avviene nel condotto o interamente nello statore (non si può in ogni caso supporre che questa
+velocità sia nulla).
+Considerando la \eqref{eq:entalpia_stadio_azione} possiamo valutare la variazione di entalpia rispetto allo stato $A$ e da quella ricavare la temperatura all'ingresso
+dello statore. La pressione si ricava sempre con la \eqref{eq:isoentropica}.
+Si può indicare con $B$ le condizioni di ristagno dello stato 2, non è possibile fare l'ipotesi di trasformazione isoentropica dato che la pressione ambiente è fissata
+e il fluido fermo non potrebbe avere una pressione una maggiore, ci spostiamo dunque lungo l'isobara inferiore aumentando temperatura ed entropia.
+Valutiamo quindi la differenza di entalpia e ripetiamo i passaggi precedenti.
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        Stato   &p (bar)    &T (°C) &v ($m^3/kg$) \\ \hline
+        A       &2.58       &104.8  &0.420  \\
+        0       &2.44       &98.9   &0.437  \\
+        1       &1          &15.2   &0.827  \\
+        2       &1          &15.2   &0.827  \\
+        B       &1          &21.18  &0.845
+    \end{tabular}
+\end{center}
+
+
 \section{Stadio a reazione}
 \label{sec:stadio_a_reazione}
 Non siamo costretti a far espandere il fluido interamente nello statore, è possibile costruire uno stadio detto a \textbf{reazione} compiendo una espansione parziale
@@ -147,7 +167,7 @@ ed applicando la \eqref{eq:stato_gas} determiniamo lo stato intermedio 1.
 \begin{center}
     \begin{tabular}{c|c|c|c}
         Stato   &p (bar)    &T (°C) &v ($m^3/kg$) \\ \hline
-        A       &2.58       &104,8  &0.420  \\
+        A       &2.58       &104.8  &0.420  \\
         1       &1.66       &60     &0.576  \\
         2       &1          &15.2   &0.827  
     \end{tabular}
