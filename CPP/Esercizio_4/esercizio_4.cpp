@@ -9,7 +9,7 @@ float P1,P2,T1,T2,v1,v2;
 float k = 1.4,R=0.287,Cp=1.005;
 float dHstar,c_1,c_2,alpha;
 float r, Tmedia,beta_parziale;
-float T0,TB; //condizioni di ristagno
+float T0,TB,T1star; //condizioni di ristagno
 
 void input_dati(){
     cout << "Inserisci la pressione di ristagno (bar): ";
@@ -94,13 +94,18 @@ int main(){
     cout << "Rendimento massimo a " << alpha << "° : " << eta_reazione(alpha) << endl<<endl;
     Tmedia = T1-(pow(c_1,2)/(2*Cp*1000));
     cout << "Temperatura intermedia: " << Tmedia-273.15 <<" °C\n";
-    cout << "Pressione parziale: " << P1*pow((Tmedia/T1),k/(k-1)) << " bar\n";
+    float P_parz = P1*pow((Tmedia/T1),k/(k-1));
+    cout << "Pressione parziale: " << P_parz << " bar\n";
     c_2 = vel_uscita(alpha,c_1);
     cout << "Velocità assiale in uscita c_2: " << c_2 << " m/s\n";
     T0 = ((1000*Cp*T1)-((c_2*c_2)/2))/(1000*Cp);
     cout << "Temperatura T0 all'ingresso dello statore: " << T0-273.15 << " °C\n"; 
     cout << "Pressione p0 all'ingresso dello statore: " << P1*pow((T0/T1),k/(k-1)) << " bar\n";
     TB = ((1000*Cp*T2)+((c_2*c_2)/2))/(1000*Cp);
-    cout << "Temperatura TB di ristagno: " << TB-273.15 << " °C\n"; 
+    cout << "Temperatura TB di ristagno: " << TB-273.15 << " °C\n";
+    // le seguenti righe non producono alcuna informazione utile :)
+    // T1star = Tmedia + (pow(c_1,2)/(2*Cp*1000));
+    // cout <<"Temperatura di ristagno intermedia: " << T1star-273.15 << " °C\n";
+    // cout << "Pressione di ristagno intermedia: " << P_parz*pow(T1star/Tmedia,k/(k-1)) << " bar\n";
     return 0;
 }
