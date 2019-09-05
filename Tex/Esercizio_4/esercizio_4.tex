@@ -155,11 +155,12 @@ I triangoli di velocità sono ottimizzati se $c_2$ è parallelo all'asse del rot
 \end{equation}
 e pari a 290 m/s.
 Seguendo i passaggi precedenti è possibile rappresentare quindi i triangoli di velocità
-\begin{figure}[H]
-    \label{fig:triangoli_reazione}
-    \centering
-    \includegraphics[width=\linewidth]{media/triangoli_reazione.png}
-\end{figure}
+% da correggere
+% \begin{figure}[H]
+%     \label{fig:triangoli_reazione}
+%     \centering
+%     \includegraphics[width=\linewidth]{media/triangoli_reazione.png}
+% \end{figure}
 Il lavoro ricavato dallo stadio a reazione si calcola allo stesso modo del caso precedente e risulta pari a 87.1 kJ/kg, il rendimento è quindi maggiore dello stadio
 ad azione (96.5\%). Di contro la velocità tangenziale della turbina è aumentata notevolmente, ciò può causare uno stress eccessivo alle palette soggette ad un'elevata
 forza centrifuga.
@@ -169,11 +170,15 @@ dato che ancora il lavoro ricavato nello statore è nullo.
 Conoscendo la variazione di entalpia si ricava la variazione di temperatura dividendo per il $C_p$, si ricava $\beta$ dalla \eqref{eq:isoentropica}
 ed applicando la \eqref{eq:stato_gas} determiniamo lo stato intermedio 1.
 
+Ripetiamo i passaggi svolti nella precedente sezione per ricavare lo stato termodinamico in ingresso allo statore (stato 0) e le
+condizioni di ristagno a monte e a valle di statore e rotore.
 \begin{center}
     \begin{tabular}{c|c|c|c}
         Stato   &p (bar)    &T (°C) &v ($m^3/kg$) \\ \hline
         A       &2.58       &104.8  &0.420  \\
+        0       &2.51       &101.8  &0.429  \\
         1       &1.66       &60     &0.576  \\
+        B       &1          &21.18  &0.845  \\
         2       &1          &15.2   &0.827  
     \end{tabular}
 \end{center}

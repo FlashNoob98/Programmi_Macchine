@@ -95,5 +95,12 @@ int main(){
     Tmedia = T1-(pow(c_1,2)/(2*Cp*1000));
     cout << "Temperatura intermedia: " << Tmedia-273.15 <<" °C\n";
     cout << "Pressione parziale: " << P1*pow((Tmedia/T1),k/(k-1)) << " bar\n";
+    c_2 = vel_uscita(alpha,c_1);
+    cout << "Velocità assiale in uscita c_2: " << c_2 << " m/s\n";
+    T0 = ((1000*Cp*T1)-((c_2*c_2)/2))/(1000*Cp);
+    cout << "Temperatura T0 all'ingresso dello statore: " << T0-273.15 << " °C\n"; 
+    cout << "Pressione p0 all'ingresso dello statore: " << P1*pow((T0/T1),k/(k-1)) << " bar\n";
+    TB = ((1000*Cp*T2)+((c_2*c_2)/2))/(1000*Cp);
+    cout << "Temperatura TB di ristagno: " << TB-273.15 << " °C\n"; 
     return 0;
 }
