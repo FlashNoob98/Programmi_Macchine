@@ -80,6 +80,12 @@ Il lavoro ottenuto dall'espansione sarà quindi
 
 Sia $\vec u$ la velocità tangenziale del rotore, $\vec c$ la velocità assoluta del fluido rispetto ad un sistema inerziale esterno alla turbina,
 risulterà $\vec w$ la velocità relativa del fluido rispetto alla palettatura e pari quindi a  $\vec c - \vec u$.
+L'equazione di riferimento per lo studio del lavoro ottenuto da una macchina che analizzi le velocità del fluido è chiamata equazione di Eulero:
+\begin{equation}
+    \label{eq:Eulero}
+    l = \frac{c_1^2-c_2^2}{2} + \frac{w_2^2-w_1^2}{2} + \frac{u_1^2 - u_2^2}{2}
+\end{equation}
+
 Questi tre vettori formano un \textbf{triangolo delle velocità} e permettono un'analisi rapida del moto del fluido attraverso le palettature,
 supponiamo quindi di costruire la turbina in maniera ottimale, limitando il più possibile il modulo delle velocità per ridurre al minimo le perdite.
 % dovute alla viscosità del fluido.
@@ -87,7 +93,7 @@ Per ricavare la velocità tangenziale $\vec u_1$ della turbina ad azione possiam
 \begin{equation}
     \left.\frac{u_1}{c_1}\right|_{opt} = \frac{\cos \alpha_1}{2}
 \end{equation}
-L'angolo $\alpha_1$ varia generalmente tra i 10 e i 20 gradi al fine di ottenere rendimenti elevati, un angolo troppo elevato delle palette sstatoriche rallenta poco 
+L'angolo $\alpha_1$ varia generalmente tra i 10 e i 20 gradi al fine di ottenere rendimenti elevati, un angolo troppo elevato delle palette statoriche rallenta poco 
 il fluido, un angolo troppo piccolo richiederebbe dimensioni maggiori della palettatura per consentire una pari portata.
 Nel testo dell'esercizio quest'angolo viene richiesto uguale a 15° quindi $|\vec u_1|$ sarà pari a 205 m/s e uguale anche a $|\vec u_2|$ per la rigidità
 del rotore.
