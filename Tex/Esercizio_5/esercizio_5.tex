@@ -1,0 +1,142 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage[italian]{babel}
+%\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\title{Esercitazione 5}
+\author{Olivieri Daniele}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{center}
+    SI Engine 1242 \\
+    \begin{tabular}{|l | l|}
+        \hline
+        Engine model    &Four-Stroke SI 16 valve \\ \hline
+        Displacement, Comp.Ratio &  1242 $cm^3$, 10.2:1 \\ \hline
+        Bore, Stroke, Con. Rod & 70.80, 78.86, 129 mm \\ \hline
+        Intake Valve Open/Close & 20° BTDC / 52°ABDC \\ \hline
+        Exh. Valve Open/Close & 53° BBDC / 19° ATDC \\ \hline
+        Int./ Exh. max. Valve Lift & 7.5 mm / 7.5 mm \\ \hline
+        Maximum Power & 54 kW @5500 rpm \\ \hline
+        Maximum Torque & 109 Nm @ 4000 rpm \\ \hline
+        Brake Specific Fuel Cons. & 277 g/kWh @Max. Torque \\ \hline        
+    \end{tabular}
+\end{center}
+Considerando le caratteristiche del motore in tabella, stimare o calcolare:
+\begin{itemize}
+    \item Il rendimento globale massimo $\eta_g$
+    \item La Coppia a 5500 giri/min
+    \item La potenza a massima Coppia (a 4000 giri/min)
+    \item La pmi e la pme a massima Coppia e a massima Potenza
+    \item Il rendimento globale a massima Potenza (5500 giri/min)
+    \item La velocità media del pistone a massima Coppia e a massima Potenza
+\end{itemize}
+\section{Rendimento globale}
+\label{sec:rendimento_globale}
+Stimo per prima cosa il \textbf{rendimento globale massimo} definito come:
+\begin{equation}
+    \label{eq:rendimento_globale}
+    \eta_g \stackrel{def}{=} \frac{P_{eff}}{\dot m_c \cdot H_i}
+\end{equation}
+In tabella ci viene fornito il valore di consumo specifico di 277 grammi di combustibile per kWh alla massima coppia.
+Ipotizzando di utilizzare la benzina essa ha un \textbf{potere calorifico} inferiore di 43.6 MJ/kg, con i seguenti passaggi si ricava il rendimento:
+\begin{equation*}
+    \eta_g = \frac{1000\cdot3600}{C_s \cdot H_i}
+\end{equation*}
+il risultato è un rendimento del 29.8\%
+
+\section{Coppia a massima Potenza}
+\label{sec:coppia_a_massima_potenza}
+La potenza all'asse si misura come il prodotto della coppia per la velocità angolare
+\begin{equation}
+    \label{eq:potenza_da_coppia}
+    P = Nm \cdot \omega
+\end{equation}
+di conseguenza la coppia sarà il rapporto tra la potenza e la velocità angolare espressa in rad/s, per convertire la velocità angolare bisogna prima moltiplicarla
+per $\pi/30$.
+
+La coppia sarà data dunque dalla seguete:
+\begin{equation}
+    Nm = \frac{P\cdot 30 }{\omega\cdot \pi}
+\end{equation}
+e pari a 93.76 Nm.
+
+\section{Potenza a massima Coppia}
+Utilizzando nuovamente la \eqref{eq:potenza_da_coppia} si può ricavare la potenza del motore quando la coppia è massima (cioè a 4000 giri/min).
+\begin{equation*}
+    P = \frac{109\cdot4000\cdot\pi}{30} = 45.66\ \text{kW}
+\end{equation*}
+
+\section{Pressione media indicata e pressione media effettiva}
+La pressione media indicata è definita come il rapporto fra il lavoro indicato, ossia l'integrale del lavoro ricavato dal diagramma indicato $P-\theta$ e la cilindrata
+del motore, ossia il volume d'aria teoricamente aspirabile in un ciclo.
+\begin{equation}
+    p_{mi} \stackrel{def}{=} \frac{L_i}{V}
+\end{equation}
+Il lavoro indicato è dato dal rapporto tra la potenza e il numero di cicli termodinamici svolti in un secondo, per un motore a 4 tempi il ciclo termodinamico si conclude 
+ogni 2 giri del pistone, devo dividere per questo numero $\varepsilon$ la velocità in radianti.
+\begin{equation}
+    P_i = L_i \frac{n}{60\varepsilon} = p_{mi} \cdot V \cdot \frac{n}{60\varepsilon}
+\end{equation}
+La pressione media indicata si calcola dunque usando
+\begin{equation}
+    \label{eq:pressione_media_indicata}
+    p_{mi} = \frac{P_i}{V} \cdot  \frac{60\varepsilon}{n}
+\end{equation}
+La pressione media effettiva invece tiene conto delle perdite meccaniche ed è minore di quella indicata, si ricava moltiplicando la pressione media indicata
+per il rendimento meccanico del motore.
+\begin{equation}
+    P_{me} \stackrel{def}{=} P_{mi}\cdot \eta_m
+\end{equation}
+Ipotizziamo un rendimmento meccanico di 0.85 in condizioni di massima coppia e di 0.80 in condizioni di massima potenza.
+\subsection{Massima Coppia}
+La \eqref{eq:pressione_media_indicata} vale 11.03 bar quando il motore si trova in condizioni di massima coppia, ossia la potenza è pari a 45.66 kW a 4000 rpm.
+La pressione media effettiva assume il valore di 9.37 bar.
+\subsection{Massima Potenza}
+La \eqref{eq:pressione_media_indicata} vale 9.49 bar quando il motore si trova in condizioni di massima potenza a 5500 rpm.
+La pressione media effettiva vale 7.59 bar.
+
+\subsection{Stima del coefficiente di riempimento alla massima Coppia}
+Sia $\lambda_v$ il coefficiente di riempimento definito come la quantità d'aria aspirata rispetto alla massima aspirabile teoricamente.
+La portata di aria teorica si ricava con la seguente:
+\begin{equation}
+    \label{eq:portata_aria}
+    \dot m_{at} = \rho_a \cdot V \cdot \frac{n}{60\varepsilon}
+\end{equation}
+dove $\rho_a$ è la densità dell'aria in condizioni ambiente e si può assumere pari a 1.225 $kg/m^3$.
+La portata teorica vale dunque: 50.71 g/s.
+
+Avendo calcolato la potenza e conoscendo il rendimento globale d'impianto ed il potere calorifico si può calcolare la portata massica di combustibile in condizioni di massima
+coppia, essa vale: 
+\begin{equation}
+    \dot m_c = \frac{P_{eff}\cdot \eta_m}{H_i\cdot \eta_g} = 2.95\ g/s
+\end{equation}
+Supponiamo che la combustione sia stechiometrica, si definisce $\alpha_{st}$ il rapporto in massa tra il comburente e il combustibile che per la miscela aria/benzina
+vale 14.7, la massa di aria necessaria alla combustione sarà pari a 43.36 g/s, il coefficiente di riempimento sarà dunque 0.855.
+
+\section{Rendimento a massima potenza}
+Sia il rendimento meccanico pari a 0.80 in condizioni di massima potenza, se la potenza utile all'asse è pari a 54 kW, quella effettiva sarà di 43.2 kW.
+Calcolo la portata di aria a 5500 rpm usando nuovamente la \eqref{eq:portata_aria} teorica che vale 69.73 g/s, con un coefficiente di riempimento minore del precedente (0.80)
+e combustione stechiometrica, la portata di combustibile necessaria sarà pari a 3.795 g/s.
+
+Il rendimento globale è dunque:
+\begin{equation*}
+    \eta_g = \frac{43.2}{3.795\cdot 43.6} = 26.1\ \%
+\end{equation*}
+
+\section{Velocità media del pistone}
+La \textbf{velocità media} del pistone è valutabile con la seguente:
+\begin{equation}
+    V_m = \frac{nC}{30}    
+\end{equation}
+dove $C$ è la corsa del pistone che vale 78.86 mm ed $n$ il numero di giri al minuto. \\
+Velocità media a massima coppia: 10.49 m/s. \\
+Velocità media a massima potenza: 14.42 m/s. 
+\end{document}
