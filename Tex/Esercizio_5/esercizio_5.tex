@@ -107,6 +107,7 @@ La pressione media effettiva vale 7.59 bar.
 Sia $\lambda_v$ il coefficiente di riempimento definito come la quantità d'aria aspirata rispetto alla massima aspirabile teoricamente.
 La portata di aria teorica si ricava con la seguente:
 \begin{equation}
+    \label{eq:portata_aria}
     \dot m_{at} = \rho_a \cdot V \cdot \frac{n}{60\varepsilon}
 \end{equation}
 dove $\rho_a$ è la densità dell'aria in condizioni ambiente e si può assumere pari a 1.225 $kg/m^3$.
@@ -115,11 +116,27 @@ La portata teorica vale dunque: 50.71 g/s.
 Avendo calcolato la potenza e conoscendo il rendimento globale d'impianto ed il potere calorifico si può calcolare la portata massica di combustibile in condizioni di massima
 coppia, essa vale: 
 \begin{equation}
-    \dot m_c = \frac{P_{eff}\cdot \eta_m}{H_i\cdot \eta_g} = 2.95 g/s
+    \dot m_c = \frac{P_{eff}\cdot \eta_m}{H_i\cdot \eta_g} = 2.95\ g/s
 \end{equation}
 Supponiamo che la combustione sia stechiometrica, si definisce $\alpha_{st}$ il rapporto in massa tra il comburente e il combustibile che per la miscela aria/benzina
 vale 14.7, la massa di aria necessaria alla combustione sarà pari a 43.36 g/s, il coefficiente di riempimento sarà dunque 0.855.
 
 \section{Rendimento a massima potenza}
+Sia il rendimento meccanico pari a 0.80 in condizioni di massima potenza, se la potenza utile all'asse è pari a 54 kW, quella effettiva sarà di 43.2 kW.
+Calcolo la portata di aria a 5500 rpm usando nuovamente la \eqref{eq:portata_aria} teorica che vale 69.73 g/s, con un coefficiente di riempimento minore del precedente (0.80)
+e combustione stechiometrica, la portata di combustibile necessaria sarà pari a 3.795 g/s.
 
+Il rendimento globale è dunque:
+\begin{equation*}
+    \eta_g = \frac{43.2}{3.795\cdot 43.6} = 26.1\ \%
+\end{equation*}
+
+\section{Velocità media del pistone}
+La \textbf{velocità media} del pistone è valutabile con la seguente:
+\begin{equation}
+    V_m = \frac{nC}{30}    
+\end{equation}
+dove $C$ è la corsa del pistone che vale 78.86 mm ed $n$ il numero di giri al minuto. \\
+Velocità media a massima coppia: 10.49 m/s. \\
+Velocità media a massima potenza: 14.42 m/s. 
 \end{document}
