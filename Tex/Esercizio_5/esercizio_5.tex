@@ -29,6 +29,26 @@
         Brake Specific Fuel Cons. & 277 g/kWh @Max. Torque \\ \hline        
     \end{tabular}
 \end{center}
+Considerando le caratteristiche del motore in tabella, stimare o calcolare:
+\begin{itemize}
+    \item Il rendimento globale massimo $\eta_g$
+    \item La Coppia a 5500 giri/min
+    \item La potenza a massima Coppia (a 4000 giri/min)
+    \item La pmi e la pme a massima Coppia e a massima Potenza
+    \item Il rendimento globale a massima Potenza (5500 giri/min)
+    \item La velocità media del pistone a massima Coppia e a massima Potenza
+\end{itemize}
+Stimo per prima cosa il \textbf{rendimento globale massimo} definito come:
+\begin{equation}
+    \label{eq:rendimento_globale}
+    \eta_g \stackrel{def}{=} \frac{P_{eff}}{\dot m_c \cdot H_i}
+\end{equation}
+In tabella ci viene fornito il valore di consumo specifico di 277 grammi di combustibile per kWh alla massima coppia.
+Ipotizzando di utilizzare la benzina essa ha un \textbf{potere calorifico} inferiore di 43.6 MJ/kg, con i seguenti passaggi si ricava il rendimento:
+\begin{equation*}
+    \eta_g = \frac{1000\cdot3600}{C_s \cdot H_i}
+\end{equation*}
+il risultato è un rendimento del 29.8\%
 
 
 \end{document}
