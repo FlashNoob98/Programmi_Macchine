@@ -103,5 +103,23 @@ La pressione media effettiva assume il valore di 9.37 bar.
 La \eqref{eq:pressione_media_indicata} vale 9.49 bar quando il motore si trova in condizioni di massima potenza a 5500 rpm.
 La pressione media effettiva vale 7.59 bar.
 
+\subsection{Stima del coefficiente di riempimento alla massima Coppia}
+Sia $\lambda_v$ il coefficiente di riempimento definito come la quantità d'aria aspirata rispetto alla massima aspirabile teoricamente.
+La portata di aria teorica si ricava con la seguente:
+\begin{equation}
+    \dot m_{at} = \rho_a \cdot V \cdot \frac{n}{60\varepsilon}
+\end{equation}
+dove $\rho_a$ è la densità dell'aria in condizioni ambiente e si può assumere pari a 1.225 $kg/m^3$.
+La portata teorica vale dunque: 50.71 g/s.
+
+Avendo calcolato la potenza e conoscendo il rendimento globale d'impianto ed il potere calorifico si può calcolare la portata massica di combustibile in condizioni di massima
+coppia, essa vale: 
+\begin{equation}
+    \dot m_c = \frac{P_{ua}}{H_i\cdot \eta_g} = 3.47 g/s
+\end{equation}
+Supponiamo che la combustione sia stechiometrica, si definisce $\alpha_{st}$ il rapporto in massa tra il comburente e il combustibile che per la miscela aria/benzina
+vale 14.6, la massa di aria necessaria alla combustione sarà pari a 50.66 g/s, il coefficiente di riempimento sarà dunque 0.999, praticamente identico a 1.
+
+\section{Rendimento a massima potenza}
 
 \end{document}
