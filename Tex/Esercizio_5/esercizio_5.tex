@@ -56,6 +56,7 @@ il risultato è un rendimento del 29.8\%
 \label{sec:coppia_a_massima_potenza}
 La potenza all'asse si misura come il prodotto della coppia per la velocità angolare
 \begin{equation}
+    \label{eq:potenza_da_coppia}
     P = Nm \cdot \omega
 \end{equation}
 di conseguenza la coppia sarà il rapporto tra la potenza e la velocità angolare espressa in rad/s, per convertire la velocità angolare bisogna prima moltiplicarla
@@ -66,6 +67,41 @@ La coppia sarà data dunque dalla seguete:
     Nm = \frac{P\cdot 30 }{\omega\cdot \pi}
 \end{equation}
 e pari a 93.76 Nm.
+
+\section{Potenza a massima Coppia}
+Utilizzando nuovamente la \eqref{eq:potenza_da_coppia} si può ricavare la potenza del motore quando la coppia è massima (cioè a 4000 giri/min).
+\begin{equation*}
+    P = \frac{109\cdot4000\cdot\pi}{30} = 45.66\ \text{kW}
+\end{equation*}
+
+\section{Pressione media indicata e pressione media effettiva}
+La pressione media indicata è definita come il rapporto fra il lavoro indicato, ossia l'integrale del lavoro ricavato dal diagramma indicato $P-\theta$ e la cilindrata
+del motore, ossia il volume d'aria teoricamente aspirabile in un ciclo.
+\begin{equation}
+    p_{mi} \stackrel{def}{=} \frac{L_i}{V}
+\end{equation}
+Il lavoro indicato è dato dal rapporto tra la potenza e il numero di cicli termodinamici svolti in un secondo, per un motore a 4 tempi il ciclo termodinamico si conclude 
+ogni 2 giri del pistone, devo dividere per questo numero $\varepsilon$ la velocità in radianti.
+\begin{equation}
+    P_i = L_i \frac{n}{60\varepsilon} = p_{mi} \cdot V \cdot \frac{n}{60\varepsilon}
+\end{equation}
+La pressione media indicata si calcola dunque usando
+\begin{equation}
+    \label{eq:pressione_media_indicata}
+    p_{mi} = \frac{P_i}{V} \cdot  \frac{60\varepsilon}{n}
+\end{equation}
+La pressione media effettiva invece tiene conto delle perdite meccaniche ed è minore di quella indicata, si ricava moltiplicando la pressione media indicata
+per il rendimento meccanico del motore.
+\begin{equation}
+    P_{me} \stackrel{def}{=} P_{mi}\cdot \eta_m
+\end{equation}
+Ipotizziamo un rendimmento meccanico di 0.85 in condizioni di massima coppia e di 0.80 in condizioni di massima potenza.
+\subsection{Massima Coppia}
+La \eqref{eq:pressione_media_indicata} vale 11.03 bar quando il motore si trova in condizioni di massima coppia, ossia la potenza è pari a 45.66 kW a 4000 rpm.
+La pressione media effettiva assume il valore di 9.37 bar.
+\subsection{Massima Potenza}
+La \eqref{eq:pressione_media_indicata} vale 9.49 bar quando il motore si trova in condizioni di massima potenza a 5500 rpm.
+La pressione media effettiva vale 7.59 bar.
 
 
 \end{document}
