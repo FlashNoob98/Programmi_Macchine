@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage[italian]{babel}
+%\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\title{Esercizio 3}
+\author{Olivieri Daniele}
+\date{}
+
+\begin{document}
+\maketitle
+
+Analizzare un impianto con turbina a gas di derivazione aereonautica LM6000 valutando i cicli termodinamici ideale e reale stimando i vari rendimenti.
+\section{Analisi etichetta}
+\label{sec:analisi_etichetta}
+I dati utili all'analisi termodinamica sono i seguenti:
+\begin{center}
+    \begin{tabular}{cccccc}
+         Potenza   & Heat  & Efficienza   & Rapp.  & Portata    &  Temp. \\
+                   &rate  &              & di comp. &    &        all'uscita \\
+            (kW)   &  (kJ/kWh) & \%    &    $\beta$  &   kg/s      &  °C \\ \hline
+        43100    &  8620    &  41.7   &  29.5  &     125.0        &  450
+    \end{tabular}
+\end{center}
+Per le condizioni dell'aria in ingresso alla turbina si può facilmente supporre che la temperatura sia pari a 15°C mentre la pressione 1 atm
+(atmosfera standard ICAO).
+
+\section{Ciclo reale}
+\label{sec:ciclo_reale}
+Iniziamo l'analisi termodinamica dell'impianto a partire dagli stati del ciclo reale.
+Calcoliamo il volume specifico $v_1$ utilizzando l'equazione di stato dei gas perfetti:
+\begin{equation}
+    \label{eq:gas_perfetti}
+    pv = RT
+\end{equation}
+Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$
+Il calcolo della potenza termica da fornire in camera di combustione si esegue attraverso l'analisi dell'\textit{Heat Rate} espresso in kJ/kWh.
+Tale grandezza va divisa per 3600 per renderla adimensionale, ottenendo un valore di 2.395, se la potenza elettrica generata è di 43.100 MW, 
+la potenza termica necessaria al funzionamento dell'impianto sarà 103.200 MW.
+Tale valore è pari alla portata massica di combustibile per il suo potere calorifico inferiore. Utilizzando gas naturale esso è pari a 47.7 MJ/kg e la portata di combustibile
+è di 2.16 kg/s.
+Supponendo un rendimento di combustione $\eta_b$ pari al 99\%, la potenza termica effettivamente trasferita all'aria in camera di combustione è pari a
+102.00 MW. Da questo valore possiamo ricavare il salto entalpico subito dal gas e quindi la differenza di temperatura tra lo stato 2 e 3 ipotizzando costante il $C_p$
+dell'aria a 1.005 kJ/(kg K).
+$T_3 -T_2$ sarà uguale a 811.9 K.
+
+Nell'ipotesi in cui i rendimenti politropici di compressione ed espansione siano uguali, si possono dunque ricavare le temperature $T_2$ e $T_3$ impostando il seguente sistema
+($\lambda = (k-1)/k;\ k=1.4$)
+$$
+\begin{cases}
+    T_2 = T_1\cdot\beta^{\frac{\lambda}{\eta_p}} \\
+    T_3 = T_4\cdot\beta^{\frac{\lambda}{\eta_p}}\\
+    T_3-T_2 = 811.9
+\end{cases}
+$$
+Il rendimento politropico vale 0.918 e le due temperature valgono rispettivamente 551.14 °C e 1795 °C.
+Si può quindi completare la tabella degli stati reali.
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+            &p(atm) &T(°C)  &v$(m^3/kg)$     \\ \hline
+        1   &    1  & 15    & 0.827   \\
+        2   &   29.5&553    & 0.080   \\
+        3   &   29.5&1800   & 0.201   \\
+        4   &   1   & 450   & 2.07
+    \end{tabular}
+\end{center}
+
+\section{Ciclo limite}
+\label{sec:ciclo_limite}
+Segue l'analisi del ciclo Joule limite considerando il compressore e la turbina isoentropici, e la combustione isobara.
+Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$ e calcoliamo il volume specifico raggiunto dopo la compressione isoentropica.
+Consideriamo inoltre lo stato 3 calcolato nella sezione \ref{sec:ciclo_reale} come punto di partenza per il calcolo delle condizioni all'uscita (stato 4).
+\begin{equation*}
+    v_2 = v_1/(\beta^{1/k})
+\end{equation*}
+e nuovamente $T_2$ mediante la \eqref{eq:gas_perfetti}.
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+            &p(atm) &T(°C)  &v$(m^3/kg)$     \\ \hline
+        1   &    1  & 15    & 0.827   \\
+        2   &   29.5& 484   & 0.0737  \\
+        3   &   29.5&1800   & 0.201   \\
+    \end{tabular}
+\end{center}
+
+
+\end{document}
