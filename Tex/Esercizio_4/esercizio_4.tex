@@ -95,10 +95,10 @@ Per ricavare la velocità tangenziale $\vec u_1$ della turbina ad azione possiam
 \begin{equation}
     \left.\frac{u_1}{c_1}\right|_{opt} = \frac{\cos \alpha_1}{2}
 \end{equation}
-L'angolo $\alpha_1$ varia generalmente tra i 10 e i 20 gradi al fine di ottenere rendimenti elevati, un angolo troppo elevato delle palette statoriche rallenta poco 
-il fluido, un angolo troppo piccolo richiederebbe dimensioni maggiori della palettatura per consentire una pari portata.
-Nel testo dell'esercizio quest'angolo viene richiesto uguale a 15° quindi $|\vec u_1|$ sarà pari a 205 m/s e uguale anche a $|\vec u_2|$ per la rigidità
-del rotore.
+L'angolo $\alpha_1$ varia generalmente tra i 10 e i 20 gradi al fine di ottenere rendimenti elevati. Infatti, un angolo troppo elevato delle palette statoriche
+rallenterebbe poco il fluido, un angolo troppo piccolo richiederebbe dimensioni maggiori della palettatura per consentire una pari portata.
+Nel testo dell'esercizio è richiesto che tale angolo abbia un valore di 15° quindi $|\vec u_1|$ sarà pari a 205 m/s e uguale anche a $|\vec u_2|$ per l'ipotesi
+di raggio costante.
 
 Supponiamo ora che la velocità in uscita dal rotore sia parallela all'asse della turbina, sarà quindi pari a
 \begin{equation}
@@ -107,22 +107,21 @@ Supponiamo ora che la velocità in uscita dal rotore sia parallela all'asse dell
 ossia 109.9 m/s.
 
 Utilizzando la \eqref{eq:vel_stadio_azione} possiamo infine calcolare il lavoro ricavato dall'espansione: 84.08 kJ/kg con un rendimento del 93.3 \%.
-Con l'ausilio di \textit{GeoGebra} possiamo facilmente disegnare i due triangoli impostando i parametri $\alpha_1$ e $\Delta h^*$
+Con l'ausilio di \textit{GeoGebra} è possibile disegnare facilmente i due triangoli impostando i parametri $\alpha_1$ e $\Delta h^*$ e misurare le lunghezze dei vettori.
 \begin{figure}[H]
     \label{fig:triangoli_azione}
     \centering
     \includegraphics[width=\linewidth]{media/triangoli_azione.png}
 \end{figure}
-e misurare le lunghezze dei vettori.
 
-Nell'ipotesi di flusso stazionario possiamo supporre che la velocità $c_2$ in uscita dalla turbina sia la stessa di quella in ingresso allo statore,
-ai fini dell'analisi energetica non ci interessa se l'espansione iniziale avviene nel condotto o interamente nello statore (non si può in ogni caso supporre che questa
+Nell'ipotesi di flusso stazionario possiamo supporre che la velocità $c_2$ in uscita dalla turbina sia la stessa di quella in ingresso allo statore.
+Ai fini dell'analisi energetica non ci interessa se l'espansione iniziale avvenga nel condotto o interamente nello statore (non si può in ogni caso supporre che questa
 velocità sia nulla).
 Considerando la \eqref{eq:entalpia_stadio_azione} possiamo valutare la variazione di entalpia rispetto allo stato $A$ e da quella ricavare la temperatura all'ingresso
 dello statore. La pressione si ricava sempre con la \eqref{eq:isoentropica}.
 
-Si può indicare con $B$ la condizione di ristagno dello stato 2, non è possibile fare l'ipotesi di trasformazione isoentropica dato che la pressione ambiente è fissata
-e il fluido fermo non potrebbe avere una pressione maggiore, ci spostiamo dunque lungo l'isobara inferiore aumentando temperatura ed entropia.
+Si può indicare con $B$ la condizione di ristagno dello stato 2, non è possibile ipotizzare che la trasformazione sia isoentropica poichè la pressione ambiente è fissata
+e il fluido fermo non potrebbe avere una pressione maggiore. Ci spostiamo dunque lungo l'isobara inferiore aumentando temperatura ed entropia.
 Valutiamo quindi la differenza di entalpia dovuta al contributo cinetico e ripetiamo i passaggi precedenti.
 \begin{center}
     \begin{tabular}{c|c|c|c}
@@ -143,7 +142,7 @@ Di seguito sono riportati gli stati sul piano T-S
 
 \section{Stadio a reazione}
 \label{sec:stadio_a_reazione}
-Non siamo costretti a far espandere il fluido interamente nello statore, è possibile costruire uno stadio detto a \textbf{reazione} compiendo una espansione parziale
+Non siamo costretti a far espandere il fluido interamente nello statore, è possibile costruire uno stadio detto a \textbf{reazione} compiendo un'espansione parziale
 nello statore e la rimanente differenza di pressione verrà trasformata in lavoro nella successiva palettatura rotorica.
 Si definisce \textbf{grado di reazione} il rapporto:
 \begin{equation}
@@ -152,12 +151,12 @@ Si definisce \textbf{grado di reazione} il rapporto:
                                                                 {\frac{c_1^2-c_2^2}{2} + \frac{w_2^2-w_1^2}{2} + \frac{u_1^2 - u_2^2}{2}}  %denominatore
 \end{equation}
 Volendo suddividere equamente i contributi di energia meccanica ricavati nel rotore tra la variazione di velocità assoluta e quella relativa al rotore stesso
-posso costruire uno stadio con grado di reazione pari a 0.5.
-La \eqref{eq:entalpia_stadio_azione} diventa
+è possibile costruire uno stadio con grado di reazione pari a 0.5.
+La \eqref{eq:entalpia_stadio_azione} diventa:
 \begin{equation}
     \frac{c_1^2}{2} = \Delta h^* (1-R)
 \end{equation}
-diventa immediato il calcolo di $c_1$ pari a 300 m/s.
+è quindi immediato il calcolo di $c_1$, chje sarà pari a 300 m/s.
 I triangoli di velocità sono ottimizzati se $c_2$ è parallelo all'asse del rotore ed uguale a $w_1$, la velocità del rotore $u$ sarà dunque
 \begin{equation}
     u = c_1 \cdot \cos \alpha
@@ -174,8 +173,8 @@ ad azione (96.5\%). Di contro la velocità tangenziale della turbina è aumentat
 forza centrifuga.
 
 Conoscendo la velocità $c_1$ è possibile valutare lo stato termodinamico intermedio tra la palettatura statorica e quella rotorica con la \eqref{eq:entalpia_stadio_azione}
-dato che ancora il lavoro ricavato nello statore è nullo.
-Conoscendo la variazione di entalpia si ricava la variazione di temperatura dividendo per il $C_p$, si ricava $\beta$ dalla \eqref{eq:isoentropica}
+poichè ancora una volta il lavoro ricavato nello statore è nullo.
+Conoscendo la variazione di entalpia si ricava la variazione di temperatura dividendo per il $C_p$; si ricava $\beta$ dalla \eqref{eq:isoentropica}
 ed applicando la \eqref{eq:stato_gas} determiniamo lo stato intermedio 1.
 
 Ripetiamo i passaggi svolti nella precedente sezione per ricavare lo stato termodinamico in ingresso allo statore (stato 0) e le
