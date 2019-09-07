@@ -1,0 +1,254 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage[italian]{babel}
+%\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\title{Esercitazione 2}
+\author{Olivieri Daniele}
+\date{}
+
+\begin{document}
+\maketitle
+% A partire dai dati sperimentali riportati nei tre schemi d'impianto calcolare
+% \begin{itemize}
+%     \item I rendimenti:
+%     \begin{itemize}
+%         \item globale elettrico
+%         \item globale
+%         \item di combustione
+%         \item limite
+%         \item interno d'impianto
+%         \item reale
+%         \item meccanico
+%         \item adiabatico di espansione
+%     \end{itemize}
+%     \item Le temperature medie di adduzione e sottrazione del calore
+% \end{itemize}
+% Confrontare i risultati.
+
+\section{Definizione dei rendimenti}
+A partire dai dati sperimentali riportati nei tre schemi d'impianto calcolare i seguenti rendienti:
+\begin{itemize}
+    \item Rendimento globale elettrico
+    \begin{equation}
+        \label{eq:rendimento_elettrico}
+        \eta_{g_{el}} \stackrel{def}{=} \frac{P_{el}}{\dot m_c \cdot H_i}
+    \end{equation}
+    
+    \item Rendimento globale
+    \begin{equation}
+        \label{eq:rendimento_globale}
+        \eta_g \stackrel{def}{=} \frac{P_{ua}}{\dot{m}_c \cdot H_i}
+   \end{equation}
+
+   \item Rendimento di combustione
+   \begin{equation}
+       \label{eq:rendimento_combustione}
+       \eta_b \stackrel{def}{=} \frac{\dot{Q_1}}{\dot{m}_c \cdot H_i}
+   \end{equation}
+
+   \item Rendimento limite
+   \begin{equation}
+       \label{eq:redimento_limite}
+       \eta_l \stackrel{def}{=} \frac{P_l}{\dot{Q_1}}
+   \end{equation}
+
+   \item Rendimento interno d'impianto
+   \begin{equation}
+        \label{eq:rendimento_interno}
+       \eta_{ii} \stackrel{def}{=} \frac{P_r}{P_l}
+   \end{equation}
+
+   \item Rendimento reale
+   \begin{equation}
+       \label{eq:rendimento_reale}
+       \eta_r \stackrel{def}{=} \eta_l \cdot \eta_{ii} = \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l} = \frac{P_r}{\dot{Q_1}}
+   \end{equation}
+
+   \item Rendimento meccanico
+   \begin{equation}
+       \label{eq:rendimento_meccanico}
+       \eta_m \stackrel{def}{=} \frac{P_{ua}}{P_r}
+   \end{equation}
+
+
+   \item Rendimento adiabatico di espansione
+   \begin{equation}
+        \label{eq:rendimento_adiabatico}
+        \eta_{ad_e} \stackrel{def}{=} \frac{P_r}{P_{is}}
+    \end{equation}
+%          = \frac{1-1/\beta^{\frac{m-1}{m}}}
+%         {1-1/\beta^{\frac{k-1}{k}}}
+%    oppure utilizzando il rendimento politropico
+%    \begin{equation}
+%         \label{eq:rendimento_adiabatico_con_rendimento_politropico}
+%         \eta_{ad_e} = \frac{1-1/\beta^{\frac{k-1}{k}\eta_{pe}}}
+%         {1-1/\beta^{\frac{k-1}{k}}}
+%         %uso \displaystyle per forzare l'integrale grande
+%    \end{equation}
+\end{itemize}
+Valutare inoltre le temperature medie di adduzione e sottrazione del calore.
+
+\section{Impianto minimo da 20.11 MW}
+\label{sec:primo_impianto}
+\subsection{Rendimento globale elettrico}
+\label{subsec:rendimento_globale_elettrico}
+Il primo schema presenta i componenti minimi necessari alla realizzazione di un impianto con turbina a vapore;
+è possibile valutare rapidamente il rendimento elettrico dell'impianto dopo aver trasformato la portata massica di combustibile da 
+tonnellate/ora in kilogrammi/secondo, ossia dividere per 3.6. Il risultato sarà 1524.4 kg/s di gas naturale immessi nel generatore di vapore.
+Il potere calorifico inferiore, ossia la massima quantità di calore ottenibile da una combustione completa del gas naturale è di 47.7 MJ/kg.
+Il \textbf{rendimento globale elettrico} sarà dunque pari a 27.7 \%.
+
+\subsection{Rendimento globale}
+\label{subsec:rendimento_globale}
+In prima approssimazione il rendimento globale può essere confuso con quello elettrico. In questo caso, infatti, la turbina ha una velocità
+di 3000 giri al minuto ossia 50 Hz, quindi non è necessario collegare un riduttore meccanico tra la turbina e l'alternatore.
+Il rendimento dell'alternatore, per una potenza di circa 20 MW, è stimabile da valori tabellati ed è pari a circa il 97.5 \%.
+La potenza \textbf{utile all'asse} $P_{ua}$ sarà dunque il rapporto della potenza elettrica generata per il rendimento dell'alternatore, ossia
+20.625 MW, fornendo un rendimento \textbf{globale} di impianto pari a 28.37 \%. 
+
+\subsection{Rendimento di combustione}
+\label{subsec:rendimento_combustione}
+Definito nella \eqref{eq:rendimento_combustione} il rendimento di combustione esprime il rapporto tra la quantità di calore
+fornita al fluido e quella potenzialmente ottenibile dal combustibile.
+
+La potenza termica trasferita al fluido è valutabile come la portata di fluido per la variazione di entalpia $\dot m\cdot \Delta h$
+cioè 3276 kJ/kg per 19.89 kg/s ossia 65.156 MW di potenza termica trasferita.
+
+La potenza termica potenziale è pari invece alla portata di combustibile per il suo potere calorifico inferiore:
+1524 kg/s per 47.7 MJ/kg ossia 72.716 MW.
+
+Il \textbf{rendimento di combustione} è dunque pari a 89.60\%
+
+\subsection{Rendimento limite}
+\label{subsec:rendimento_limite}
+Per poter calcolare il rendimento limite definito nella \eqref{eq:redimento_limite} è necessaria un'analisi
+più approfondita dell'impianto che permetta di valutare il ciclo termodinamico limite, ovvero quello che avverrebbe
+con processi di scambio termico isobari ed espansione/compressione adiabatici isoentropici. 
+
+Notando che i valori di entalpia riportati nello schema sono espressi in kcal/kg e che 1 kcal è pari a 4.186 kJ,
+bisogna moltiplicare per questo fattore la differenza di entalpia.
+Utilizzando come punti di riferimento i valori reali misurati nello stato termodinamico 1 e 3 ossia a monte delle macchine
+adiabatiche, è possibile raccogliere i dati in una tabella 
+(la pressione è stata trasformata da \textit{ata} ad \textit{atm} mentre l'entalpia da \textit{kcal} a \textit{kJ}):
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (atm)$ & $h\ (kJ/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &        0.0419 &          125.6   &           30     \\ \hline
+        3   &        59.05  &           3381   &           485
+    \end{tabular}
+\end{center}
+Confrontanto il valore di entalpia con quello delle tabelle dell'acqua in condizioni di saturazione possiamo affermare
+che l'acqua si trova nella condizione di liquido saturo, possiamo quindi leggere la pressione dalla stessa tabella.
+Consideriamo unica la compressione eseguita dalle due pompe.
+
+Riportiamo questi valori in una tabella che comprenda anche l'entropia ed il titolo per il calcolo degli altri 2 stati termodinamici,
+lo stato 1, come precedentemente detto, è in condizioni di liquido saturo mentre lo stato 3 è nella condizione di vapore surriscaldato
+poichè la temperatura è maggiore della temperatura critica dell'acqua (373.9 °C) e la pressione è minore di quella critica
+(217.7 atm).
+Ricordando le ipotesi precedenti possiamo fissare pressione ed entropia per gli stati 2 e 4.
+I valori di temperatura, titolo ed entalpia per lo stato 2 e 4 sono stimabili mediante l'uso del diagramma di Mollier,
+tabelle o software appositi.
+\begin{center}
+    \begin{tabular}{r|c|c|c|c|c}
+        stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
+        1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline
+        2   &        59.05    &          30.137&liq. sott.& 131.7    &0.4368 \\ \hline
+        3   &        59.05   &           485  & vap. surr.& 3381     &6.837  \\ \hline
+        4   &        0.0419       &      29.98&     79.85 & 2066     &6.837
+    \end{tabular}
+\end{center}
+
+Siamo ora in possesso di tutti i dati necessari al calcolo della potenza limite ricavata dal ciclo termodinamico ideale.
+La potenza meccanica ricavata dall'espansione in turbina sarà pari ancora una volta al prodotto della portata massica per il salto
+entalpico del fluido, $\dot m \cdot (h_3 - h_4) $ ossia 19.65 kg/s per 1315 kJ/kg, una potenza di 25.840 MW.
+A questa va sottratta la potenza meccanica necessaria alle pompe (in questo caso racchiusa in un'unica trasformazione)
+pari a $\dot m \cdot (h_2 - h_1)$ = 121 kW.
+
+La \textbf{potenza meccanica limite} è quindi 25.719 MW, mentre la potenza termica fornita al fluido è pari al salto di entalpia tra 
+lo stato 3 e 2, 64.258 MW.
+Il \textbf{rendimento limite} è del 40.02 \%
+
+Il rendimento limite è pari al rendimento del ciclo ideale di Carnot che avverrebbe tra le stesse temmperature medie di adduzione e sottrazione
+del calore, temperature stimabili dalla seguente:
+\begin{equation}
+    \label{eq:T_ds}
+    Q = T\Delta s
+\end{equation}
+La temperatura media di adduzione del calore è pari a:
+\begin{equation*}
+    T_{m_a} = \frac{h_3-h_2}{s_3 - s_2} = 507.68\ K = 234.53 \text{°C}
+\end{equation*}
+mentre quella di sottrazione è pari a:
+\begin{equation*}
+    T_{m_s} = \frac{h_4 - h_1}{s_4 - s_1} = 303.17\ K = 30.02 \text{°C}
+\end{equation*}
+Il rendimento del ciclo di Carnot è quindi definito come
+\begin{equation}
+    \eta_{Carnot} \stackrel{def}{=} 1 - \frac{T_{m_s}}{T_{m_a}}
+\end{equation}
+e utilizzando le temperature in Kelvin esso vale 0.402 ossia 40.2 \%.
+%Il rendimento limite raggiunge il rendimento di Carnot se trascuriamo la potenza meccanica necessaria alla compressione del fluido.
+
+\subsection{Rendimento interno di impianto}
+\label{subsec:rendimento_interno}
+Per il calcolo del rendimento interno di impianto è necessario valutare la potenza ottenuta dalla trasformazione reale,
+valutabile come la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
+dei dispositivi ausiliari (pompe).
+
+È presente una fuga di vapore in turbina quindi per una stima più precisa consideriamo la portata massica più bassa pari
+a 70.72 t/h, pari a 19.65 kg/s. La variazione di entalpia è pari a 254.9 kcal/kg o 1067 kJ/kg.
+La potenza ottenuta dalla turbina è dunque 20.960 MW.
+
+Nell'impianto sono presenti 2 pompe, una di estrazione dal condensatore e l'altra di alimento verso il generatore
+di vapore; entrambi i lavori sono stimabili attraverso la variazione di entalpia subita dal fluido:
+la pompa di \textbf{estrazione} produce un aumento di entalpia pari a 0.7 kcal/kg o 2.93 kJ/kg con una portata massica di
+71.6 t/h o 19.89 kg/s, la potenza meccanica necessaria sarà dunque 58.3 kW, una modesta quantità rispetto a quella prodotta dalla turbina.
+La pompa di \textbf{alimento} produce una variazione di entalpia pari a 2.11 kcal/kg o 8.833 kJ/kg, la portata massica è identica
+alla precedente, la potenza necessaria è 175.69 kW, maggiore della pompa precedente ma comunque molto piccola rispetto alla potenza
+ricavata dalla turbina.
+
+È proprio questo il grande vantaggio degli impianti a vapore rispetto agli impianti a gas dove la potenza
+necessaria alla compressione del gas non è affatto trascurabile.
+La potenza meccanica \textbf{reale} è dunque 20.726 MW.
+
+Definito nella \eqref{eq:rendimento_interno} il rendimento \textbf{interno} esprime il rapporto tra la potenza ricavata dall'impianto reale
+e quella massima ricavabile dallo stesso impianto se fosse ideale, esprime cioè la bontà costruttiva dell'impianto rispetto al limite ideale.
+La potenza meccanica ideale è stata calcolata nella sezione \ref{subsec:rendimento_limite} e valutando il rendimento si ottiene un valore di 
+80.59\%.
+
+\subsection{Rendimento reale}
+Il rendimento reale definito nella \eqref{eq:rendimento_reale} è pari al prodotto tra i rendimenti interno e limite, vale dunque 32.25 \%
+
+\subsection{Rendimento meccanico}
+Definito nella \eqref{eq:rendimento_meccanico} esprime le perdite meccaniche ed è pari a 0.995
+
+\subsection{Rendimento adiabatico di espansione}
+Il rendimento adiabatico di espansione permette di stimare le irreversibilità introdotte dall'espansione in turbina come definito dalla \eqref{eq:rendimento_adiabatico}.
+La potenza meccanica \textbf{limite} è stata calcolata nella sezione \ref{subsec:rendimento_limite} e vale 25.840 MW (ignorando la spesa necessaria alla compressione),
+mentre quella \textbf{reale} nella sezione \ref{subsec:rendimento_interno} e vale 20.960 MW.
+Il rendimento \textbf{adiabatico} di espansione vale dunque 81.11\%.
+
+\subsection{Considerazioni finali}
+Possiamo verificare il calcolo dei rendimenti effettuati mediante la seguente schematizzazione del rendimeto globale:
+\begin{equation}
+    \eta_g \stackrel{sch}{=} \eta_b \cdot \eta_l \cdot \eta_{ii} \cdot \eta_m
+    = \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r}
+\end{equation}
+e ricapitolando i rendimenti essi valgono:
+\begin{itemize}
+    \item Rendimento di combustione: 0.8960
+    \item Rendimento limite: 0.4002
+    \item Rendimento interno: 0.8059
+    \item Rendimento meccanico: 0.995
+\end{itemize}
+Il loro prodotto vale 0.2875, ossia 28.75\% molto prossimo al rendimento globale calcolato all'inizio della trattazione (\ref{subsec:rendimento_globale}).
+
+\input{impianto2} %l'impianto 2 viene trattato in un file differente > modifica impianto2.tex e dopo ricompila da qui
+%\input{impianto3} %stesso discorso di prima > impianto3.tex
+\end{document}
