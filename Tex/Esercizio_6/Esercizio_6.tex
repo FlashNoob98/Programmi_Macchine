@@ -45,5 +45,26 @@ il condotto dovrà dissipare una prevalenza aggiuntiva di 5.37 metri.
 Sfruttando le tabelle del produttore vediamo che con una portata di 15 m/s il tubo in acciaio ha una perdita di 265.51 m/km, dividendo la prevalenza aggiuntiva
 per questo valore si ottiene la lunghezza del circuito pari a 20 metri, superiore ai 12 metri di dislivello tra i due serbatoi.
 
+\section{Pompa volumetrica}
+La pompa volumetrica funziona con portate molto più basse, fissata la lunghezza del circuito precedente infatti le perdite legate alla portata nelle tubazioni sono limitate.
+% per una portata di 1 l/s si ha infatti una prevalenza del circuito pari a 18.165 metri mentre per una portata di 1.5 l/s la prevalenza vale 18.205 metri.
+% Questi valori sono stati ricavati dalla stessa tabella precedente presente sul sito del produttore e devono essere convertiti nel sistema internazionale per poter essere
+% utilizzati nel grafico di funzionamento della pompa.
 
+L'energia posseduta da un fluido posto ad una certa altezza è pari a 
+\begin{equation}
+    U = mgh
+\end{equation}
+data la prevalenza espressa in metri, si può ricavare l'energia specifica moltiplicando per l'accelerazione gravitazionale $g$ e dividendo per 1000 si ricava 
+l'energia espressa in kJ/kg come in tabella. La portata espressa in l/s va moltiplicata per 60 per ottenere i l/min.
+Si ricavano dalle tabelle i seguenti valori
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        Q (lt/min)  &   Q (lt/s)&H(m)   &H (kJ/kg)  \\ \hline
+        60          &   1       &18.165 &0.1782     \\ \hline
+        90          &   1.5     &18.205 &0.1785     \\ \hline
+        120         &   2       &18.258 &0.1791     \\ \hline
+    \end{tabular}
+    
+\end{center}
 \end{document}
