@@ -59,14 +59,13 @@ La potenza all'asse si misura come il prodotto della coppia per la velocità ang
     \label{eq:potenza_da_coppia}
     P = Nm \cdot \omega
 \end{equation}
-di conseguenza la coppia sarà il rapporto tra la potenza e la velocità angolare espressa in rad/s, per convertire la velocità angolare bisogna prima moltiplicarla
-per $\pi/30$.
 
-La coppia sarà data dunque dalla seguete:
+La coppia sarà quindi il rapporto tra la potenza e la velocità angolare espressa in rad/s; per convertire la velocità angolare bisogna prima moltiplicarla
+per $\pi/30$, ossia:
 \begin{equation}
     Nm = \frac{P\cdot 30 }{\omega\cdot \pi}
 \end{equation}
-e pari a 93.76 Nm.
+essa sarà pari a 93.76 Nm.
 
 \section{Potenza a massima Coppia}
 Utilizzando nuovamente la \eqref{eq:potenza_da_coppia} si può ricavare la potenza del motore quando la coppia è massima (cioè a 4000 giri/min).
@@ -75,13 +74,13 @@ Utilizzando nuovamente la \eqref{eq:potenza_da_coppia} si può ricavare la poten
 \end{equation*}
 
 \section{Pressione media indicata e pressione media effettiva}
-La pressione media indicata è definita come il rapporto fra il lavoro indicato, ossia l'integrale del lavoro ricavato dal diagramma indicato $P-\theta$ e la cilindrata
+La pressione media indicata è definita come il rapporto fra il lavoro indicato, ossia l'integrale del lavoro ricavato dal diagramma indicato $P-\theta$, e la cilindrata
 del motore, ossia il volume d'aria teoricamente aspirabile in un ciclo.
 \begin{equation}
     p_{mi} \stackrel{def}{=} \frac{L_i}{V}
 \end{equation}
-Il lavoro indicato è dato dal rapporto tra la potenza e il numero di cicli termodinamici svolti in un secondo, per un motore a 4 tempi il ciclo termodinamico si conclude 
-ogni 2 giri del pistone, devo dividere per questo numero $\varepsilon$ la velocità in radianti.
+Il lavoro indicato è dato dal rapporto tra la potenza e il numero di cicli termodinamici svolti in un secondo. Per un motore a 4 tempi il ciclo termodinamico si conclude 
+ogni 2 giri del pistone, sia indicato con $\varepsilon$ questo fattore, si dovrà dividere la velocità angolare per tale fattore per ottenere la velocità del ciclo termodinamico.
 \begin{equation}
     P_i = L_i \frac{n}{60\varepsilon} = p_{mi} \cdot V \cdot \frac{n}{60\varepsilon}
 \end{equation}
@@ -90,8 +89,8 @@ La pressione media indicata si calcola dunque usando
     \label{eq:pressione_media_indicata}
     p_{mi} = \frac{P_i}{V} \cdot  \frac{60\varepsilon}{n}
 \end{equation}
-La pressione media effettiva invece tiene conto delle perdite meccaniche ed è minore di quella indicata, si ricava moltiplicando la pressione media indicata
-per il rendimento meccanico del motore.
+La pressione media effettiva invece tiene conto delle perdite meccaniche ed è minore di quella indicata. È possibile ricavare la pressione media effettiva
+moltiplicando la pressione media indicata per il rendimento meccanico del motore.
 \begin{equation}
     P_{me} \stackrel{def}{=} P_{mi}\cdot \eta_m
 \end{equation}
@@ -104,7 +103,7 @@ La \eqref{eq:pressione_media_indicata} vale 9.49 bar quando il motore si trova i
 La pressione media effettiva vale 7.59 bar.
 
 \subsection{Stima del coefficiente di riempimento alla massima Coppia}
-Sia $\lambda_v$ il coefficiente di riempimento definito come la quantità d'aria aspirata rispetto alla massima aspirabile teoricamente.
+Sia $\lambda_v$ il coefficiente di riempimento, definito come la quantità d'aria aspirata rispetto alla massima aspirabile teoricamente.
 La portata di aria teorica si ricava con la seguente:
 \begin{equation}
     \label{eq:portata_aria}
@@ -113,18 +112,19 @@ La portata di aria teorica si ricava con la seguente:
 dove $\rho_a$ è la densità dell'aria in condizioni ambiente e si può assumere pari a 1.225 $kg/m^3$.
 La portata teorica vale dunque: 50.71 g/s.
 
-Avendo calcolato la potenza e conoscendo il rendimento globale d'impianto ed il potere calorifico si può calcolare la portata massica di combustibile in condizioni di massima
-coppia, essa vale: 
+Avendo calcolato la potenza e conoscendo il rendimento globale d'impianto ed il potere calorifico è possibile calcolare la portata massica di combustibile
+in condizioni di massima coppia: 
 \begin{equation}
     \dot m_c = \frac{P_{eff}\cdot \eta_m}{H_i\cdot \eta_g} = 2.95\ g/s
 \end{equation}
-Supponiamo che la combustione sia stechiometrica, si definisce $\alpha_{st}$ il rapporto in massa tra il comburente e il combustibile che per la miscela aria/benzina
-vale 14.7, la massa di aria necessaria alla combustione sarà pari a 43.36 g/s, il coefficiente di riempimento sarà dunque 0.855.
+Supponendo che la combustione sia stechiometrica, si definisce $\alpha_{st}$ il rapporto in massa tra il comburente e il combustibile che per la miscela aria/benzina
+vale 14.7, la massa di aria necessaria alla combustione sarà pari a 43.36 g/s. Il coefficiente di riempimento sarà dunque 0.855.
 
 \section{Rendimento a massima potenza}
 Sia il rendimento meccanico pari a 0.80 in condizioni di massima potenza, se la potenza utile all'asse è pari a 54 kW, quella effettiva sarà di 43.2 kW.
-Calcolo la portata di aria a 5500 rpm usando nuovamente la \eqref{eq:portata_aria} teorica che vale 69.73 g/s, con un coefficiente di riempimento minore del precedente (0.80)
-e combustione stechiometrica, la portata di combustibile necessaria sarà pari a 3.795 g/s.
+Si effettua nuovamente il calcolo della portata di aria teorica a 5500 rpm usando nuovamente la \eqref{eq:portata_aria};
+tale portata è pari a 69.73 g/s. Utilizzando un coefficiente di riempimento minore del precedente (0.80) e ipotizzando ancora la combustione stechiometrica,
+la portata di combustibile necessaria sarà pari a 3.795 g/s.
 
 Il rendimento globale è dunque:
 \begin{equation*}

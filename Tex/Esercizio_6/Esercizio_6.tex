@@ -22,31 +22,35 @@ di 12 metri e nei quali ci siano le pressioni di 1 bar in quello inferiore e 1.6
 \end{enumerate}
 
 \section{Pompa centrifuga}
-Per prima cosa va dimensionato il circuito idraulico, i dati in nostro possesso sono il diametro della flangia di aspirazione e la differenza di quota da raggiungere.
+È necessario in primo luogo dimensionare il circuito idraulico, i dati a disposizione sono:
+\begin{itemize}
+    \item il diametro della flangia di aspirazione
+    \item la differenza di quota da raggiungere
+\end{itemize}
 % La pressione idrostatica che devono sopportare le tubazioni si può calcolare con la legge di Stevino
 % \begin{equation}
 %     P = \rho g h
 % \end{equation}
 % che per l'acqua ad una quota di 12 metri vale 1.17 bar alla quale va aggiunta la differenza di pressione 
-Con un diametro nominale della flangia di 65 mm possiamo utilizzare un tubo in acciaio da 2" 1/2 (2 pollici e mezzo) della lunghezza minima di 12m.
+Con un diametro nominale della flangia di 65 mm possiamo utilizzare un tubo in acciaio con diametro nominale di 2" 1/2 (2 pollici e mezzo) e della lunghezza minima di 12 m.
 Utilizzando il catalogo del produttore \textit{Oppo} possiamo trovare tabellati i valori di velocità e perdita di carico per unità di lunghezza.
 La \textbf{prevalenza} del circuito si può calcolare con la seguente:
 \begin{equation}
     H_{Tc} = \frac{P_2-P_1}{\rho g} + (z_2-z_1) + \frac{c_2^2-c_1^2}{g2} + \frac{\Delta_{P_{12}}}{\rho g}
 \end{equation}
-il termine contenente la differenza di velocità può essere trascurato data la presenza dei serbatoi.
-Il valore della prevalenza è quindi 18.13 m al quale va aggiunto la perdita di carico, che dipende dalla portata del fluido.
-Da metri cubi orari a litri al secondo devo moltiplicare per 3.6.
+Il termine contenente la differenza di velocità può essere trascurato data la presenza dei serbatoi.
+Il valore della prevalenza è quindi 18.13 m al quale va aggiunta la perdita di carico, che dipende dalla portata del fluido.
+Da metri cubi orari a litri al secondo bisogna moltiplicare per 3.6.
 
-Seguendo la curva della pompa è possibile confrontare il valore di prevalenza totale rispetto a quello minimo appena calcolato,
-con una portata di 15 $m^3/s$ o 54 $l/h$ si ha una prevalenza totale di 23.5 metri, facendo la differenza con quella iniziale sappiamo che
-il condotto dovrà dissipare una prevalenza aggiuntiva di 5.37 metri.
+Seguendo la curva della pompa è possibile confrontare il valore di prevalenza totale rispetto a quello minimo appena calcolato.
+Con una portata di 15 $m^3/s$ o 54 $l/h$ si ha una prevalenza totale di 23.5 metri, facendo la differenza con quella iniziale sappiamo che
+il condotto dovrà avere una lunghezza tale da dissipare una prevalenza aggiuntiva di 5.37 metri.
 
 Sfruttando le tabelle del produttore vediamo che con una portata di 15 m/s il tubo in acciaio ha una perdita di 265.51 m/km, dividendo la prevalenza aggiuntiva
 per questo valore si ottiene la lunghezza del circuito pari a 20 metri, superiore ai 12 metri di dislivello tra i due serbatoi.
 
 \section{Pompa volumetrica}
-La pompa volumetrica funziona con portate molto più basse, fissata la lunghezza del circuito precedente infatti le perdite legate alla portata nelle tubazioni sono limitate.
+La pompa volumetrica funziona con portate molto più basse; fissata la lunghezza del circuito precedente, infatti, le perdite legate alla portata nelle tubazioni sono limitate.
 % per una portata di 1 l/s si ha infatti una prevalenza del circuito pari a 18.165 metri mentre per una portata di 1.5 l/s la prevalenza vale 18.205 metri.
 % Questi valori sono stati ricavati dalla stessa tabella precedente presente sul sito del produttore e devono essere convertiti nel sistema internazionale per poter essere
 % utilizzati nel grafico di funzionamento della pompa.
@@ -54,8 +58,8 @@ L'energia posseduta da un fluido posto ad una certa altezza è pari a
 \begin{equation}
     U = mgh
 \end{equation}
-data la prevalenza espressa in metri, si può ricavare l'energia specifica moltiplicando per l'accelerazione gravitazionale $g$ e dividendo per 1000 si ricava 
-l'energia espressa in kJ/kg come in tabella. La portata espressa in l/s va moltiplicata per 60 per ottenere i l/min.
+Data la prevalenza espressa in metri è possibile ricavare l'energia specifica moltiplicando la prevalenza per l'accelerazione gravitazionale $g$ e dividendo per 1000 si ricava 
+l'energia espressa in kJ/kg, come in tabella. La portata espressa in l/s va moltiplicata per 60 per ottenere i l/min.
 Si ricavano i seguenti valori
 \begin{center}
     \begin{tabular}{c|c|c|c}
