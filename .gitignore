@@ -29,7 +29,7 @@
 
 # LaTex
 *.synctex.gz
-*.pdf 
+#*.pdf 
 *.log
 *.aux
 *.fls
@@ -37,5 +37,3 @@
 *.blg
 *.fdb_latexmk
 *.synctex(busy)
-
-*.pdf
