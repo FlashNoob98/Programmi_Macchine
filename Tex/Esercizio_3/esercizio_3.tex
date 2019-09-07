@@ -27,7 +27,7 @@ I dati utili all'analisi termodinamica sono i seguenti:
         43100    &  8620    &  41.7   &  29.5  &     125.0        &  450
     \end{tabular}
 \end{center}
-mentre per le condizioni dell'aria in ingresso alla turbina si può facilmente supporre che la temperatura sia pari a 15°C mentre la pressione 1 atm
+Per le condizioni dell'aria in ingresso alla turbina si può facilmente supporre che la temperatura sia pari a 15°C mentre la pressione 1 atm
 (atmosfera standard ICAO).
 
 \section{Ciclo reale}
@@ -39,9 +39,10 @@ Calcoliamo il volume specifico $v_1$ utilizzando l'equazione di stato dei gas pe
     pv = RT
 \end{equation}
 Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$
-Il calcolo della potenza termica da fornire in camera di combustione si esegue attraverso l'analisi dell'\textit{Heat Rate} espresso in kJ/kWh va diviso per 3600 per renderlo
-adimensionale ottenendo un valore di 2.395, se la potenza elettrica generata è di 43.100 MW, la potenza termica necessaria al funzionamento dell'impianto sarà 103.200 MW.
-Tale valore è pari alla portata massica di combustibile per il suo potere calorifico inferiore, se utilizziamo gas naturale è pari a 47.7 MJ/kg e la portata di combustibile
+Il calcolo della potenza termica da fornire in camera di combustione si esegue attraverso l'analisi dell'\textit{Heat Rate} espresso in kJ/kWh.
+Tale grandezza va divisa per 3600 per renderla adimensionale, ottenendo un valore di 2.395, se la potenza elettrica generata è di 43.100 MW, 
+la potenza termica necessaria al funzionamento dell'impianto sarà 103.200 MW.
+Tale valore è pari alla portata massica di combustibile per il suo potere calorifico inferiore. Utilizzando gas naturale esso è pari a 47.7 MJ/kg e la portata di combustibile
 è di 2.16 kg/s.
 Supponendo un rendimento di combustione $\eta_b$ pari al 99\%, la potenza termica effettivamente trasferita all'aria in camera di combustione è pari a
 102.00 MW. Da questo valore possiamo ricavare il salto entalpico subito dal gas e quindi la differenza di temperatura tra lo stato 2 e 3 ipotizzando costante il $C_p$
@@ -71,7 +72,7 @@ Si può quindi completare la tabella degli stati reali.
 
 \section{Ciclo limite}
 \label{sec:ciclo_limite}
-Analizziamo il ciclo Joule limite considerando il compressore e la turbina isoentropici, e la combustione isobara.
+Segue l'analisi del ciclo Joule limite considerando il compressore e la turbina isoentropici, e la combustione isobara.
 Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$ e calcoliamo il volume specifico raggiunto dopo la compressione isoentropica.
 Consideriamo inoltre lo stato 3 calcolato nella sezione \ref{sec:ciclo_reale} come punto di partenza per il calcolo delle condizioni all'uscita (stato 4).
 \begin{equation*}
