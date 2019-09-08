@@ -12,6 +12,7 @@ Il calore prodotto dal combustibile, calcolato in precedenza per i rendimenti gl
 Il rendimento di combustione è quindi pari al 89.77\%.
 
 \subsection{Rendimento limite}
+\label{subsec:rendimento_limite_2}
 Eseguiamo ora l'analisi del ciclo limite considerando come valori di riferimento quelli dello stato 1 e 3.
 \begin{center}
     \begin{tabular}{r|c|c|c}
@@ -57,7 +58,7 @@ ai flussi di massa entranti e uscenti dalla turbina:
 A questa potenza devo sottrarre quella necessaria alle pompe, ricavabile analogamente.
 \begin{equation*}
     P_{p_estrazione} = \dot m_1 \cdot \left( h_{1'} - h_1 \right) = 13.4\ kW \\
-   P_{p_alimento} = \dot m_2 \cdot \left( h_2 - h_{2'} \right) = 109\ kW 
+    P_{p_alimento} = \dot m_2 \cdot \left( h_2 - h_{2'} \right) = 109\ kW 
 \end{equation*}
 La \textbf{potenza limite} è dunque pari a 25.697 MW.
 
@@ -81,6 +82,37 @@ La temperatura media di sottrazione del calore vale invece:
 Utilizzando la \eqref{eq:rendimento_carnot} troviamo il rendimento di Carnot pari a 41.46\%.
 
 \subsection{Rendimento interno di impianto}
+Ricaviamo ancora una volta la potenza reale erogata dalla turbina, riferendoci questa volta ai dati termodinamici reali.
+\begin{equation*}
+    P_T = \dot m_3 \cdot h_3 - \dot m_{SP2} \cdot h_{SP2} - \dot m_4 \cdot h_4 = 20.531\ MW
+\end{equation*}
+Calcolo ora la potenza necessaria ai meccanismi ausiliari, posso trascurare la potenza necessaria alla pompa di estrazione, non conosco in ogni caso lo stato termodinamico
+reale successivo alla pompa.
+\begin{equation*}
+    P_{p_alimento} = \dot m_2 \cdot \left( h_2 - h_{2'} \right) = 250\ kW 
+\end{equation*}
+La potenza netta reale sarà circa 20.280 MW.
 
+Il rendimento interno vale dunque 78.92\%.
 
+\subsection{Rendimento reale}
+È necessario il calcolo della potenza termica trasferita nell'impianto reale per poter valutare il rendimento reale:
+\begin{equation*}
+    \dot Q_1 = \dot m_2 \cdot (h_{3'} - h_2) = 63.130\ MW
+\end{equation*}
+Il rendimento reale è dunque 32.12\%.
 
+\subsection{Rendimento meccanico}
+Si assume che l'alternatore sia identico all'impianto precedente e così anche il suo rendimento pari a 97.5\%.
+La $P_{ua}$ sarà pari quindi a 20.195 MW. Il rendimento meccanico quindi vale 99.58\%.
+
+\subsection{Rendimento adiabatico di espansione}
+Valutata nella sezione \ref{subsec:rendimento_limite_2} la potenza ideale disponibile in turbina, è possibile calcolare il rendimento adiabatico di espansione pari a
+79.90\%.
+
+\subsection{Verifica dei rendimenti}
+\begin{align*}
+    \eta_g \stackrel{sch}{=} \eta_b \cdot \eta_l \cdot \eta_{ii} \cdot \eta_m
+    = \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r} = \\
+    =  0.8977 \cdot 0.4098 \cdot 0.7892 \cdot 0.9958 = 28.91 \%
+\end{align*}
