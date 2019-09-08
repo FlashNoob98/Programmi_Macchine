@@ -11,3 +11,43 @@ La potenza termica trasferita al fluido nel generatore di vapore è valutabile c
 Il calore prodotto dal combustibile, calcolato in precedenza per i rendimenti globali è pari a 70.29 MW.
 Il rendimento di combustione è quindi pari al 89.77\%.
 
+\subsection{Rendimento limite}
+Eseguiamo ora l'analisi del ciclo limite considerando come valori di riferimento quelli dello stato 1 e 3.
+\begin{center}
+    \begin{tabular}{r|c|c|c}
+        stato    & $p\ (atm)$ & $h\ (kJ/kg)$ & $T\ (\text{°}C) $\\ \hline
+        1   &        0.0419 &          125.6   &           30     \\ \hline
+        3   &        59.05  &           3381   &           485
+    \end{tabular}
+\end{center}
+Considero SP2 lo stato termodinamico successivo allo spillamento dalla turbina, con una portata massica di 0.725 kg/s. Ricalcolo la tabella degli stati.
+Non è possibile calcolare immediatamente lo stato 2' dato che è successivo ad un mescolamento adiabatico con il vapore spillato dalla turbina, calcolo quindi prima
+lo stato 4 in uscita dalla turbina considerando la trasformazione isoentropica e la pressione identica alla pressione misurata nell'impianto reale.
+Anche l'entropia del vapore spillato sarà quindi pari a quella dello stato 3 e 4 ossia 6.837 kJ/kgK, ricaviamo gli altri valori dello stato.
+
+Per permettere un corretto mescolamento, la pompa di estrazione deve portare l'acqua dallo stato 1 ad uno stato 1' con una pressione di 5.32 atm, il processo si assume
+isoentropico.
+
+Considerando la trasformazione adiabatica nell'estrattore di vapore è possibile fare un bilancio sull'entalpia:
+\begin{equation*}
+    h_{2'} = \frac{\dot m_{1'}\cdot h_{1'} + \dot m_{SP2} \cdot h_{SP2}}{\dot m_{2'}} = 222.5\ kJ/kg
+\end{equation*}
+Considerata la pressione dello stato 2' identica a quella del vapore spillato e calcolata l'entalpia si possono ricavare le altre variabili di stato.
+
+Lo stato 2 è successivo alla pompa di alimento, trasformazione considerata isoentropica, fissiamo il valore di pressione identico a quello dello stato 3 e calcoliamo
+le altre variabili.
+\begin{center}
+    \begin{tabular}{l|c|c|c|c|c}
+        stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
+        1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline
+        1'  &        5.32    &           30.01   &liq. sott.  & 126.3&0.4368 \\ \hline
+        2'   &       5.32    &           53.1&liq. sott.& 222.5    &0.743 \\ \hline
+        2   &        59.05   &           53.1&liq. sott.&  228.0   &0.743   \\ \hline
+        3   &        59.05   &           485  & vap. surr.& 3381     &6.837  \\ \hline
+        SP2  &       5.32        &       160.9 &  vap. surr.&2767     &6.837  \\ \hline
+        4   &        0.0419       &      29.76&     79.81 & 2064     &6.837
+    \end{tabular}
+\end{center}
+
+
+
