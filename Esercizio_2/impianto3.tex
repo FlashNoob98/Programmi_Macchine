@@ -20,7 +20,7 @@ seguiamo ora l'analisi del ciclo limite considerando come valori di riferimento 
 \end{center}
 Siano SP1, SP2, SP3 ed SP4 gli stati termodinamici consecutivi ai vari spillamenti, si suppone che abbiano tutti la stessa entropia specifica.
 Sia fissata ancora una volta la pressione all'interno del mescolatore adiabatico uguale a quella del secondo spillamento, ossia 5.32 atm.
-Si può ricavare lo stato 1' dalla compressione isoentropica della pompa di estrazione.
+Si può ricavare lo stato 1' consecutivo alla compressione isoentropica provocata dalla pompa di estrazione.
 
 Calcolo quindi gli stati termodinamici degli spillamenti, l'entropia è identica a quella dello stato 3 in ingresso alla turbina.
 \begin{center}
@@ -33,11 +33,14 @@ Calcolo quindi gli stati termodinamici degli spillamenti, l'entropia è identica
     \end{tabular}
 \end{center}
 
+Anche lo stato 4 si può ricavare fissando l'entropia e la pressione successive alla espansione in turbina.
 
 \begin{center}
     \begin{tabular}{l|c|c|c|c|c}
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
         1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline     %uscita condensatore 
         1'  &        5.32    &           30.01   &liq. sott.  & 126.3&0.4368 \\ \hline      %uscita pompa estrazione
+        3   &        59.05  &            485&  vap. surr.    &  3381 &6.837  \\ \hline      %ingresso turbina
+        4   &        0.0419       &      29.76&     79.81 &    2064  &6.837                %uscita turbina
     \end{tabular}
 \end{center}
