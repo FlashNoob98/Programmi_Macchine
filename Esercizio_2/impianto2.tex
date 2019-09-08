@@ -39,15 +39,32 @@ le altre variabili.
 \begin{center}
     \begin{tabular}{l|c|c|c|c|c}
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
-        1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline
-        1'  &        5.32    &           30.01   &liq. sott.  & 126.3&0.4368 \\ \hline
-        2'   &       5.32    &           53.1&liq. sott.& 222.5    &0.743 \\ \hline
-        2   &        59.05   &           53.1&liq. sott.&  228.0   &0.743   \\ \hline
-        3   &        59.05   &           485  & vap. surr.& 3381     &6.837  \\ \hline
-        SP2  &       5.32        &       160.9 &  vap. surr.&2767     &6.837  \\ \hline
-        4   &        0.0419       &      29.76&     79.81 & 2064     &6.837
+        1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline     %uscita condensatore 
+        1'  &        5.32    &           30.01   &liq. sott.  & 126.3&0.4368 \\ \hline      %uscita pompa estrazione
+        2'   &       5.32    &           53.1&liq. sott.& 222.5    &0.743 \\ \hline         %uscita mescolatore
+        2   &        59.05   &           53.1&liq. sott.&  228.0   &0.743   \\ \hline       %uscita pompa alimento
+        3   &        59.05   &           485  & vap. surr.& 3381     &6.837  \\ \hline  %ingresso turbina
+        SP2  &       5.32        &       160.9 &  vap. surr.&2767     &6.837  \\ \hline  %spillamento
+        4   &        0.0419       &      29.76&     79.81 & 2064     &6.837                 %uscita turbina
     \end{tabular}
 \end{center}
 
+È ora possibile calcolare il rendimento limite definito nella \eqref{eq:redimento_limite}. Per conoscere la potenza limite eseguo un'analisi energetica
+ai flussi di massa entranti e uscenti dalla turbina:
+\begin{equation*}
+    P_T = \dot m_3 \cdot h_3 - \dot m_1 \cdot h_1 - \dot m_{SP2} \cdot h_{SP2} = 25.819\ MW
+\end{equation*}
+A questa potenza devo sottrarre quella necessaria alle pompe, ricavabile analogamente.
+\begin{equation*}
+    P_{p_estrazione} = \dot m_1 \cdot \left( h_{1'} - h_1 \right) = 13.4\ kW \\
+   P_{p_alimento} = \dot m_2 \cdot \left( h_2 - h_{2'} \right) = 109\ kW 
+\end{equation*}
+La \textbf{potenza limite} è dunque pari a 25.697 MW.
+
+La potenza termica trasferita al fluido è pari alla portata per il salto di entalpia a monte e a valle del generatore di vapore
+\begin{equation*}
+    \dot Q_1 = \dot m_2 \cdot (h_3-h_2) = 62.709\ MW
+\end{equation*}
+Il rendimento limite è dunque pari al 40.98\%
 
 
