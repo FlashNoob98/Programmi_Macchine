@@ -30,9 +30,32 @@ I dati utili all'analisi termodinamica sono i seguenti:
 Per le condizioni dell'aria in ingresso alla turbina si può facilmente supporre che la temperatura sia pari a 15°C mentre la pressione 1 atm
 (atmosfera standard ICAO).
 
+\section{Ciclo limite}
+\label{sec:ciclo_limite}
+Segue l'analisi del ciclo Joule limite considerando il compressore e la turbina isoentropici, e la combustione isobara.
+Per lo stato 2 fissiamo il valore di pressione $p_2$ uguale a $\beta$ e calcoliamo il volume specifico raggiunto dopo la compressione isoentropica:
+\begin{equation*}
+    v_2 = v_1/(\beta^{1/k})
+\end{equation*}
+e nuovamente $T_2$ mediante la \eqref{eq:gas_perfetti}.
+Lo stato termodinamico 3 si trova sulla stessa isobara dello stato 2 e fissiamo un valore di temperatura arbitrario di 1200°C.
+
+Per lo stato termodinamico 4 fissiamo la pressione e consideriamo ancora una volta l'espansione isoentropica.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+            &p(atm) &T(°C)  &v$(m^3/kg)$     \\ \hline
+        1   &    1  & 15    & 0.827   \\
+        2   &   29.5& 484   & 0.0737  \\
+        3   &   29.5&1200   & 0.1433   \\
+        4   &   1   &286    & 1.60           
+    \end{tabular}
+\end{center}
+
+
+
 \section{Ciclo reale}
 \label{sec:ciclo_reale}
-Iniziamo l'analisi termodinamica dell'impianto a partire dagli stati del ciclo reale.
 Calcoliamo il volume specifico $v_1$ utilizzando l'equazione di stato dei gas perfetti:
 \begin{equation}
     \label{eq:gas_perfetti}
@@ -70,23 +93,6 @@ Si può quindi completare la tabella degli stati reali.
     \end{tabular}
 \end{center}
 
-\section{Ciclo limite}
-\label{sec:ciclo_limite}
-Segue l'analisi del ciclo Joule limite considerando il compressore e la turbina isoentropici, e la combustione isobara.
-Per lo stato 2 fissiamo invece il valore di pressione $p_2$ uguale a $\beta$ e calcoliamo il volume specifico raggiunto dopo la compressione isoentropica.
-Consideriamo inoltre lo stato 3 calcolato nella sezione \ref{sec:ciclo_reale} come punto di partenza per il calcolo delle condizioni all'uscita (stato 4).
-\begin{equation*}
-    v_2 = v_1/(\beta^{1/k})
-\end{equation*}
-e nuovamente $T_2$ mediante la \eqref{eq:gas_perfetti}.
-\begin{center}
-    \begin{tabular}{c|c|c|c}
-            &p(atm) &T(°C)  &v$(m^3/kg)$     \\ \hline
-        1   &    1  & 15    & 0.827   \\
-        2   &   29.5& 484   & 0.0737  \\
-        3   &   29.5&1800   & 0.201   \\
-    \end{tabular}
-\end{center}
 
 
 \end{document}
