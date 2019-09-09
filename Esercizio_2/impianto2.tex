@@ -1,7 +1,7 @@
 \section{Secondo impianto da 19.69 MW}
 Il secondo impianto prevede rispetto al primo uno \textbf{spillamento} dalla turbina, ossia una sottrazione di vapore caldo da uno degli stadi della turbina, 
 utile al preriscaldamento del fluido di lavoro prima dell'ingresso nel generatore di vapore.
-La potenza elettrica generata è quindi diminuita ma è diminuita anche la portata di combustibile, è necessario quindi rieseguire il calcolo dei rendimenti.
+La potenza elettrica generata è quindi diminuita ma è diminuita anche la portata di combustibile. È necessario quindi rieseguire il calcolo dei rendimenti.
 \subsection{Rendimento globale}
 Il rendimento globale elettrico calcolabile con la \eqref{eq:rendimento_elettrico} vale 27.66\%.
 
@@ -21,13 +21,13 @@ Eseguiamo ora l'analisi del ciclo limite considerando come valori di riferimento
         3   &        59.05  &           3381   &           485
     \end{tabular}
 \end{center}
-Considero SP2 lo stato termodinamico successivo allo spillamento dalla turbina, con una portata massica di 0.725 kg/s. Ricalcolo la tabella degli stati.
+Definisco SP2 come lo stato termodinamico successivo allo spillamento dalla turbina, con una portata massica di 0.725 kg/s. Ricalcolo la tabella degli stati.
 
-Non è possibile calcolare immediatamente lo stato 2' dato che è successivo ad un mescolamento adiabatico con il vapore spillato dalla turbina, calcolo quindi prima
+Non è possibile calcolare immediatamente lo stato 2' poichè è successivo ad un mescolamento adiabatico con il vapore spillato dalla turbina. Calcolo quindi prima
 lo stato 4 in uscita dalla turbina considerando la trasformazione isoentropica e la pressione identica alla pressione misurata nell'impianto reale.
-Anche l'entropia del vapore spillato sarà quindi pari a quella dello stato 3 e 4 ossia 6.837 kJ/kgK, ricaviamo gli altri valori dello stato.
+Anche l'entropia del vapore spillato sarà quindi pari a quella dello stato 3 e 4, ossia 6.837 kJ/kgK. Ricavo gli altri valori dello stato.
 
-Per permettere un corretto mescolamento, la pompa di estrazione deve portare l'acqua dallo stato 1 ad uno stato 1' con una pressione di 5.32 atm, il processo si assume
+Per permettere un corretto mescolamento, la pompa di estrazione deve portare l'acqua dallo stato 1 ad uno stato 1' con una pressione di 5.32 atm; il processo si assume
 isoentropico.
 
 Considerando la trasformazione adiabatica nell'estrattore di vapore è possibile fare un bilancio sull'entalpia:
@@ -36,7 +36,7 @@ Considerando la trasformazione adiabatica nell'estrattore di vapore è possibile
 \end{equation*}
 Considerata la pressione dello stato 2' identica a quella del vapore spillato e calcolata l'entalpia si possono ricavare le altre variabili di stato.
 
-Lo stato 2 è successivo alla pompa di alimento, trasformazione considerata isoentropica, fissiamo il valore di pressione identico a quello dello stato 3 e calcoliamo
+Lo stato 2 è successivo alla pompa di alimento la cui trasformazione è considerata isoentropica; fissiamo il valore di pressione identico a quello dello stato 3 e calcoliamo
 le altre variabili.
 \begin{center}
     \begin{tabular}{l|c|c|c|c|c}
@@ -87,7 +87,7 @@ Ricaviamo ancora una volta la potenza reale erogata dalla turbina, riferendoci q
 \begin{equation*}
     P_T = \dot m_3 \cdot h_3 - \dot m_{SP2} \cdot h_{SP2} - \dot m_4 \cdot h_4 = 20.531\ MW
 \end{equation*}
-Calcolo ora la potenza necessaria ai meccanismi ausiliari, posso trascurare la potenza necessaria alla pompa di estrazione, non conosco in ogni caso lo stato termodinamico
+Calcolo ora la potenza necessaria ai meccanismi ausiliari; posso trascurare la potenza necessaria alla pompa di estrazione, non conosco in ogni caso lo stato termodinamico
 reale successivo alla pompa.
 \begin{equation*}
     P_{p_alimento} = \dot m_2 \cdot \left( h_2 - h_{2'} \right) = 250\ kW 
@@ -104,7 +104,7 @@ Il rendimento interno vale dunque 78.92\%.
 Il rendimento reale è dunque 32.12\%.
 
 \subsection{Rendimento meccanico}
-Si assume che l'alternatore sia identico all'impianto precedente e così anche il suo rendimento pari a 97.5\%.
+Si assume che l'alternatore sia identico all'impianto precedente e così anche il suo rendimento, pari a 97.5\%.
 La $P_{ua}$ sarà pari quindi a 20.195 MW. Il rendimento meccanico quindi vale 99.58\%.
 
 \subsection{Rendimento adiabatico di espansione}

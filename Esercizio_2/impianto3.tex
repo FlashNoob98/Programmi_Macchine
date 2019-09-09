@@ -1,6 +1,6 @@
 \section{Impianto da 18 MW con 4 spillamenti}
-L'ultimo impianto presenta 4 spillamenti per il preriscaldamento del fluido, la potenza netta è necessariamente diminuita
-ma un rapido calcolo permette di valutare il rendimento elettrico globale aumentato ad un valore di 30.01\%
+L'ultimo impianto presenta 4 spillamenti per il preriscaldamento del fluido; la potenza netta è necessariamente diminuita
+ma un rapido calcolo permette di valutare il rendimento elettrico globale, aumentato ad un valore di 30.01\%.
 Il rendimento dell'alternatore si può stimare, anche in questo caso, pari a 97.5\%.
 Il rendimento globale vale dunque 30.78\%
 
@@ -10,7 +10,7 @@ Potenza termica trasferita al fluido: $\dot m_{3'} \cdot (h_{3'} - h_{2R}) = 53.
 Rendimento di combustione: 90.08\%.
 
 \subsection{Rendimento limite}
-seguiamo ora l'analisi del ciclo limite considerando come valori di riferimento quelli dello stato 1 e 3.
+Seguiamo ora l'analisi del ciclo limite considerando come valori di riferimento quelli dello stato 1 e 3.
 \begin{center}
     \begin{tabular}{r|c|c|c}
         stato    & $p\ (atm)$ & $h\ (kJ/kg)$ & $T\ (\text{°}C) $\\ \hline
@@ -18,11 +18,11 @@ seguiamo ora l'analisi del ciclo limite considerando come valori di riferimento 
         3   &        59.05  &           3381   &           485
     \end{tabular}
 \end{center}
-Siano SP1, SP2, SP3 ed SP4 gli stati termodinamici consecutivi ai vari spillamenti, si suppone che abbiano tutti la stessa entropia specifica.
+Siano SP1, SP2, SP3 ed SP4 gli stati termodinamici consecutivi ai vari spillamenti; si suppone che abbiano tutti la stessa entropia specifica.
 Sia fissata ancora una volta la pressione all'interno del mescolatore adiabatico uguale a quella del secondo spillamento, ossia 5.32 atm.
 Si può ricavare lo stato 1' consecutivo alla compressione isoentropica provocata dalla pompa di estrazione.
 
-Calcolo quindi gli stati termodinamici degli spillamenti, l'entropia è identica a quella dello stato 3 in ingresso alla turbina.
+Calcolo quindi gli stati termodinamici degli spillamenti; l'entropia è identica a quella dello stato 3 in ingresso alla turbina.
 \begin{center}
     \begin{tabular}{l|c|c|c|c|c}
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
@@ -36,9 +36,9 @@ Calcolo quindi gli stati termodinamici degli spillamenti, l'entropia è identica
 
 Anche lo stato 4 si può ricavare fissando l'entropia e la pressione successive alla espansione in turbina.
 
-Supponiamo che lo stato 2R sia ad una temperatura pari alla temperatura di saturazione dello spillamento 1 (SP1) pari a 173°C.
+Supponiamo che lo stato 2R sia ad una temperatura pari alla temperatura di saturazione dello spillamento 1 (SP1), pari a 173°C.
 
-Ipotizzando uno scambio termico ideale, posso suppore che le temperature dei due fluidi uscenti dal rigeneratore siano identiche, ossia che la temperatura
+Ipotizzando uno scambio termico ideale posso suppore che le temperature dei due fluidi uscenti dal rigeneratore siano identiche, ossia che la temperatura
 del fluido spillato dalla turbina, dopo lo scambio termico, abbia la stessa temperatura del fluido in ingresso al generatore di vapore (173°C).
 
 Per valutare la temperatura in uscita dalla pompa (stato 2) posso eseguire un bilancio energetico sul rigeneratore.
@@ -65,14 +65,14 @@ Si può calcolare infine la potenza limite erogata dalla turbina pari a 23.569 M
     P_T = \dot m_3 h_3 - \dot m_{SP1} h_{SP1} - \dot m_{SP2} h_{SP2} - \dot m_{SP3} h_{SP3} -\dot m_{SP4} h_{SP4} - \dot m_{4} h_4
 \end{equation*}
 
-Calcoliamo inoltre la potenza necessaria al funzionamento delle pompe
+Calcoliamo inoltre la potenza necessaria al funzionamento delle pompe:
 \begin{align*}
     P_{p_{estrazione}} = \dot m_1 \cdot (h_{1'} - h_1) = 10.97\ kW \\
     P_{p_{alimento}} = \dot m_2 \cdot (h_2 - h_{2'} ) = 131.27\ kW
 \end{align*}
 
 La potenza utile limite sarà dunque 23.427 MW.
-La potenza termica trasferita al fluido invece
+La potenza termica trasferita al fluido è:
 \begin{equation*}
     \dot Q_1 = \dot m_2 \cdot (h_3 - h_{2R}) = 52.626\ MW
 \end{equation*}
@@ -86,14 +86,13 @@ Il calcolo delle temperature medie si esegue mediante la \eqref{eq:T_ds}:
     T_{ms} = \frac{h_4-h_1}{s_4-s_1} = 29.71 \text{°C}
 \end{align*}
 
-Il rendimento di Carnot è pari dunque a 
+Il rendimento di Carnot è pari dunque a:
 \begin{equation*}
     \eta_{Carnot} = 1 - \frac{T_{ms}}{T_{ma}} = 45.37\%
 \end{equation*}
 
 \subsection{Rendimento interno di impianto}
-Analizzo l'impianto reale, valutando le potenze necessarie ed erogate da turbina e pompe tramite gli stati termodinamici reali indicati sullo schema d'impianto.
-
+Analizzo l'impianto reale valutando le potenze necessarie ed erogate da turbina e pompe tramite gli stati termodinamici reali indicati sullo schema d'impianto:
 \begin{align*}
     P_T = \dot m_3 h_3 - (\dot m_{SP1}h_{SP1}+ \dot m_{SP2}h_{SP2}+ \dot m_{SP3}h_{SP3}+ \dot m_{SP4}h_{SP4}+ \dot m_4h_4) \\
     P_{alimento} = \dot m_2R \cdot (h_2 - h_{2'})
@@ -104,19 +103,19 @@ La potenza utile reale è pari a 18.747 MW.
 Il rendimento interno vale dunque 80.02\%.
 
 \subsection{Rendimento reale}
-Calcoliamo la potenza termica reale trasferita nel generatore di vapore
+Calcoliamo la potenza termica reale trasferita nel generatore di vapore:
 \begin{equation*}
     \dot Q_1 = \dot m_{2R} \cdot (h_{3'} - h_{2R}) = 53.916\ MW
 \end{equation*}
 Il rendimento reale è pari a 34.77\%.
 
 \subsection{Rendimento meccanico}
-Sia la potenza elettrica generatoa pari a 18 MW e il rendimento dell'alternatore pari a 97.5\%; la potenza utile all'asse della turbina è pari a 18.46 MW.
+Sia la potenza elettrica generata pari a 18 MW e il rendimento dell'alternatore pari a 97.5\%; la potenza utile all'asse della turbina è pari a 18.46 MW.
 
 Il rendimento meccanico è dunque 98.47\%.
 
 \subsection{Rendimento adiabatico di espansione}
-Rapporto tra le espansioni in turbina reale ed isoentropica, è pari a 80.81\%.
+Il rapporto tra le espansioni in turbina reale ed isoentropica, è pari a 80.81\%.
 
 \subsection{Verifica dei rendimenti}
 \begin{align*}

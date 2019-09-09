@@ -100,8 +100,8 @@ Valutare inoltre le temperature medie di adduzione e sottrazione del calore.
 \label{subsec:rendimento_globale_elettrico}
 Il primo schema presenta i componenti minimi necessari alla realizzazione di un impianto con turbina a vapore;
 è possibile valutare rapidamente il rendimento elettrico dell'impianto dopo aver trasformato la portata massica di combustibile da 
-tonnellate/ora in kilogrammi/secondo, ossia dividere per 3.6. Il risultato sarà 1524.4 kg/s di gas naturale immessi nel generatore di vapore.
-Il potere calorifico inferiore, ossia la massima quantità di calore ottenibile da una combustione completa del gas naturale è di 47.7 MJ/kg.
+tonnellate/ora in kilogrammi/secondo, ossia dividere per 3.6. Il risultato sarà 1.524 kg/s di gas naturale immessi nel generatore di vapore.
+Il potere calorifico inferiore, ossia la massima quantità di calore ottenibile da una combustione completa del gas naturale, è di 47.7 MJ/kg.
 Il \textbf{rendimento globale elettrico} sarà dunque pari a 27.7 \%.
 
 \subsection{Rendimento globale}
@@ -120,8 +120,8 @@ fornita al fluido e quella potenzialmente ottenibile dal combustibile.
 La potenza termica trasferita al fluido è valutabile come la portata di fluido per la variazione di entalpia $\dot m\cdot \Delta h$
 cioè 3276 kJ/kg per 19.89 kg/s ossia 65.156 MW di potenza termica trasferita.
 
-La potenza termica potenziale è pari invece alla portata di combustibile per il suo potere calorifico inferiore:
-1524 kg/s per 47.7 MJ/kg ossia 72.716 MW.
+La potenza termica contenuta nel combustibile è pari invece alla portata di combustibile per il suo potere calorifico inferiore:
+1.524 kg/s per 47.7 MJ/kg ossia 72.716 MW.
 
 Il \textbf{rendimento di combustione} è dunque pari a 89.60\%
 
@@ -133,7 +133,7 @@ con processi di scambio termico isobari ed espansione/compressione adiabatici is
 
 Notando che i valori di entalpia riportati nello schema sono espressi in kcal/kg e che 1 kcal è pari a 4.186 kJ,
 bisogna moltiplicare per questo fattore la differenza di entalpia.
-Utilizzando come punti di riferimento i valori reali misurati nello stato termodinamico 1 e 3 ossia a monte delle macchine
+Utilizzando come punti di riferimento i valori reali misurati nello stato termodinamico 1 e 3, ossia a monte delle macchine
 adiabatiche, è possibile raccogliere i dati in una tabella 
 (la pressione è stata trasformata da \textit{ata} ad \textit{atm} mentre l'entalpia da \textit{kcal} a \textit{kJ}):
 \begin{center}
@@ -144,11 +144,11 @@ adiabatiche, è possibile raccogliere i dati in una tabella
     \end{tabular}
 \end{center}
 Confrontanto il valore di entalpia con quello delle tabelle dell'acqua in condizioni di saturazione possiamo affermare
-che l'acqua si trova nella condizione di liquido saturo, possiamo quindi leggere la pressione dalla stessa tabella.
+che l'acqua si trova nella condizione di liquido saturo; è quindi possibile leggere la pressione dalla stessa tabella.
 Consideriamo unica la compressione eseguita dalle due pompe.
 
-Riportiamo questi valori in una tabella che comprenda anche l'entropia ed il titolo per il calcolo degli altri 2 stati termodinamici,
-lo stato 1, come precedentemente detto, è in condizioni di liquido saturo mentre lo stato 3 è nella condizione di vapore surriscaldato
+Riportiamo questi valori in una tabella che comprenda anche l'entropia ed il titolo per il calcolo degli altri 2 stati termodinamici.
+Lo stato 1, come precedentemente detto, è in condizioni di liquido saturo mentre lo stato 3 è nella condizione di vapore surriscaldato
 poichè la temperatura è maggiore della temperatura critica dell'acqua (373.9 °C) e la pressione è minore di quella critica
 (217.7 atm).
 Ricordando le ipotesi precedenti possiamo fissare pressione ed entropia per gli stati 2 e 4.
@@ -174,7 +174,7 @@ La \textbf{potenza meccanica limite} è quindi 25.719 MW, mentre la potenza term
 lo stato 3 e 2, 64.258 MW.
 Il \textbf{rendimento limite} è del 40.02 \%
 
-Il rendimento limite è pari al rendimento del ciclo ideale di Carnot che avverrebbe tra le stesse temmperature medie di adduzione e sottrazione
+Il rendimento limite ha come limite superiore il rendimento del ciclo ideale di Carnot che avverrebbe tra le stesse temmperature medie di adduzione e sottrazione
 del calore, temperature stimabili dalla seguente:
 \begin{equation}
     \label{eq:T_ds}
@@ -202,15 +202,14 @@ Per il calcolo del rendimento interno di impianto è necessario valutare la pote
 valutabile come la portata di fluido per il salto di entalpia al quale va sottratta la potenza meccanica necessaria al funzionamento
 dei dispositivi ausiliari (pompe).
 
-È presente una fuga di vapore in turbina quindi per una stima più precisa consideriamo la portata massica più bassa pari
-a 70.72 t/h, pari a 19.65 kg/s. La variazione di entalpia è pari a 254.9 kcal/kg o 1067 kJ/kg.
+Consideriamo la portata massica in turbina pari a 70.72 t/h, pari a 19.65 kg/s. La variazione di entalpia è pari a 254.9 kcal/kg, o equivalentemente a 1067 kJ/kg.
 La potenza ottenuta dalla turbina è dunque 20.960 MW.
 
-Nell'impianto sono presenti 2 pompe, una di estrazione dal condensatore e l'altra di alimento verso il generatore
+Nell'impianto sono presenti 2 pompe: una pompa di estrazione dal condensatore ed una pompa di alimento verso il generatore
 di vapore; entrambi i lavori sono stimabili attraverso la variazione di entalpia subita dal fluido:
-la pompa di \textbf{estrazione} produce un aumento di entalpia pari a 0.7 kcal/kg o 2.93 kJ/kg con una portata massica di
-71.6 t/h o 19.89 kg/s, la potenza meccanica necessaria sarà dunque 58.3 kW, una modesta quantità rispetto a quella prodotta dalla turbina.
-La pompa di \textbf{alimento} produce una variazione di entalpia pari a 2.11 kcal/kg o 8.833 kJ/kg, la portata massica è identica
+la pompa di \textbf{estrazione} produce un aumento di entalpia pari a 0.7 kcal/kg (o 2.93 kJ/kg) con una portata massica di
+71.6 t/h (o 19.89 kg/s), la potenza meccanica necessaria sarà dunque 58.3 kW, una modesta quantità rispetto a quella prodotta dalla turbina.
+La pompa di \textbf{alimento} produce una variazione di entalpia pari a 2.11 kcal/kg o (8.833 kJ/kg), la portata massica è identica
 alla precedente, la potenza necessaria è 175.69 kW, maggiore della pompa precedente ma comunque molto piccola rispetto alla potenza
 ricavata dalla turbina.
 
