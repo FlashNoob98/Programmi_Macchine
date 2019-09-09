@@ -102,3 +102,25 @@ Trascuro il lavoro necessario alle altre due pompe.
 La potenza utile reale è pari a 18.747 MW.
 
 Il rendimento interno vale dunque 80.02\%.
+
+\subsection{Rendimento reale}
+Calcoliamo la potenza termica reale trasferita nel generatore di vapore
+\begin{equation*}
+    \dot Q_1 = \dot m_{2R} \cdot (h_{3'} - h_{2R}) = 53.916\ MW
+\end{equation*}
+Il rendimento reale è pari a 34.77\%.
+
+\subsection{Rendimento meccanico}
+Sia la potenza elettrica generatoa pari a 18 MW e il rendimento dell'alternatore pari a 97.5\%; la potenza utile all'asse della turbina è pari a 18.46 MW.
+
+Il rendimento meccanico è dunque 98.47\%.
+
+\subsection{Rendimento adiabatico di espansione}
+Rapporto tra le espansioni in turbina reale ed isoentropica, è pari a 80.81\%.
+
+\subsection{Verifica dei rendimenti}
+\begin{align*}
+    \eta_g \stackrel{sch}{=} \eta_b \cdot \eta_l \cdot \eta_{ii} \cdot \eta_m
+    = \frac{\dot{Q_1}}{\dot{m}_c H_i}\cdot \frac{P_l}{\dot{Q_1}} \cdot \frac{P_r}{P_l}\cdot \frac{P_{ua}}{P_r} = \\
+    =  0.9008 \cdot 0.4452 \cdot 0.8002 \cdot 0.9847 = 31.60 \%
+\end{align*}
