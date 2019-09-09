@@ -26,7 +26,8 @@ Calcolo quindi gli stati termodinamici degli spillamenti, l'entropia è identica
 \begin{center}
     \begin{tabular}{l|c|c|c|c|c}
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
-        SP1   &       8.42 &     211     & vap. surr. &  2863   &6.837 \\ \hline    
+        SP1   &       8.42 &     211     & vap. surr. &  2863   &6.837 \\ \hline 
+        SP1'    &       8.42    &173    &   liq. sott. &732.2   &2.071  \\ \hline
         SP2  &        5.32    &    162    & vap. surr. & 2769  &6.837 \\ \hline    
         SP3  &      1.47       &    111    &  93.30    &2544 &6.837   \\ \hline
         SP4   &    0.55      &      84    &    88.83   & 2393&6.837 
@@ -35,11 +36,25 @@ Calcolo quindi gli stati termodinamici degli spillamenti, l'entropia è identica
 
 Anche lo stato 4 si può ricavare fissando l'entropia e la pressione successive alla espansione in turbina.
 
+Supponiamo che lo stato 2R sia ad una temperatura pari alla temperatura di saturazione dello spillamento 1 (SP1) pari a 173°C.
+
+Ipotizzando uno scambio termico ideale, posso suppore che le temperature dei due fluidi uscenti dal rigeneratore siano identiche, ossia che la temperatura
+del fluido spillato dalla turbina, dopo lo scambio termico, abbia la stessa temperatura del fluido in ingresso al generatore di vapore (173°C).
+
+Per valutare la temperatura in uscita dalla pompa (stato 2) posso eseguire un bilancio energetico sul rigeneratore.
+\begin{equation*}
+    h_2 =\frac{ \dot m_{2R}\cdot h_{2R} - \dot m_{SP2}\cdot(h_{SP2}-h_{SP2'})}{\dot m_{2R}} = 700.6\ kJ/kg
+\end{equation*}
+Ricavato lo stato 2, si può ricavare lo stato 2' considerando la compressione isoentropica.
+
 \begin{center}
     \begin{tabular}{l|c|c|c|c|c}
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
         1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline     %uscita condensatore 
         1'  &        5.32    &           30.01   &liq. sott.  & 126.3&0.4368 \\ \hline      %uscita pompa estrazione
+        2'  &          5.32  &         154&liq.sott.            &694&1.9866  \\ \hline      %ingresso pompa alimento
+        2   &          59.05&           165&liq. sott.      &700.6& 1.9866   \\ \hline      %uscita pompa alimento
+        2R  &       59.05   &           173     &liq. sott. &  735  & 2.0644 \\ \hline      %ingresso caldaia  
         3   &        59.05  &            485&  vap. surr.    &  3381 &6.837  \\ \hline      %ingresso turbina
         4   &        0.0419       &      29.76&     79.81 &    2064  &6.837                %uscita turbina
     \end{tabular}
