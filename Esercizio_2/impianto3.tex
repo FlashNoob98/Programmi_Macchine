@@ -52,10 +52,53 @@ Ricavato lo stato 2, si può ricavare lo stato 2' considerando la compressione i
         stato    & $p\ (atm)$ & $T\ (\text{°}C) $&$X\ (\%$)& $h\ (\frac{kJ}{kg})$  & $s\ (\frac{kJ}{kg\cdot K})$\\ \hline
         1   &        0.0419 &            30   &    0      & 125.6    &0.4368 \\ \hline     %uscita condensatore 
         1'  &        5.32    &           30.01   &liq. sott.  & 126.3&0.4368 \\ \hline      %uscita pompa estrazione
-        2'  &          5.32  &         154&liq.sott.            &694&1.9866  \\ \hline      %ingresso pompa alimento
+        2'  &          5.32  &         154&liq. sott.           &694&1.9866  \\ \hline      %ingresso pompa alimento
         2   &          59.05&           165&liq. sott.      &700.6& 1.9866   \\ \hline      %uscita pompa alimento
         2R  &       59.05   &           173     &liq. sott. &  735  & 2.0644 \\ \hline      %ingresso caldaia  
         3   &        59.05  &            485&  vap. surr.    &  3381 &6.837  \\ \hline      %ingresso turbina
         4   &        0.0419       &      29.76&     79.81 &    2064  &6.837                %uscita turbina
     \end{tabular}
 \end{center}
+
+Si può calcolare infine la potenza limite erogata dalla turbina pari a 23.569 MW.
+\begin{equation*}
+    P_T = \dot m_3 h_3 - \dot m_{SP1} h_{SP1} - \dot m_{SP2} h_{SP2} - \dot m_{SP3} h_{SP3} -\dot m_{SP4} h_{SP4} - \dot m_{4} h_4
+\end{equation*}
+
+Calcoliamo inoltre la potenza necessaria al funzionamento delle pompe
+\begin{align*}
+    P_{p_{estrazione}} = \dot m_1 \cdot (h_{1'} - h_1) = 10.97\ kW \\
+    P_{p_{alimento}} = \dot m_2 \cdot (h_2 - h_{2'} ) = 131.27\ kW
+\end{align*}
+
+La potenza utile limite sarà dunque 23.427 MW.
+La potenza termica trasferita al fluido invece
+\begin{equation*}
+    \dot Q_1 = \dot m_2 \cdot (h_3 - h_{2R}) = 52.626\ MW
+\end{equation*}
+
+Il rendimento limite d'impianto vale dunque 44.52\%.
+
+\subsection{Rendimento di Carnot}
+Il calcolo delle temperature medie si esegue mediante la \eqref{eq:T_ds}: 
+\begin{align*}
+    T_{ma} = \frac{h_3-h_{2R}}{s_3-s_{2R}} = 281.26 \text{°C} \\
+    T_{ms} = \frac{h_4-h_1}{s_4-s_1} = 29.71 \text{°C}
+\end{align*}
+
+Il rendimento di Carnot è pari dunque a 
+\begin{equation*}
+    \eta_{Carnot} = 1 - \frac{T_{ms}}{T_{ma}} = 45.37\%
+\end{equation*}
+
+\subsection{Rendimento interno di impianto}
+Analizzo l'impianto reale, valutando le potenze necessarie ed erogate da turbina e pompe tramite gli stati termodinamici reali indicati sullo schema d'impianto.
+
+\begin{align*}
+    P_T = \dot m_3 h_3 - (\dot m_{SP1}h_{SP1}+ \dot m_{SP2}h_{SP2}+ \dot m_{SP3}h_{SP3}+ \dot m_{SP4}h_{SP4}+ \dot m_4h_4) \\
+    P_{alimento} = \dot m_2R \cdot (h_2 - h_{2'})
+\end{align*}
+Trascuro il lavoro necessario alle altre due pompe.
+La potenza utile reale è pari a 18.747 MW.
+
+Il rendimento interno vale dunque 80.02\%.
